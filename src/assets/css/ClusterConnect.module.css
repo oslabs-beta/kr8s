@@ -1,0 +1,14 @@
+.mainContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border: 1px white solid;
+  padding: 10px;
+}
+
+.clusterContainer {
+  border: 1px white solid;
+  width: fit-content;
+  padding: 5px;
+}
