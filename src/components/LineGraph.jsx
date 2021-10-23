@@ -5,7 +5,13 @@ export default function LineGraph(props) {
   
   return (
     <div>
-      This is the LineGraph Component
+      <iframe
+        width="25%"
+        height="15%"
+        src={props.src}
+        >
+      </iframe>
     </div>
   );
 }
+

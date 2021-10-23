@@ -5,7 +5,12 @@ export default function Speedometer(props) {
   
   return (
     <div>
-      This is the Speedometer Component
+      <iframe
+        width="15%"
+        height="15%"
+        src={props.src}
+        >
+      </iframe>
     </div>
   );
 }
