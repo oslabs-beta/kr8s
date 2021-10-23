@@ -5,7 +5,8 @@ export default function Tile(props) {
   
   return (
     <div>
-      This is the Tile Component
+      <h5> {props.tileHeader} </h5>
+      <h5> {props.tileValue} </h5>
     </div>
   );
 }
