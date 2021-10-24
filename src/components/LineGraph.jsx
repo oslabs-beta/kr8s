@@ -1,17 +1,17 @@
 import React from 'react';
 
+import style from '../assets/css/LineGraph.module.css';
 
 export default function LineGraph(props) {
-  
+
   return (
-    <div>
+    <div className={style.lineGraphContainer}>
       <iframe
-        width="25%"
-        height="15%"
-        src={props.src}
+        width="280px"
+        height="200px"
+        src={props.src || "https://tinyurl.com/mostyle-moproblem"}
         >
       </iframe>
     </div>
   );
 }
-
