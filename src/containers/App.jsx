@@ -1,13 +1,13 @@
 import React from "react";
 
 // Import components
-// import Sidebar from '../components/Sidebar';
+// import Sidebar from "../components/Sidebar.jsx";
 // import ClusterConnect from '../components/ClusterConnect.jsx';
-// import Dashboard from './Dashboard';
-// import Nodes from './Nodes';
-// import Pods from './Pods';
-// import PodView from '../components/PodView';
-// import NodeView from '../components/NodeView';
+// import Dashboard from './Dashboard.jsx"';
+// import Nodes from './Nodes.jsx"';
+// import Pods from './Pods.jsx"';
+// import PodView from '../components/PodView.jsx"';
+// import NodeView from '../components/NodeView.jsx"';
 
 import "../assets/css/App.css";
 
