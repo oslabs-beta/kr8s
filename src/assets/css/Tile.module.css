@@ -1,0 +1,21 @@
+.tileContainer {
+  background-image: radial-gradient(circle, #5f5a5d, #4f4a4d, #3f3b3c, #2f2c2d, #272425, #1f1c1d, #171515, #131111, #0e0c0c, #070606, #000000);
+  color: #31A72B;
+  border: solid #31A72B 3px;
+  border-radius: 50%;
+  margin: 20px;
+  height: 150px;
+  width: 150px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.tileHeader {
+  color: #daa71d;
+}
+
+.tileValue {
+  color: #26b81e;
+}
