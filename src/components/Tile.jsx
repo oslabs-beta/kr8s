@@ -1,12 +1,12 @@
 import React from 'react';
-
+import style from '../assets/css/Tile.module.css';
 
 export default function Tile(props) {
   
   return (
-    <div>
-      <h5> {props.tileHeader} </h5>
-      <h5> {props.tileValue} </h5>
+    <div className={style.tileContainer}>
+      <h3 className={style.tileHeader}> {props.tileHeader} </h3>
+      <h3 className={style.tileValue}> {props.tileValue} </h3>
     </div>
   );
 }
