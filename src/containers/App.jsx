@@ -17,7 +17,7 @@ import style from "../assets/css/App.module.css";
 export default function App() {
 //   Set connected to be true for development
 //   !!TODO: Change useState value to false before deployment!!!
-  const [connected, useConnected] = useState(true);
+  const [connected, useConnected] = useState(false);
 
   // Accepts a path variable to connect to the given cluster
   function getClusterInfo(path) {
@@ -32,7 +32,7 @@ export default function App() {
         <div id={style.App}>
           {/* Display Sidebar only if we are connected to a cluster */}
           {connected && <Sidebar />}
-          <div>
+          <div className={style.routerWrapper}>
             <Switch>
               <Route exact path="/index.html">
                 <ClusterConnect
