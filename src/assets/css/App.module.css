@@ -5,5 +5,9 @@
 #App {
   display: flex;
   flex-direction: row;
-  justify-content: flex-start;
+  justify-content: start;
+}
+
+.routerWrapper {
+  flex-grow: 1;
 }

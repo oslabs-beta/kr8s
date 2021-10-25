@@ -8,7 +8,7 @@ export default function Speedometer(props) {
     <div className={style.speedometerContainer}>
       <iframe
         width="200px"
-        height="280px"
+        height="220px"
         src={props.src || "https://tinyurl.com/jrVsrDev"}
         >
       </iframe>

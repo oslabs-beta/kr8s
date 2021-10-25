@@ -15,7 +15,9 @@ import Pods from "./Pods.jsx";
 import style from "../assets/css/App.module.css";
 
 export default function App() {
-  const [connected, useConnected] = useState(false);
+//   Set connected to be true for development
+//   !!TODO: Change useState value to false before deployment!!!
+  const [connected, useConnected] = useState(true);
 
   // Accepts a path variable to connect to the given cluster
   function getClusterInfo(path) {
@@ -39,10 +41,7 @@ export default function App() {
                 />
               </Route>
               <Route path="/dash">
-                <Dashboard />
-                <div>Another component</div>
-                <h2>Another component</h2>
-                <h2>Another component</h2>
+                <Dashboard clusterName="Reland's Cluster"/>
               </Route>
               <Route path="/nodes">
                 <Nodes />

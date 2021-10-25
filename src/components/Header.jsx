@@ -5,9 +5,7 @@ export default function Header(props) {
   
   return (
     <div className={style.Header}>
-      <h1>
-        {props.headerContent}
-      </h1>
+      <h1 className={style.headerContent}>{props.headerContent}</h1>
     </div>
   );
 }
