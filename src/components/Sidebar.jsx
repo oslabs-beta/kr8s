@@ -1,4 +1,6 @@
 import React from "react";
+import { Link } from "react-router-dom";
+
 import Box from "@mui/material/Box";
 import Drawer from "@mui/material/Drawer";
 import Toolbar from "@mui/material/Toolbar";
@@ -10,24 +12,6 @@ import styles from "../assets/css/Sidebar.module.css";
 const drawerWidth = 180;
 
 export default function Sidebar(props) {
-  function handleReroute(e) {
-    e.preventDefault();
-    // TODO: need to handle click to reroute to another page
-  }
-
-  let pages = props.pages.map((page) => {
-    return (
-      <div>
-        <ListItem className={styles.pageNames}>
-          <a href={props.routes} onClick={handleReroute}>
-            {page}
-          </a>
-        </ListItem>
-        <Divider />
-      </div>
-    );
-  });
-
   return (
     <div>
       <Box sx={{ display: "flex" }}>
@@ -45,8 +29,21 @@ export default function Sidebar(props) {
           anchor="left"
         >
           <Toolbar />
-          <Divider />
-          <List>{pages}</List>
+          <Divider className={styles.divider} variant="middle" />
+          <List>
+            <ListItem className={styles.pageNames}>
+              <Link to="/dash">Cluster Dashboard</Link>
+            </ListItem>
+            <Divider className={styles.divider} variant="middle" />
+            <ListItem className={styles.pageNames}>
+              <Link to="/nodes">Nodes</Link>
+            </ListItem>
+            <Divider className={styles.divider} variant="middle" />
+            <ListItem className={styles.pageNames}>
+              <Link to="/pods">Pods</Link>
+            </ListItem>
+            <Divider className={styles.divider} variant="middle" />
+          </List>
         </Drawer>
       </Box>
     </div>

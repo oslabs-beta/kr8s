@@ -6,3 +6,7 @@
   color: white;
   text-decoration: none;
 }
+
+.divider {
+  background: grey;
+}
