@@ -15,24 +15,39 @@ import Pods from "./Pods.jsx";
 // import NodeView from '../components/NodeView.jsx"';
 
 
-import "../assets/css/App.css";
+import style from "../assets/css/App.module.css";
 
 export default function App() {
 
   const [connected, useConnected] = useState(false);
+
+  // Accepts a path variable to connect to the given cluster
+  function getClusterInfo (path) {
+    // Set connected to true to display the sidebar
+    useConnected(true);
+    console.log('getClusterInfo run!');
+  }
+
+
   return (
-    <div>
-      {/* Display Sidebar only if we are not in the root path ('/') */}
-      {/* <Sidebar /> */}
+    <div id={style.App}>
+      {/* Display Sidebar only if we are connected to a cluster */}
+      {connected && <Sidebar />}
 
       <Router>
         <div>
           <Switch>
-            <Route exact="/">
-              <ClusterConnect clusters={["Cluster1", "Cluster2"]}/>
+            <Route exact path="/index.html">
+              <ClusterConnect 
+                clusters={["Cluster1", "Cluster2"]}
+                getClusterInfo={getClusterInfo}
+              />
             </Route>
             <Route path="/dash">
               <Dashboard />
+              <div>Another component</div>
+              <h2>Another component</h2>
+              <h2>Another component</h2>
             </Route>
             <Route path="/nodes">
               <Nodes />
