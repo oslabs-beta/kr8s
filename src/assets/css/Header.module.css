@@ -2,3 +2,10 @@
   height: fit-content;
   width: fit-content;
 }
+
+.headerContent {
+  font-size: 5.5em;
+  font-style: italic;
+  font-weight: 400;
+  color: rgb(255, 94, 0);
+}
