@@ -12,7 +12,7 @@ import styles from "../assets/css/Pods.module.css";
 const podsHeaders = [{ id: "pods", label: "Pods", minWidth: 100 }];
 const podsValues = [];
 for (let i = 0; i < 20; i++) {
-  podsValues.push({ pods: `pod${i}` });
+  podsValues.push({ id: i, pods: `pod${i}` });
 }
 const listValueHeaders = podsHeaders;
 const listValue = podsValues;
@@ -33,7 +33,11 @@ export default function Pods(props) {
 
       <div className={styles.podsContainerList}>
         {/* TODO: Add listValue references */}
-        <List listValueHeaders={listValueHeaders} listValue={listValue} />
+        <List
+          listValueHeaders={listValueHeaders}
+          listValue={listValue}
+          reroute="/podview"
+        />
       </div>
 
       <div className={styles.podsContainerHeader}>

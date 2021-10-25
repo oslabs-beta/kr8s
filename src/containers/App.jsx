@@ -7,7 +7,7 @@ import ClusterConnect from "../components/ClusterConnect.jsx";
 import Dashboard from "./Dashboard.jsx";
 import Nodes from "./Nodes.jsx";
 import Pods from "./Pods.jsx";
-// import PodView from '../components/PodView.jsx';
+import PodView from '../components/PodView.jsx';
 // import NodeView from '../components/NodeView.jsx';
 // import List from "../components/List.jsx";
 // import Tile from "../components/Tile.jsx";
@@ -51,6 +51,9 @@ export default function App() {
               </Route>
               <Route path="/pods">
                 <Pods />
+              </Route>
+              <Route path="/podview">
+                <PodView />
               </Route>
             </Switch>
           </div>

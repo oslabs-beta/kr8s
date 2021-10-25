@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { useHistory } from "react-router-dom";
 
 import Paper from "@mui/material/Paper";
 import Table from "@mui/material/Table";
@@ -8,6 +9,8 @@ import TableContainer from "@mui/material/TableContainer";
 import TableHead from "@mui/material/TableHead";
 import TablePagination from "@mui/material/TablePagination";
 import TableRow from "@mui/material/TableRow";
+
+import styles from "../assets/css/List.module.css";
 
 // DUMMY DATA THAT SHOULD FLOW DOWN FROM PROPS
 // const nodesHeaders = [
@@ -38,6 +41,15 @@ export default function List(props) {
     setRowsPerPage(+event.target.value);
     setPage(0);
   };
+
+  let history = useHistory();
+
+  function handleClick(e) {
+    e.preventDefault();
+    history.push(props.reroute);
+    console.log(e.target.textContent);
+    console.log(props.reroute);
+  }
 
   return (
     <Paper
@@ -83,9 +95,15 @@ export default function List(props) {
                           align={header.align}
                           sx={{ color: "white" }}
                         >
-                          {header.format && typeof value === "number"
-                            ? header.format(value)
-                            : value}
+                          <a
+                            href=""
+                            onClick={handleClick}
+                            className={styles.rows}
+                          >
+                            {header.format && typeof value === "number"
+                              ? header.format(value)
+                              : value}
+                          </a>
                         </TableCell>
                       );
                     })}
