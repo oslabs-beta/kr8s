@@ -15,6 +15,8 @@ import Pods from "./Pods.jsx";
 import style from "../assets/css/App.module.css";
 
 export default function App() {
+//   Set connected to be true for development
+//   !!TODO: Change useState value to false before deployment!!!
   const [connected, useConnected] = useState(true);
 
   // Accepts a path variable to connect to the given cluster
