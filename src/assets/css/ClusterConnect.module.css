@@ -1,14 +1,21 @@
 .mainContainer {
+  background-color: #00000081;
+  margin: auto;
+  margin-top: 200px;
+  width: 350px;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   border: 1px white solid;
-  padding: 10px;
+  padding: 40px 0px;
 }
 
 .clusterContainer {
   border: 1px white solid;
-  width: fit-content;
-  padding: 5px;
+  border-radius: .5em;
+  background-color: #31A72B;
+  text-align: center;
+  width: 200px;
+  padding: 15px;
 }
