@@ -1,9 +1,15 @@
 import React from "react";
+import { Link } from "react-router-dom";
+
 import styles from "../assets/css/ClusterConnect.module.css";
 
 export default function ClusterConnect(props) {
   let clusters = props.clusters.map((cluster) => {
-    return <p className={styles.clusterContainer}>{cluster}</p>;
+    return (
+      <Link key={cluster} to="/dash" onClick={props.getClusterInfo}>
+        <p className={styles.clusterContainer}>{cluster}</p>
+      </Link>
+    );
   });
 
   return (

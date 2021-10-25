@@ -2,8 +2,8 @@
 
 @import '_example/_example.css';
 
-.tile-line {
-  margin-top: 300px;
+#App {
   display: flex;
-  justify-content: space-evenly;
+  flex-direction: row;
+  justify-content: flex-start;
 }
