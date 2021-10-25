@@ -13,9 +13,11 @@
 }
 
 .tileHeader {
+  text-align: center;
   color: #daa71d;
 }
 
 .tileValue {
+  align-self: center;
   color: #26b81e;
 }
