@@ -30,13 +30,15 @@ export default function App() {
         <div id={style.App}>
           {/* Display Sidebar only if we are connected to a cluster */}
           {connected && <Sidebar />}
+          <Sidebar />
           <div>
             <Switch>
               <Route exact path="/index.html">
-                <ClusterConnect
+                {/* <ClusterConnect
                   clusters={["Cluster1", "Cluster2"]}
                   getClusterInfo={getClusterInfo}
-                />
+                /> */}
+                <Pods />
               </Route>
               <Route path="/dash">
                 <Dashboard />
