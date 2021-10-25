@@ -1,14 +1,15 @@
 import React from 'react';
 
+import style from '../assets/css/Speedometer.module.css';
 
 export default function Speedometer(props) {
-  
+
   return (
-    <div>
+    <div className={style.speedometerContainer}>
       <iframe
-        width="15%"
-        height="15%"
-        src={props.src}
+        width="200px"
+        height="280px"
+        src={props.src || "https://tinyurl.com/jrVsrDev"}
         >
       </iframe>
     </div>
