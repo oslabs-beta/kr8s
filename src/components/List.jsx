@@ -49,7 +49,7 @@ export default function List(props) {
     return;
   }
 
-  if (rowName.length) {
+  if (rowName.length && props.reroute) {
     return (
       <Redirect
         to={{
@@ -94,30 +94,63 @@ export default function List(props) {
             {props.listValue
               .slice(page * rowsPerPage, page * rowsPerPage + rowsPerPage)
               .map((row) => {
-                return (
-                  <TableRow hover role="checkbox" tabIndex={-1} key={row.code}>
-                    {props.listValueHeaders.map((header) => {
-                      const value = row[header.id];
-                      return (
-                        <TableCell
-                          key={row.id}
-                          align={header.align}
-                          sx={{ color: "white" }}
-                        >
-                          <a
-                            href=""
-                            onClick={handleClick}
-                            className={styles.rows}
+                if (props.reroute) {
+                  return (
+                    <TableRow
+                      hover
+                      role="checkbox"
+                      tabIndex={-1}
+                      key={row.code}
+                    >
+                      {props.listValueHeaders.map((header) => {
+                        const value = row[header.id];
+                        return (
+                          <TableCell
+                            key={header.id}
+                            align={header.align}
+                            sx={{ color: "white" }}
                           >
-                            {header.format && typeof value === "number"
-                              ? header.format(value)
-                              : value}
-                          </a>
-                        </TableCell>
-                      );
-                    })}
-                  </TableRow>
-                );
+                            <a
+                              href=""
+                              onClick={handleClick}
+                              className={styles.rows}
+                            >
+                              {header.format && typeof value === "number"
+                                ? header.format(value)
+                                : value}
+                            </a>
+                          </TableCell>
+                        );
+                      })}
+                    </TableRow>
+                  );
+                } else {
+                  return (
+                    <TableRow
+                      hover
+                      role="checkbox"
+                      tabIndex={-1}
+                      key={row.code}
+                    >
+                      {props.listValueHeaders.map((header) => {
+                        const value = row[header.id];
+                        return (
+                          <TableCell
+                            key={header.id}
+                            align={header.align}
+                            sx={{ color: "white" }}
+                          >
+                            <a className={styles.rows}>
+                              {header.format && typeof value === "number"
+                                ? header.format(value)
+                                : value}
+                            </a>
+                          </TableCell>
+                        );
+                      })}
+                    </TableRow>
+                  );
+                }
               })}
           </TableBody>
         </Table>

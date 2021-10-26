@@ -1,0 +1,12 @@
+.containersContainer {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+}
+
+.containersContainerHeader {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
