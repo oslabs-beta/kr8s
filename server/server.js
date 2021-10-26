@@ -3,7 +3,7 @@ const path = require('path');
 const k8sController = require('./controllers/k8sController.js')
 
 
-const PORT = 3000;
+const PORT = 3400;
 
 app = express();
 
@@ -13,9 +13,29 @@ app.use(express.urlencoded({ extended: true }));
 
 //Routes handling requests for k8s cluster info
 
-app.get('/api/getPodList', 
+app.get('/api/namespaceList', 
 k8sController.getPodList,
-(req, res) => res.status(200).json('response here'));
+(req, res) => res.status(200).json(res.locals.namespaceList));
+
+app.get('/api/podList', 
+k8sController.getPodList,
+(req, res) => res.status(200).json(res.locals.podList));
+
+app.get('/api/nodeList', 
+k8sController.getNodeList,
+(req, res) => res.status(200).json(res.locals.nodeList));
+
+app.get('/api/deploymentList', 
+k8sController.getDeploymentList,
+(req, res) => res.status(200).json(res.locals.deploymentList));
+
+app.get('/api/serviceList', 
+k8sController.getServiceList,
+(req, res) => res.status(200).json(res.locals.serviceList));
+
+app.get('/api/ingressList', 
+k8sController.getIngressList,
+(req, res) => res.status(200).json(res.locals.ingressList));
 
 
 
@@ -31,4 +51,4 @@ app.use((err, req, res, next) => {
   });
   
 
-app.listen(PORT, () => console.log(`Server listening on port ${PORT} `))
+app.listen(PORT, () => console.log(`Server listening on port ${PORT} `));

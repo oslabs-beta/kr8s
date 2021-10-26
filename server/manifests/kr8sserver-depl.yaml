@@ -1,0 +1,31 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: kr8sserver-depl
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: kr8sserver
+  template:
+    metadata:
+      labels:
+        app: kr8sserver
+    spec:
+      containers:
+        - name: kr8sserver
+          image: jgstoddard/kr8sserver
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: kr8sserver-srv
+spec: 
+  type: NodePort
+  selector:
+    app: kr8sserver
+  ports:
+    - name: kr8sserver
+      protocol: TCP
+      port: 3400
+      targetPort: 3400
