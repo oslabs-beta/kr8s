@@ -1,0 +1,8 @@
+
+.lineGraphContainer {
+  border: solid #31A72B 2px;
+  margin: 20px;
+  height: fit-content;
+  width: fit-content;
+  border-radius: .5em;
+}

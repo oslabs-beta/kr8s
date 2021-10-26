@@ -1,0 +1,13 @@
+/* Main CSS file */
+
+@import "_example/_example.css";
+
+#App {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+}
+
+.routerWrapper {
+  flex-grow: 1;
+}

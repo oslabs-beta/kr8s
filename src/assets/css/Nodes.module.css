@@ -1,0 +1,32 @@
+.nodesContainer {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+}
+
+.nodesContainerHeader {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.nodesContainerMainContent {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+
+.nodesContainerSpeedometerColumn {
+
+}
+
+.nodesContainerList {
+  width: 100%;
+}
+
+List {
+  height: 400px;
+  width: 500px;
+}

@@ -1,0 +1,12 @@
+.podsContainer {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+}
+
+.podsContainerHeader {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}

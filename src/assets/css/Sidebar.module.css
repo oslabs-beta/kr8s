@@ -1,0 +1,12 @@
+.pageNames {
+  color: white;
+}
+
+.pageNames a {
+  color: white;
+  text-decoration: none;
+}
+
+.divider {
+  background: grey;
+}
