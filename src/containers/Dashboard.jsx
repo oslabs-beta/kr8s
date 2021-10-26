@@ -7,6 +7,9 @@ import Header from "../components/Header.jsx";
 import style from '../assets/css/Dashboard.module.css';
 
 export default function Dashboard(props) {
+  
+  const { apiServer, controller, cpu, disk, etcd, io, memory, scheduler } = props.grafana;
+  
   return (
     <div className={style.DashboardContainer}>
       <Header headerContent={props.clusterName}/>
@@ -19,17 +22,17 @@ export default function Dashboard(props) {
 
       <div className={style.speedoBoxes}>
         <div className={style.speedoes}>
-          <Speedometer />
-          <Speedometer />
-          <Speedometer />
-          <Speedometer />
+          <Speedometer  src={cpu} />
+          <Speedometer src={memory} />
+          <Speedometer src={io} />
+          <Speedometer src={disk} />
         </div>
 
         <div className={style.speedoes}>
-          <Speedometer />
-          <Speedometer />
-          <Speedometer />
-          <Speedometer />
+        <Speedometer src={apiServer} />
+          <Speedometer src={scheduler} />
+          <Speedometer src={controller} />
+          <Speedometer src={etcd} />
         </div>
       </div>
     </div>
