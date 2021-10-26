@@ -8,10 +8,18 @@ import Header from '../components/Header.jsx';
 
 import style from '../assets/css/Nodes.module.css';
 
+// DUMMY DATA
+const nodeHeaders = [{ id: "nodes", label: "Nodes", minWidth: 100 }];
+const nodeValues = [];
+for (let i = 0; i < 20; i++) {
+  nodeValues.push({ id: i, nodes: `node${i}` });
+}
+const listValueHeaders = nodeHeaders;
+const listValue = nodeValues;
+
 export default function Nodes(props) {
   
-  const headerContent = `Cluster ${props.clusterName} Node Condition`
-  
+  const headerContent = `${props.clusterName} Node Condition`
   
   return (
     <div className={style.nodesContainer}>
@@ -33,7 +41,11 @@ export default function Nodes(props) {
         <div className={style.nodesContainerList}>
           <h3>Node Condition</h3>
           {/* TODO: Add list props once List component is done */}
-          <List />
+          <List
+          listValueHeaders={listValueHeaders}
+          listValue={listValue}
+          reroute="/nodeview"
+        />
         </div>
       </div>
     </div>

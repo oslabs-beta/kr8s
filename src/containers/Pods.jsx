@@ -17,7 +17,7 @@ const listValueHeaders = podsHeaders;
 const listValue = podsValues;
 
 export default function Pods(props) {
-  const headerContent = `Cluster ${props.clusterName} - Pods`;
+  const headerContent = `${props.clusterName} Pod Condition`;
 
   return (
     <div className={styles.podsContainer}>
