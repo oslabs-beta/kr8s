@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { useHistory } from "react-router-dom";
+import { Redirect } from "react-router-dom";
 
 import Paper from "@mui/material/Paper";
 import Table from "@mui/material/Table";
@@ -32,6 +32,7 @@ import styles from "../assets/css/List.module.css";
 export default function List(props) {
   const [page, setPage] = useState(0);
   const [rowsPerPage, setRowsPerPage] = useState(10);
+  const [rowName, setRowName] = useState("");
 
   const handleChangePage = (event, newPage) => {
     setPage(newPage);
@@ -42,13 +43,21 @@ export default function List(props) {
     setPage(0);
   };
 
-  let history = useHistory();
-
   function handleClick(e) {
     e.preventDefault();
-    history.push(props.reroute);
-    console.log(e.target.textContent);
-    console.log(props.reroute);
+    setRowName(e.target.textContent);
+    return;
+  }
+
+  if (rowName.length) {
+    return (
+      <Redirect
+        to={{
+          pathname: props.reroute,
+          rowName,
+        }}
+      />
+    );
   }
 
   return (
