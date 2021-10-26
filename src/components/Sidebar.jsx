@@ -29,19 +29,27 @@ export default function Sidebar(props) {
         >
           <Toolbar />
           <Divider className={styles.divider} variant="middle" />
+          
           <List>
+            
             <ListItem className={styles.pageNames}>
               <Link to="/dash">Cluster Dashboard</Link>
             </ListItem>
+            
             <Divider className={styles.divider} variant="middle" />
+            
             <ListItem className={styles.pageNames}>
               <Link to="/nodes">Nodes</Link>
             </ListItem>
+            
             <Divider className={styles.divider} variant="middle" />
+            
             <ListItem className={styles.pageNames}>
               <Link to="/pods">Pods</Link>
             </ListItem>
+            
             <Divider className={styles.divider} variant="middle" />
+          
           </List>
         </Drawer>
       </Box>

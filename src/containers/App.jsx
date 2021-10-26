@@ -8,9 +8,9 @@ import Dashboard from "./Dashboard.jsx";
 import Nodes from "./Nodes.jsx";
 import Pods from "./Pods.jsx";
 import PodView from "../components/PodView.jsx";
-// import NodeView from '../components/NodeView.jsx';
+import NodeView from '../components/NodeView.jsx';
 // import List from "../components/List.jsx";
-// import Tile from "../components/Tile.jsx";
+import Tile from "../components/Tile.jsx";
 
 import style from "../assets/css/App.module.css";
 
@@ -62,24 +62,40 @@ export default function App() {
           {connected && <Sidebar />}
           <div className={style.routerWrapper}>
             <Switch>
+              
               <Route exact path="/index.html">
                 <ClusterConnect
                   clusters={["MicroServices Limited", "Market's Be Crazy"]}
                   getClusterInfo={getClusterInfo}
                 />
               </Route>
+              
               <Route path="/dash">
                 <Dashboard
                   clusterName={clusterName}
                   grafana={grafana.cluster}
                 />
               </Route>
+              
               <Route path="/nodes">
                 <Nodes clusterName={clusterName} grafana={grafana.nodes} />
               </Route>
+
+              <Route
+                path="/nodeview"
+                render={(props) => (
+                  <NodeView
+                    {...props}
+                    clusterName={clusterName}
+                    grafana={grafana.nodes}
+                  />
+                )}
+              />
+              
               <Route path="/pods">
                 <Pods clusterName={clusterName} grafana={grafana.pods} />
               </Route>
+              
               <Route
                 path="/podview"
                 render={(props) => (

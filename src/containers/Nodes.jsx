@@ -1,6 +1,5 @@
 import React from "react";
 
-
 import Speedometer from '../components/Speedometer.jsx';
 import Tile from '../components/Tile.jsx';
 import List from '../components/List.jsx';
@@ -45,7 +44,7 @@ export default function Nodes(props) {
           listValueHeaders={listValueHeaders}
           listValue={listValue}
           reroute="/nodeview"
-        />
+          />
         </div>
       </div>
     </div>
