@@ -7,6 +7,10 @@ import ClusterConnect from "../components/ClusterConnect.jsx";
 import Dashboard from "./Dashboard.jsx";
 import Nodes from "./Nodes.jsx";
 import Pods from "./Pods.jsx";
+import PodView from "../components/PodView.jsx";
+// import NodeView from '../components/NodeView.jsx';
+// import List from "../components/List.jsx";
+// import Tile from "../components/Tile.jsx";
 
 import style from "../assets/css/App.module.css";
 
@@ -26,19 +30,19 @@ grafana["cluster"] = {
 grafana["nodes"] = {
   cpu: "https://source.unsplash.com/random/200x220?speedometer",
   memory: "https://source.unsplash.com/random/200x220?speedometer",
-  disk: "https://source.unsplash.com/random/200x220?speedometer"
+  disk: "https://source.unsplash.com/random/200x220?speedometer",
 };
 grafana["pods"] = {
   cpu: "https://source.unsplash.com/random/200x220?speedometer",
   memory: "https://source.unsplash.com/random/200x220?speedometer",
-  restarts: "https://source.unsplash.com/random/200x220?speedometer"
+  restarts: "https://source.unsplash.com/random/200x220?speedometer",
 };
 
 export default function App() {
-//   Set connected to be true for development
-//   !!TODO: Change useState value to false before deployment!!!
+  //   Set connected to be true for development
+  //   !!TODO: Change useState value to false before deployment!!!
   const [connected, useConnected] = useState(false);
-  const [clusterName, useClusterName] = useState('');
+  const [clusterName, useClusterName] = useState("");
 
   // Accepts a path variable to connect to the given cluster
   function getClusterInfo(path) {
@@ -47,9 +51,7 @@ export default function App() {
 
     // TODO: Retrieve information necessary for the selected cluster
     // TODO: Store information in the grafana object and related state
-    useClusterName("MicroServices Limited")
-
-    
+    useClusterName("MicroServices Limited");
   }
 
   return (
@@ -67,23 +69,27 @@ export default function App() {
                 />
               </Route>
               <Route path="/dash">
-                <Dashboard 
-                  clusterName={clusterName} 
+                <Dashboard
+                  clusterName={clusterName}
                   grafana={grafana.cluster}
                 />
               </Route>
               <Route path="/nodes">
-                <Nodes 
-                  clusterName={clusterName}
-                  grafana={grafana.nodes}
-                />
+                <Nodes clusterName={clusterName} grafana={grafana.nodes} />
               </Route>
               <Route path="/pods">
-                <Pods 
-                  clusterName={clusterName}
-                  grafana={grafana.pods}
-                />
+                <Pods clusterName={clusterName} grafana={grafana.pods} />
               </Route>
+              <Route
+                path="/podview"
+                render={(props) => (
+                  <PodView
+                    {...props}
+                    clusterName={clusterName}
+                    grafana={grafana.pods}
+                  />
+                )}
+              />
             </Switch>
           </div>
         </div>

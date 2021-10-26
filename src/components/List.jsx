@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { Redirect } from "react-router-dom";
 
 import Paper from "@mui/material/Paper";
 import Table from "@mui/material/Table";
@@ -8,6 +9,8 @@ import TableContainer from "@mui/material/TableContainer";
 import TableHead from "@mui/material/TableHead";
 import TablePagination from "@mui/material/TablePagination";
 import TableRow from "@mui/material/TableRow";
+
+import styles from "../assets/css/List.module.css";
 
 // DUMMY DATA THAT SHOULD FLOW DOWN FROM PROPS
 // const nodesHeaders = [
@@ -29,6 +32,7 @@ import TableRow from "@mui/material/TableRow";
 export default function List(props) {
   const [page, setPage] = useState(0);
   const [rowsPerPage, setRowsPerPage] = useState(10);
+  const [rowName, setRowName] = useState("");
 
   const handleChangePage = (event, newPage) => {
     setPage(newPage);
@@ -38,6 +42,23 @@ export default function List(props) {
     setRowsPerPage(+event.target.value);
     setPage(0);
   };
+
+  function handleClick(e) {
+    e.preventDefault();
+    setRowName(e.target.textContent);
+    return;
+  }
+
+  if (rowName.length && props.reroute) {
+    return (
+      <Redirect
+        to={{
+          pathname: props.reroute,
+          rowName,
+        }}
+      />
+    );
+  }
 
   return (
     <Paper
@@ -73,24 +94,63 @@ export default function List(props) {
             {props.listValue
               .slice(page * rowsPerPage, page * rowsPerPage + rowsPerPage)
               .map((row) => {
-                return (
-                  <TableRow hover role="checkbox" tabIndex={-1} key={row.code}>
-                    {props.listValueHeaders.map((header) => {
-                      const value = row[header.id];
-                      return (
-                        <TableCell
-                          key={header.id}
-                          align={header.align}
-                          sx={{ color: "white" }}
-                        >
-                          {header.format && typeof value === "number"
-                            ? header.format(value)
-                            : value}
-                        </TableCell>
-                      );
-                    })}
-                  </TableRow>
-                );
+                if (props.reroute) {
+                  return (
+                    <TableRow
+                      hover
+                      role="checkbox"
+                      tabIndex={-1}
+                      key={row.code}
+                    >
+                      {props.listValueHeaders.map((header) => {
+                        const value = row[header.id];
+                        return (
+                          <TableCell
+                            key={header.id}
+                            align={header.align}
+                            sx={{ color: "white" }}
+                          >
+                            <a
+                              href=""
+                              onClick={handleClick}
+                              className={styles.rows}
+                            >
+                              {header.format && typeof value === "number"
+                                ? header.format(value)
+                                : value}
+                            </a>
+                          </TableCell>
+                        );
+                      })}
+                    </TableRow>
+                  );
+                } else {
+                  return (
+                    <TableRow
+                      hover
+                      role="checkbox"
+                      tabIndex={-1}
+                      key={row.code}
+                    >
+                      {props.listValueHeaders.map((header) => {
+                        const value = row[header.id];
+                        return (
+                          <TableCell
+                            key={header.id}
+                            align={header.align}
+                            sx={{ color: "white" }}
+                          >
+                            <a className={styles.rows}>
+                              {header.format && typeof value === "number"
+                                ? header.format(value)
+                                : value}
+                            </a>
+                          </TableCell>
+                        );
+                      })}
+                    </TableRow>
+                  );
+                }
               })}
           </TableBody>
         </Table>
