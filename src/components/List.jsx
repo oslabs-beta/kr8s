@@ -100,7 +100,7 @@ export default function List(props) {
                       const value = row[header.id];
                       return (
                         <TableCell
-                          key={header.id}
+                          key={row.id}
                           align={header.align}
                           sx={{ color: "white" }}
                         >

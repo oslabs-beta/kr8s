@@ -15,8 +15,8 @@ import PodView from "../components/PodView.jsx";
 import style from "../assets/css/App.module.css";
 
 export default function App() {
-//   Set connected to be true for development
-//   !!TODO: Change useState value to false before deployment!!!
+  //   Set connected to be true for development
+  //   !!TODO: Change useState value to false before deployment!!!
   const [connected, useConnected] = useState(false);
 
   // Accepts a path variable to connect to the given cluster
@@ -35,14 +35,13 @@ export default function App() {
           <div className={style.routerWrapper}>
             <Switch>
               <Route exact path="/index.html">
-                {/* <ClusterConnect
+                <ClusterConnect
                   clusters={["Cluster1", "Cluster2"]}
                   getClusterInfo={getClusterInfo}
-                /> */}
-                <Pods />
+                />
               </Route>
               <Route path="/dash">
-                <Dashboard clusterName="Reland's Cluster"/>
+                <Dashboard clusterName="Reland's Cluster" />
               </Route>
               <Route path="/nodes">
                 <Nodes />
@@ -50,9 +49,6 @@ export default function App() {
               <Route path="/pods">
                 <Pods />
               </Route>
-              {/* <Route path="/podview">
-                <PodView />
-              </Route> */}
               <Route
                 path="/podview"
                 render={(props) => <PodView {...props} />}
