@@ -8,11 +8,12 @@ import Dashboard from "./Dashboard.jsx";
 import Nodes from "./Nodes.jsx";
 import Pods from "./Pods.jsx";
 import PodView from "../components/PodView.jsx";
-import NodeView from "../components/NodeView.jsx";
-// import List from "../components/List.jsx";
-import Tile from "../components/Tile.jsx";
+import NodeView from '../components/NodeView.jsx';
+
 
 import style from "../assets/css/App.module.css";
+import kr8sBackground from "../assets/css/imgs/KR8S-Background.png";
+import { height } from "@mui/system";
 
 const grafana = {};
 
@@ -55,18 +56,22 @@ export default function App() {
   }
 
   return (
-    <div>
+    <div id={style.App}>
       <Router>
-        <div id={style.App}>
+        <div className={style.AppContainer}>
           {/* Display Sidebar only if we are connected to a cluster */}
           {connected && <Sidebar />}
-          <div className={style.routerWrapper}>
+          <div 
+            className={style.routerWrapper} 
+            // Only display the KR8S logo when we have not connected to a cluster
+            style={{ backgroundImage: !connected?`url(${kr8sBackground})` : null }}
+          >
             <Switch>
               <Route exact path="/index.html">
-                <ClusterConnect
-                  clusters={["MicroServices Limited", "Market's Be Crazy"]}
-                  getClusterInfo={getClusterInfo}
-                />
+                  <ClusterConnect
+                    clusters={["MicroServices Limited", "Market's Be Crazy"]}
+                    getClusterInfo={getClusterInfo}
+                  />
               </Route>
 
               <Route path="/dash">
