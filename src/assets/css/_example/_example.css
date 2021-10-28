@@ -4,6 +4,7 @@
   body{
     color: #000;
     background-color: #3d393b;
+    margin: 0;
   }
 }
 
@@ -12,6 +13,7 @@
   body {
     color: #201d1e;
     background-color: #000;
+    margin: 0;
   }
 }
 

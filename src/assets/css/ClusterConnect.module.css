@@ -8,13 +8,16 @@
   justify-content: center;
   align-items: center;
   border: 1px white solid;
+  border-radius: .75em;
+  box-shadow: 0px 0px 8px aqua;
   padding: 40px 0px;
 }
 
 .clusterContainer {
   border: 1px white solid;
   border-radius: .5em;
-  background-color: #31A72B;
+  background-color: #4a8ac5bb;
+  color:rgb(255, 255, 255);
   text-align: center;
   width: 200px;
   padding: 15px;
