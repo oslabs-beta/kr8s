@@ -35,6 +35,7 @@ export default function Nodes(props) {
           <Speedometer src="TODO: Grafana Link Nodes CPU"/>
           <Speedometer src="TODO: Grafana Link Nodes Memory"/>
           <Speedometer src="TODO: Grafana Link Nodes Disk Space"/>
+
         </div>
 
         <div className={style.nodesContainerList}>
