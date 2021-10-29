@@ -3,6 +3,7 @@ import React from "react";
 import Speedometer from "../components/Speedometer.jsx";
 import Tile from "../components/Tile.jsx";
 import List from "../components/List.jsx";
+import LineGraph from "../components/LineGraph.jsx";
 import Header from "../components/Header.jsx";
 
 import styles from "../assets/css/Pods.module.css";
@@ -41,9 +42,28 @@ export default function Pods(props) {
 
       <div className={styles.podsContainerHeader}>
         {/* TODO: Add grafana link for each speedometer */}
-        <Speedometer src="TODO: Grafana Link Pods CPU" />
-        <Speedometer src="TODO: Grafana Link Pods Memory" />
-        <Speedometer src="TODO: Grafana Link Pods Restarts" />
+        {/* <LineGraph src={props.grafana.cpu} />
+        <LineGraph src={props.grafana.memory} />
+        <Speedometer src={props.grafana.restarts} /> */}
+        {/* using dashboard 6663 */}
+        <iframe
+          src="http://localhost:32000/d-solo/AAOMjeHmk/kubernetes-pod-and-cluster-monitoring-via-prometheus?orgId=1&refresh=10s&from=1635437894472&to=1635441494472&theme=dark&panelId=3"
+          width="450"
+          height="200"
+          frameborder="0"
+        ></iframe>
+        <iframe
+          src="http://localhost:32000/d-solo/AAOMjeHmk/kubernetes-pod-and-cluster-monitoring-via-prometheus?orgId=1&refresh=10s&from=1635437907441&to=1635441507441&theme=dark&panelId=2"
+          width="450"
+          height="200"
+          frameborder="0"
+        ></iframe>
+        <iframe
+          src="http://localhost:32000/d-solo/AAOMjeHmk/kubernetes-pod-and-cluster-monitoring-via-prometheus?orgId=1&refresh=10s&from=1635437052196&to=1635440652196&theme=dark&panelId=8"
+          width="450"
+          height="200"
+          frameborder="0"
+        ></iframe>
       </div>
     </div>
   );

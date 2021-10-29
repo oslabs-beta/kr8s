@@ -1,6 +1,5 @@
 import React from "react";
 
-
 import Speedometer from '../components/Speedometer.jsx';
 import Tile from '../components/Tile.jsx';
 import List from '../components/List.jsx';
@@ -36,6 +35,7 @@ export default function Nodes(props) {
           <Speedometer src="TODO: Grafana Link Nodes CPU"/>
           <Speedometer src="TODO: Grafana Link Nodes Memory"/>
           <Speedometer src="TODO: Grafana Link Nodes Disk Space"/>
+
         </div>
 
         <div className={style.nodesContainerList}>
@@ -45,7 +45,7 @@ export default function Nodes(props) {
           listValueHeaders={listValueHeaders}
           listValue={listValue}
           reroute="/nodeview"
-        />
+          />
         </div>
       </div>
     </div>

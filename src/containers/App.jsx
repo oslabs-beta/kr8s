@@ -8,11 +8,12 @@ import Dashboard from "./Dashboard.jsx";
 import Nodes from "./Nodes.jsx";
 import Pods from "./Pods.jsx";
 import PodView from "../components/PodView.jsx";
-// import NodeView from '../components/NodeView.jsx';
-// import List from "../components/List.jsx";
-// import Tile from "../components/Tile.jsx";
+import NodeView from '../components/NodeView.jsx';
+
 
 import style from "../assets/css/App.module.css";
+import kr8sBackground from "../assets/css/imgs/KR8S-Background.png";
+import { height } from "@mui/system";
 
 const grafana = {};
 
@@ -33,9 +34,9 @@ grafana["nodes"] = {
   disk: "https://source.unsplash.com/random/200x220?speedometer",
 };
 grafana["pods"] = {
-  cpu: "https://source.unsplash.com/random/200x220?speedometer",
-  memory: "https://source.unsplash.com/random/200x220?speedometer",
-  restarts: "https://source.unsplash.com/random/200x220?speedometer",
+  cpu: "http://localhost:32000/d/AAOMjeHmk/kubernetes-pod-and-cluster-monitoring-via-prometheus?orgId=1&refresh=10s&from=1635436646489&to=1635440246490&viewPanel=3",
+  memory: "http://localhost:32000/d/AAOMjeHmk/kubernetes-pod-and-cluster-monitoring-via-prometheus?orgId=1&refresh=10s&from=1635436837809&to=1635440437809&theme=dark&viewPanel=2",
+  restarts: "http://localhost:32000/d/AAOMjeHmk/kubernetes-pod-and-cluster-monitoring-via-prometheus?orgId=1&refresh=10s&from=1635436921706&to=1635440521706&theme=dark&viewPanel=8",
 };
 
 export default function App() {
@@ -55,31 +56,50 @@ export default function App() {
   }
 
   return (
-    <div>
+    <div id={style.App}>
       <Router>
-        <div id={style.App}>
+        <div className={style.AppContainer}>
           {/* Display Sidebar only if we are connected to a cluster */}
           {connected && <Sidebar />}
-          <div className={style.routerWrapper}>
+          <div 
+            className={style.routerWrapper} 
+            // Only display the KR8S logo when we have not connected to a cluster
+            style={{ backgroundImage: !connected?`url(${kr8sBackground})` : null }}
+          >
             <Switch>
               <Route exact path="/index.html">
-                <ClusterConnect
-                  clusters={["MicroServices Limited", "Market's Be Crazy"]}
-                  getClusterInfo={getClusterInfo}
-                />
+                  <ClusterConnect
+                    clusters={["MicroServices Limited", "Market's Be Crazy"]}
+                    getClusterInfo={getClusterInfo}
+                  />
               </Route>
+
               <Route path="/dash">
                 <Dashboard
                   clusterName={clusterName}
                   grafana={grafana.cluster}
                 />
               </Route>
+
               <Route path="/nodes">
                 <Nodes clusterName={clusterName} grafana={grafana.nodes} />
               </Route>
+
+              <Route
+                path="/nodeview"
+                render={(props) => (
+                  <NodeView
+                    {...props}
+                    clusterName={clusterName}
+                    grafana={grafana.nodes}
+                  />
+                )}
+              />
+
               <Route path="/pods">
                 <Pods clusterName={clusterName} grafana={grafana.pods} />
               </Route>
+
               <Route
                 path="/podview"
                 render={(props) => (
