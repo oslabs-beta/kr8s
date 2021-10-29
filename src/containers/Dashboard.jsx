@@ -1,21 +1,36 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 
 import Speedometer from "../components/Speedometer.jsx";
 import Header from "../components/Header.jsx";
 
 import style from "../assets/css/Dashboard.module.css";
+import apiCalls from "../APIcalls.js";
 
 export default function Dashboard(props) {
-  const { apiServer, controller, cpu, disk, etcd, io, memory, scheduler } =
-    props.grafana;
+  const [numPods, setNumPods] = useState(0);
+  const [numNodes, setNumNodes] = useState(0);
+
+  useEffect(() => {
+    apiCalls.fetchNodes()
+      .then(data => {
+        setNumNodes(data.items.length);
+        console.log('Node data: ', data);
+      });
+
+    apiCalls.fetchPods()
+      .then(data => {
+        setNumPods(data.items.length);
+        console.log('Pod data: ', data);
+      });
+  }, [numPods, numNodes])
 
   return (
     <div className={style.DashboardContainer}>
       <Header headerContent={props.clusterName} />
 
       <div className={style.clusterNumbers}>
-        <h3>Nodes Running: 8</h3>
-        <h3>Pods Running: 21</h3>
+        <h3>Nodes Running: {numNodes}</h3>
+        <h3>Pods Running: {numPods}</h3>
         <h3>Containers: 37</h3>
       </div>
 

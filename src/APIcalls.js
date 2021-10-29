@@ -1,24 +1,27 @@
+import fetch from "node-fetch";
+const apiCalls = {};
 
-
-const fetchPods = () => {
-    const podList = [];
-
-    fetch('http://localhost:31000/api/podList')
-      .then((data) => data.json())
-      .then((data) => {
-      //iterate through data.items, push to podList array
-    //   data.items.forEach((pod) => {
-    //       podList.push({
-    //           podName: item.metadata.name
-    //       })
-    //   })
-        console.log(data.item.metadata.name);
-      
-
-    })
-      .catch(err => { console.log(err) });
-
+apiCalls.fetchPods = async () => {
+  
+  try{
+    let response = await fetch('http://localhost:31000/api/podList')
+    response = await response.json();
+    return response;
+  } catch {
+    console.log('Error occured fetching pods');
+  }
 };
 
-//console.log('test')
-//fetchPods();
+
+apiCalls.fetchNodes = async () => {
+  const nodeData = {};
+  try{
+    let response = await fetch('http://localhost:31000/api/nodeList')
+    response = await response.json();
+    return response;
+  } catch {
+    console.log('Error occured fetching nodes');
+  }
+};
+
+export default apiCalls;
