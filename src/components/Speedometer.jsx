@@ -6,8 +6,8 @@ export default function Speedometer(props) {
   return (
     <div className={style.speedometerContainer}>
       <iframe
-        width="450"
-        height="200"
+        width="280px"
+        height="200px"
         frameborder="0"
         src={props.src || "https://tinyurl.com/jrVsrDev"}
       ></iframe>

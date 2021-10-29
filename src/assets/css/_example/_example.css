@@ -1,7 +1,8 @@
 /* Example stylesheet */
-@media screen and (prefers-color-scheme: light), screen and (prefers-color-scheme: no-preference) {
+@media screen and (prefers-color-scheme: light),
+  screen and (prefers-color-scheme: no-preference) {
   /* Light theme */
-  body{
+  body {
     color: #000;
     background-color: #3d393b;
     margin: 0;
@@ -12,7 +13,7 @@
   /* Dark theme */
   body {
     color: #201d1e;
-    background-color: #000;
+    background-color: #3d393b;
     margin: 0;
   }
 }
