@@ -1,4 +1,3 @@
-
 .DashboardContainer {
   display: flex;
   flex-direction: column;
@@ -26,4 +25,9 @@
   flex-direction: row;
   flex-wrap: wrap;
   justify-content: space-evenly;
+}
+
+iframe {
+  padding-top: 20px;
+  padding-bottom: 10px;
 }
