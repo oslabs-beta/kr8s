@@ -13,37 +13,39 @@ import NodeView from '../components/NodeView.jsx';
 
 import style from "../assets/css/App.module.css";
 import kr8sBackground from "../assets/css/imgs/KR8S-Background.png";
-import { height } from "@mui/system";
+import apiCalls from "../APIcalls.js";
 
-const grafana = {};
+// const grafana = {};
 
-// Adding dummy data to the grafana object
-grafana["cluster"] = {
-  cpu: "https://source.unsplash.com/random/200x220?speedometer",
-  memory: "https://source.unsplash.com/random/200x220?speedometer",
-  io: "https://source.unsplash.com/random/200x220?speedometer",
-  disk: "https://source.unsplash.com/random/200x220?speedometer",
-  apiServer: "https://source.unsplash.com/random/200x220?speedometer",
-  scheduler: "https://source.unsplash.com/random/200x220?speedometer",
-  controller: "https://source.unsplash.com/random/200x220?speedometer",
-  etcd: "https://source.unsplash.com/random/200x220?speedometer",
-};
-grafana["nodes"] = {
-  cpu: "https://source.unsplash.com/random/200x220?speedometer",
-  memory: "https://source.unsplash.com/random/200x220?speedometer",
-  disk: "https://source.unsplash.com/random/200x220?speedometer",
-};
-grafana["pods"] = {
-  cpu: "http://localhost:32000/d/AAOMjeHmk/kubernetes-pod-and-cluster-monitoring-via-prometheus?orgId=1&refresh=10s&from=1635436646489&to=1635440246490&viewPanel=3",
-  memory: "http://localhost:32000/d/AAOMjeHmk/kubernetes-pod-and-cluster-monitoring-via-prometheus?orgId=1&refresh=10s&from=1635436837809&to=1635440437809&theme=dark&viewPanel=2",
-  restarts: "http://localhost:32000/d/AAOMjeHmk/kubernetes-pod-and-cluster-monitoring-via-prometheus?orgId=1&refresh=10s&from=1635436921706&to=1635440521706&theme=dark&viewPanel=8",
-};
+// // Adding dummy data to the grafana object
+// grafana["cluster"] = {
+//   cpu: "https://source.unsplash.com/random/200x220?speedometer",
+//   memory: "https://source.unsplash.com/random/200x220?speedometer",
+//   io: "https://source.unsplash.com/random/200x220?speedometer",
+//   disk: "https://source.unsplash.com/random/200x220?speedometer",
+//   apiServer: "https://source.unsplash.com/random/200x220?speedometer",
+//   scheduler: "https://source.unsplash.com/random/200x220?speedometer",
+//   controller: "https://source.unsplash.com/random/200x220?speedometer",
+//   etcd: "https://source.unsplash.com/random/200x220?speedometer",
+// };
+// grafana["nodes"] = {
+//   cpu: "https://source.unsplash.com/random/200x220?speedometer",
+//   memory: "https://source.unsplash.com/random/200x220?speedometer",
+//   disk: "https://source.unsplash.com/random/200x220?speedometer",
+// };
+// grafana["pods"] = {
+//   cpu: "http://localhost:32000/d/AAOMjeHmk/kubernetes-pod-and-cluster-monitoring-via-prometheus?orgId=1&refresh=10s&from=1635436646489&to=1635440246490&viewPanel=3",
+//   memory: "http://localhost:32000/d/AAOMjeHmk/kubernetes-pod-and-cluster-monitoring-via-prometheus?orgId=1&refresh=10s&from=1635436837809&to=1635440437809&theme=dark&viewPanel=2",
+//   restarts: "http://localhost:32000/d/AAOMjeHmk/kubernetes-pod-and-cluster-monitoring-via-prometheus?orgId=1&refresh=10s&from=1635436921706&to=1635440521706&theme=dark&viewPanel=8",
+// };
 
 export default function App() {
   //   Set connected to be true for development
   //   !!TODO: Change useState value to false before deployment!!!
   const [connected, useConnected] = useState(false);
   const [clusterName, useClusterName] = useState("");
+  const [pods, setPods] = useState([]);
+  const [nodes, setNodes] = useState([]);
 
   // Accepts a path variable to connect to the given cluster
   function getClusterInfo(path) {
@@ -53,6 +55,18 @@ export default function App() {
     // TODO: Retrieve information necessary for the selected cluster
     // TODO: Store information in the grafana object and related state
     useClusterName("MicroServices Limited");
+    
+    apiCalls.fetchNodes()
+      .then(data => {
+        setNodes(data.items);
+        console.log('Node data: ', data);
+      });
+
+    apiCalls.fetchPods()
+      .then(data => {
+        setPods(data.items);
+        console.log('Pod data: ', data);
+      });
   }
 
   return (
@@ -69,47 +83,36 @@ export default function App() {
             <Switch>
               <Route exact path="/index.html">
                   <ClusterConnect
-                    clusters={["MicroServices Limited", "Market's Be Crazy"]}
+                    clusters={["MicroServices Limited"]}
                     getClusterInfo={getClusterInfo}
                   />
               </Route>
 
               <Route path="/dash">
                 <Dashboard
+                  numNodes={nodes.length}
+                  numPods={pods.length}
                   clusterName={clusterName}
-                  grafana={grafana.cluster}
+                  // grafana={grafana.cluster}
                 />
               </Route>
 
               <Route path="/nodes">
-                <Nodes clusterName={clusterName} grafana={grafana.nodes} />
+                <Nodes 
+                  clusterName={clusterName} 
+                  nodes={nodes}
+                  // grafana={grafana.nodes} 
+                />
               </Route>
-
-              <Route
-                path="/nodeview"
-                render={(props) => (
-                  <NodeView
-                    {...props}
-                    clusterName={clusterName}
-                    grafana={grafana.nodes}
-                  />
-                )}
-              />
 
               <Route path="/pods">
-                <Pods clusterName={clusterName} grafana={grafana.pods} />
+                <Pods 
+                  clusterName={clusterName}
+                  pods={pods}
+                  // grafana={grafana.pods} 
+                />
               </Route>
 
-              <Route
-                path="/podview"
-                render={(props) => (
-                  <PodView
-                    {...props}
-                    clusterName={clusterName}
-                    grafana={grafana.pods}
-                  />
-                )}
-              />
             </Switch>
           </div>
         </div>
