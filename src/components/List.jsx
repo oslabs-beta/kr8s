@@ -58,7 +58,7 @@ export default function List(props) {
 
   function handleClick(e) {
     e.preventDefault();
-    props.nodeViewRedirect(e.target.textContent);
+    props.setCurrentTarget(e.target.textContent);
     setRowName(e.target.textContent);
     return;
   }

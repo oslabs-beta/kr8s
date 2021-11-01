@@ -15,23 +15,13 @@ export default function Nodes(props) {
   const headerContent = `${props.clusterName} Node Condition`
   const [myNode, setMyNode] = useState({});
 
-  function nodeViewRedirect(nodeName) {
+  function setCurrentNode(nodeName) {
     for (let i = 0; i < nodesValues.length; i++) {
       if(nodesValues[i].node === nodeName) {
-        // currentNode = nodesValues[i];
         setMyNode(nodesValues[i]);
         return;
       }
     }  
-  
-    console.log('About to try and redirect to nodeView');
-    console.log('Current Node is: ', currentNode);
-    return (
-      <Redirect to={{
-        pathname: '/nodeview'
-        }}
-      />
-    );
   }
 
   const nodesValues = [],
@@ -92,7 +82,7 @@ export default function Nodes(props) {
                 <List
                 listValueHeaders={nodesHeaders}
                 listValue={nodesValues}
-                nodeViewRedirect={nodeViewRedirect}
+                setCurrentTarget={setCurrentNode}
                 reroute="/nodeview"
                 />
               </div>

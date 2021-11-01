@@ -12,7 +12,17 @@ import PodView from "../components/PodView.jsx";
 
 export default function Pods(props) {
   const headerContent = `${props.clusterName} Pod Condition`;
-  
+  const [myPod, setMyPod] = useState({});
+
+  function setCurrentPod(podName) {
+    for (let i = 0; i < podsValues.length; i++) {
+      if(podsValues[i].pod === podName) {
+        setMyPod(podsValues[i]);
+        return;
+      }
+    }  
+  }
+
   let runningPods = 0, 
       pendingPods = 0,
       failedPods = 0,
@@ -23,7 +33,7 @@ export default function Pods(props) {
   const podsValues = [];
 
   const podsHeaders = [
-    { id: 'pods', label: 'Pods', minWidth: 100 },
+    { id: 'pod', label: 'Pod', minWidth: 100 },
     { id: 'initialized', label: 'Initialized', minWidth: 100 },
     { id: 'ready', label: 'Ready', minWidth: 100 },
     { id: 'containersReady', label: 'Containers Ready', minWidth: 100 },
@@ -53,12 +63,13 @@ export default function Pods(props) {
     }
 
     // Build Current Pod Values object and add to the podsValues Array
-    podValues['pods'] = pod.metadata.name;
+    podValues['pod'] = pod.metadata.name;
     podValues['initialized'] = pod.status.conditions[0].status;
     podValues['ready'] = pod.status.conditions[1].status;
     podValues['containersReady'] = pod.status.conditions[2].status;
     podValues['podScheduled'] = pod.status.conditions[3].status;
     podValues['numContainers'] = pod.spec.containers.length;
+    podValues['containers'] = pod.status.containerStatuses;
 
     podsValues.push(podValues);
   });    
@@ -66,11 +77,11 @@ export default function Pods(props) {
   return (
     <Router>
       <Switch>
+      
         <Route path='/pods'>
           <div className={styles.podsContainer}>
             <Header headerContent={headerContent} />
             <div className={styles.podsContainerHeader}>
-              {/* TODO: Add tileValue references */}
               <Tile tileHeader="Running Pods" tileValue={runningPods} />
               <Tile tileHeader="Pending Pods" tileValue={pendingPods} />
               <Tile tileHeader="Failed Pods" tileValue={failedPods} />
@@ -79,12 +90,12 @@ export default function Pods(props) {
             </div>
 
             <div className={styles.podsContainerList}>
-              {/* TODO: Add listValue references */}
               <List
                 listValueHeaders={podsHeaders}
                 listValue={podsValues}
+                setCurrentTarget={setCurrentPod}
                 reroute="/podview"
-              />
+                />
             </div>
 
             <div className={styles.podsContainerHeader}>
@@ -117,9 +128,10 @@ export default function Pods(props) {
 
         <Route path="/podview">
           <PodView 
-
+            pod={myPod}
           />
         </Route>
+        
       </Switch>
     </Router>
   );
