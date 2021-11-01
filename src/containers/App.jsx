@@ -60,7 +60,7 @@ export default function App() {
       <Router>
         <div className={style.AppContainer}>
           {/* Display Sidebar only if we are connected to a cluster */}
-          {connected && <Sidebar />}
+          {connected && <Sidebar clusterName={clusterName}/>}
           <div 
             className={style.routerWrapper} 
             // Only display the KR8S logo when we have not connected to a cluster
