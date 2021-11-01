@@ -77,7 +77,7 @@ export default function List(props) {
   return (
     <Paper
       sx={{
-        width: "100%",
+        width: "90%",
         overflow: "hidden",
         background: "rgb(30,30,30)",
         color: "white",

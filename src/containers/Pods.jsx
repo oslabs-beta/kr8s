@@ -126,13 +126,34 @@ export default function Pods(props) {
           </div>
         </Route>
 
-        <Route path="/podview">
-          <PodView 
-            pod={myPod}
-          />
-        </Route>
-        
-      </Switch>
-    </Router>
+      <div className={styles.podsContainerHeader}>
+        {/* TODO: Add grafana link for each speedometer */}
+        {/* <LineGraph src={props.grafana.cpu} />
+        <LineGraph src={props.grafana.memory} />
+        <Speedometer src={props.grafana.restarts} /> */}
+        {/* using dashboard 6663 */}
+        <iframe
+          src="http://localhost:32000/d-solo/AAOMjeHmk/kubernetes-pod-and-cluster-monitoring-via-prometheus?orgId=1&refresh=10s&from=1635437894472&to=1635441494472&theme=dark&panelId=3"
+          width="280"
+          height="180"
+          frameborder="0"
+          className={styles.podsiframe}
+        ></iframe>
+        <iframe
+          src="http://localhost:32000/d-solo/AAOMjeHmk/kubernetes-pod-and-cluster-monitoring-via-prometheus?orgId=1&refresh=10s&from=1635437907441&to=1635441507441&theme=dark&panelId=2"
+          width="280"
+          height="180"
+          frameborder="0"
+          className={styles.podsiframe}
+        ></iframe>
+        <iframe
+          src="http://localhost:32000/d-solo/AAOMjeHmk/kubernetes-pod-and-cluster-monitoring-via-prometheus?orgId=1&refresh=10s&from=1635437052196&to=1635440652196&theme=dark&panelId=8"
+          width="280"
+          height="180"
+          frameborder="0"
+          className={styles.podsiframe}
+        ></iframe>
+      </div>
+    </div>
   );
 }
