@@ -27,25 +27,25 @@ export default function Dashboard(props) {
           <Speedometer src={disk} /> */}
           {/* using dashboard 6417 */}
           <iframe
-            src="http://localhost:32000/d-solo/4XuMd2Iiz/kubernetes-cluster-prometheus?orgId=1&from=1635439862845&to=1635441662846&theme=dark&panelId=4"
+            src="http://localhost:32000/d-solo/4XuMd2Iiz/kubernetes-cluster-prometheus?orgId=1&theme=dark&panelId=4"
             width="280"
             height="180"
             frameborder="0"
           ></iframe>
           <iframe
-            src="http://localhost:32000/d-solo/4XuMd2Iiz/kubernetes-cluster-prometheus?orgId=1&from=1635439804187&to=1635441604187&theme=dark&panelId=5"
+            src="http://localhost:32000/d-solo/4XuMd2Iiz/kubernetes-cluster-prometheus?orgId=1&theme=dark&panelId=5"
             width="280"
             height="180"
             frameborder="0"
           ></iframe>
           <iframe
-            src="http://localhost:32000/d-solo/4XuMd2Iiz/kubernetes-cluster-prometheus?orgId=1&from=1635439813545&to=1635441613545&theme=dark&panelId=6"
+            src="http://localhost:32000/d-solo/4XuMd2Iiz/kubernetes-cluster-prometheus?orgId=1&theme=dark&panelId=6"
             width="280"
             height="180"
             frameborder="0"
           ></iframe>
           <iframe
-            src="http://localhost:32000/d-solo/4XuMd2Iiz/kubernetes-cluster-prometheus?orgId=1&from=1635439828243&to=1635441628243&theme=dark&panelId=7"
+            src="http://localhost:32000/d-solo/4XuMd2Iiz/kubernetes-cluster-prometheus?orgId=1&theme=dark&panelId=7"
             width="280"
             height="180"
             frameborder="0"
@@ -59,25 +59,25 @@ export default function Dashboard(props) {
           <Speedometer src={etcd} /> */}
           {/* using dashboard 12006 */}
           <iframe
-            src="http://localhost:32000/d-solo/R6abPf9Zz/kubernetes-apiserver?orgId=1&from=1635441183527&to=1635444783527&theme=dark&panelId=8"
+            src="http://localhost:32000/d-solo/R6abPf9Zz/kubernetes-apiserver?orgId=1&theme=dark&panelId=8"
             width="280"
             height="180"
             frameborder="0"
           ></iframe>
           <iframe
-            src="http://localhost:32000/d-solo/R6abPf9Zz/kubernetes-apiserver?orgId=1&from=1635441221311&to=1635444821311&theme=dark&panelId=2"
+            src="http://localhost:32000/d-solo/R6abPf9Zz/kubernetes-apiserver?orgId=1&theme=dark&panelId=2"
             width="280"
             height="180"
             frameborder="0"
           ></iframe>
           <iframe
-            src="http://localhost:32000/d-solo/R6abPf9Zz/kubernetes-apiserver?orgId=1&from=1635441208309&to=1635444808309&theme=dark&panelId=10"
+            src="http://localhost:32000/d-solo/R6abPf9Zz/kubernetes-apiserver?orgId=1&theme=dark&panelId=10"
             width="280"
             height="180"
             frameborder="0"
           ></iframe>
           <iframe
-            src="http://localhost:32000/d-solo/R6abPf9Zz/kubernetes-apiserver?orgId=1&from=1635441239546&to=1635444839546&theme=dark&panelId=12"
+            src="http://localhost:32000/d-solo/R6abPf9Zz/kubernetes-apiserver?orgId=1&theme=dark&panelId=12"
             width="280"
             height="180"
             frameborder="0"
