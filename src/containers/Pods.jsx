@@ -19,7 +19,21 @@ export default function Pods(props) {
       unknownPods = 0,
       succeededPods = 0;
 
+
+  const podsValues = [];
+
+  const podsHeaders = [
+    { id: 'pods', label: 'Pods', minWidth: 100 },
+    { id: 'initialized', label: 'Initialized', minWidth: 100 },
+    { id: 'ready', label: 'Ready', minWidth: 100 },
+    { id: 'containersReady', label: 'Containers Ready', minWidth: 100 },
+    { id: 'podScheduled', label: 'Pod Scheduled', minWidth: 100 },
+    { id: 'numContainers', label: 'Number of Containers', minWidth: 100 }];
+    
   props.pods.forEach(pod => {
+    const podValues = {};
+
+    // Increment count for the current Pod Status
     switch(pod.status.phase) {
       case "Running":
         runningPods++;
@@ -37,7 +51,17 @@ export default function Pods(props) {
         succeededPods++;
         break;
     }
-  })    
+
+    // Build Current Pod Values object and add to the podsValues Array
+    podValues['pods'] = pod.metadata.name;
+    podValues['initialized'] = pod.status.conditions[0].status;
+    podValues['ready'] = pod.status.conditions[1].status;
+    podValues['containersReady'] = pod.status.conditions[2].status;
+    podValues['podScheduled'] = pod.status.conditions[3].status;
+    podValues['numContainers'] = pod.spec.containers.length;
+
+    podsValues.push(podValues);
+  });    
 
   return (
     <Router>
@@ -57,8 +81,8 @@ export default function Pods(props) {
             <div className={styles.podsContainerList}>
               {/* TODO: Add listValue references */}
               <List
-                listValueHeaders={listValueHeaders}
-                listValue={listValue}
+                listValueHeaders={podsHeaders}
+                listValue={podsValues}
                 reroute="/podview"
               />
             </div>
