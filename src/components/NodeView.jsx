@@ -8,11 +8,10 @@ import styles from "../assets/css/NodeView.module.css";
 
 
 export default function NodeView(props) {
-  const { node, memoryPressure, diskPressure, pidPressure, ready } = props.node;
 
-  const headerContent = `Node: ${node}`;
-
-
+  const headerContent = `Node: ${props.nodeName} - ${props.nodeId}`;
+  // const headerContent = 'This is the Node View';
+  
   return (
 
     <div className={styles.containersContainer}>
@@ -38,13 +37,15 @@ export default function NodeView(props) {
       </div>
 
       <div className={styles.nodeNumbers}>
-        <h3 style={{color: (ready === "True") ? "green" : "red" }}>READY</h3>
+        <h3>READY</h3>
         <h3>|</h3>
-        <h3 style={{color: (diskPressure !== "True") ? "green" : "red" }}>Disk Pressure</h3>
+        <h3>Disk Pressure: 27%</h3>
         <h3>|</h3>
-        <h3 style={{color: (memoryPressure !== "True") ? "green" : "red" }}>Memory Pressure</h3>
+        <h3>Memory Pressure: 43%</h3>
         <h3>|</h3>
-        <h3 style={{color: (pidPressure !== "True") ? "green" : "red" }}>PID Pressure</h3>
+        <h3>PID Pressure: 21%</h3>
+        <h3>|</h3>
+        <h3>Network</h3>
       </div>
 
     </div>

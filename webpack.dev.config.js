@@ -7,7 +7,6 @@ const { spawn } = require('child_process')
 const defaultInclude = path.resolve(__dirname, 'src')
 
 module.exports = {
-  entry: ['babel-polyfill', './src/index.js'],
   module: {
     rules: [
       {
