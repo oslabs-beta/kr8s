@@ -47,21 +47,21 @@ export default function Pods(props) {
         <Speedometer src={props.grafana.restarts} /> */}
         {/* using dashboard 6663 */}
         <iframe
-          src="http://localhost:32000/d-solo/AAOMjeHmk/kubernetes-pod-and-cluster-monitoring-via-prometheus?orgId=1&refresh=10s&theme=dark&panelId=3"
+          src="http://localhost:32000/d-solo/sO3bv1Fnz/kr8s-dashboard?orgId=1&theme=dark&panelId=10"
           width="280"
           height="180"
           frameborder="0"
           className={styles.podsiframe}
         ></iframe>
         <iframe
-          src="http://localhost:32000/d-solo/AAOMjeHmk/kubernetes-pod-and-cluster-monitoring-via-prometheus?orgId=1&refresh=10s&theme=dark&panelId=2"
+          src="http://localhost:32000/d-solo/sO3bv1Fnz/kr8s-dashboard?orgId=1&theme=dark&panelId=12"
           width="280"
           height="180"
           frameborder="0"
           className={styles.podsiframe}
         ></iframe>
         <iframe
-          src="http://localhost:32000/d-solo/AAOMjeHmk/kubernetes-pod-and-cluster-monitoring-via-prometheus?orgId=1&refresh=10s&theme=dark&panelId=8"
+          src="http://localhost:32000/d-solo/sO3bv1Fnz/kr8s-dashboard?orgId=1&theme=dark&panelId=14"
           width="280"
           height="180"
           frameborder="0"

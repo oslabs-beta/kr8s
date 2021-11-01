@@ -37,20 +37,20 @@ export default function Nodes(props) {
           {/* using dashboard 1860 */}
           <p>
             <iframe
-              src="http://localhost:32000/d-solo/rYdddlPWk/node-exporter-full?orgId=1&refresh=1m&theme=dark&panelId=77"
+              src="http://localhost:32000/d-solo/sO3bv1Fnz/kr8s-dashboard?orgId=1&theme=dark&panelId=26"
               width="280"
               height="180"
               frameborder="0"
             ></iframe>
           </p>
           <iframe
-            src="http://localhost:32000/d-solo/rYdddlPWk/node-exporter-full?orgId=1&refresh=1m&theme=dark&panelId=78"
+            src="http://localhost:32000/d-solo/sO3bv1Fnz/kr8s-dashboard?orgId=1&theme=dark&panelId=28"
             width="280"
             height="180"
             frameborder="0"
           ></iframe>
           <iframe
-            src="http://localhost:32000/d-solo/rYdddlPWk/node-exporter-full?orgId=1&refresh=1m&theme=dark&panelId=152"
+            src="http://localhost:32000/d-solo/sO3bv1Fnz/kr8s-dashboard?orgId=1&theme=dark&panelId=30"
             width="280"
             height="180"
             frameborder="0"
