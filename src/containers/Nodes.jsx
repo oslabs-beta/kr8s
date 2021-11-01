@@ -1,14 +1,14 @@
 import React, { useState } from "react";
 import { BrowserRouter as Router, Redirect, Switch, Route } from "react-router-dom";
 
-import Speedometer from '../components/Speedometer.jsx';
-import Tile from '../components/Tile.jsx';
-import List from '../components/List.jsx';
-import Header from '../components/Header.jsx';
+import Speedometer from "../components/Speedometer.jsx";
+import Tile from "../components/Tile.jsx";
+import List from "../components/List.jsx";
+import Header from "../components/Header.jsx";
+
 
 import style from '../assets/css/Nodes.module.css';
 import NodeView from "../components/NodeView.jsx";
-
 
 
 export default function Nodes(props) {
@@ -68,13 +68,29 @@ export default function Nodes(props) {
             </div>
 
             <div className={style.nodesContainerMainContent}>
-              {/* TODO: Add grafana link for each speedometer */}
-              <div className={style.nodesContainerSpeedometerColumn}>
-                <Speedometer src="TODO: Grafana Link Nodes CPU"/>
-                <Speedometer src="TODO: Grafana Link Nodes Memory"/>
-                <Speedometer src="TODO: Grafana Link Nodes Disk Space"/>
-
-              </div>
+            <div className={style.nodesContainerSpeedometerColumn}>
+              {/* using dashboard 1860 */}
+              <p>
+                <iframe
+                  src="http://localhost:32000/d-solo/sO3bv1Fnz/kr8s-dashboard?orgId=1&theme=dark&panelId=26"
+                  width="280"
+                  height="180"
+                  frameborder="0"
+                ></iframe>
+              </p>
+              <iframe
+                src="http://localhost:32000/d-solo/sO3bv1Fnz/kr8s-dashboard?orgId=1&theme=dark&panelId=28"
+                width="280"
+                height="180"
+                frameborder="0"
+              ></iframe>
+              <iframe
+                src="http://localhost:32000/d-solo/sO3bv1Fnz/kr8s-dashboard?orgId=1&theme=dark&panelId=30"
+                width="280"
+                height="180"
+                frameborder="0"
+              ></iframe>
+            </div>
 
               <div className={style.nodesContainerList}>
                 <h3>Node Condition</h3>
@@ -97,6 +113,5 @@ export default function Nodes(props) {
         </Route>
       </Switch>
     </Router>
-
   );
 }
