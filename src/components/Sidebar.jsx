@@ -33,7 +33,7 @@ export default function Sidebar(props) {
           <List>
             
             <ListItem className={styles.pageNames}>
-              <Link to="/dash">Cluster Dashboard</Link>
+              <Link to="/dash">{props.clusterName} Dashboard</Link>
             </ListItem>
             
             <Divider className={styles.divider} variant="middle" />
