@@ -104,6 +104,17 @@ export default function App() {
                 />
               </Route>
 
+              <Route
+                path="/nodeview"
+                render={(props) => (
+                  <NodeView
+                    {...props}
+                    clusterName={clusterName}
+                    // grafana={grafana.pods}
+                  />
+                )}
+              />
+
               <Route path="/pods">
                 <Pods
                   clusterName={clusterName}
