@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 
 import Speedometer from "../components/Speedometer.jsx";
 import Header from "../components/Header.jsx";
@@ -6,16 +6,15 @@ import Header from "../components/Header.jsx";
 import style from "../assets/css/Dashboard.module.css";
 
 export default function Dashboard(props) {
-  const { apiServer, controller, cpu, disk, etcd, io, memory, scheduler } =
-    props.grafana;
+  
 
   return (
     <div className={style.DashboardContainer}>
       <Header headerContent={props.clusterName} />
 
       <div className={style.clusterNumbers}>
-        <h3>Nodes Running: 8</h3>
-        <h3>Pods Running: 21</h3>
+        <h3>Nodes Running: {props.numNodes}</h3>
+        <h3>Pods Running: {props.numPods}</h3>
         <h3>Containers: 37</h3>
       </div>
 
@@ -29,25 +28,25 @@ export default function Dashboard(props) {
           <iframe
             src="http://localhost:32000/d-solo/sO3bv1Fnz/kr8s-dashboard?orgId=1&theme=dark&panelId=2"
             width="280"
-            height="180"
+            height="200"
             frameborder="0"
           ></iframe>
           <iframe
             src="http://localhost:32000/d-solo/sO3bv1Fnz/kr8s-dashboard?orgId=1&theme=dark&panelId=4"
             width="280"
-            height="180"
+            height="200"
             frameborder="0"
           ></iframe>
           <iframe
             src="http://localhost:32000/d-solo/sO3bv1Fnz/kr8s-dashboard?orgId=1&theme=dark&panelId=6"
             width="280"
-            height="180"
+            height="200"
             frameborder="0"
           ></iframe>
           <iframe
             src="http://localhost:32000/d-solo/sO3bv1Fnz/kr8s-dashboard?orgId=1&theme=dark&panelId=8"
             width="280"
-            height="180"
+            height="200"
             frameborder="0"
           ></iframe>
         </div>
