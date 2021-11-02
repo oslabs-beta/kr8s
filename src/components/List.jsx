@@ -14,17 +14,30 @@ import styles from "../assets/css/List.module.css";
 
 // DUMMY DATA THAT SHOULD FLOW DOWN FROM PROPS
 // const nodesHeaders = [
-//   { id: 'nodes', label: 'Nodes', minWidth: 100},
+//   { id: 'node', label: 'Node', minWidth: 100},
 //   { id: 'ready', label: 'Ready', minWidth: 100 },
 //   { id: 'memorypressure', label: 'MemoryPressure', minWidth: 100 },
-//   { id: 'diskpressure', label: 'DiskPressure', minWidth: 100 }]
+//   { id: 'diskpressure', label: 'DiskPressure', minWidth: 100 },
+//   { id: 'pidPressure', label: 'PID Pressure', minWidth: 100 }
+// ];
 
 // const nodesValues = [{nodes: 'node1', ready: 'true', memorypressure: 'good', diskpressure: 'high'},
 //   {nodes: 'node2', ready: 'false', memorypressure: 'bad', diskpressure: 'high'},
 //   {nodes: 'node3', ready: 'true', memorypressure: 'good', diskpressure: 'high'}]
 
-// const podsHeaders = [{ id: 'pods', label: 'Pods', minWidth: 100 }]
-// const podsValues = [{pods: 'pod1'}, {pods: 'pod2'}, {pods: 'pod3'}]
+// const podsHeaders = [
+//   { id: 'pods', label: 'Pods', minWidth: 100 }
+//   { id: 'initialized', label: 'Initialized', minWidth: 100 },
+//   { id: 'ready', label: 'Ready', minWidth: 100 },
+//   { id: 'containersReady', label: 'Containers Ready', minWidth: 100 },
+//   { id: 'podScheduled', label: 'Pod Scheduled', minWidth: 100 },
+//   { id: 'numContainers', label: 'Number of Containers', minWidth: 100 }]
+
+// const podsValues = [
+//    {pods: 'pod1', initialized: 'true', ready: 'true', containersReady: 'true', podScheduled: 'true', numContainers: 3}
+//    {pods: 'pod2', initialized: 'true', ready: 'true', containersReady: 'false', podScheduled: 'true', numContainers: 1}
+//    {pods: 'pod3', initialized: 'true', ready: 'false', containersReady: 'true', podScheduled: 'true', numContainers: 6}
+//   ]
 
 // const listValueHeaders = nodesHeaders
 // const listValue = nodesValues
@@ -45,6 +58,7 @@ export default function List(props) {
 
   function handleClick(e) {
     e.preventDefault();
+    props.setCurrentTarget(e.target.textContent);
     setRowName(e.target.textContent);
     return;
   }
@@ -54,7 +68,7 @@ export default function List(props) {
       <Redirect
         to={{
           pathname: props.reroute,
-          rowName,
+          state: { name: rowName }
         }}
       />
     );
@@ -106,7 +120,7 @@ export default function List(props) {
                         const value = row[header.id];
                         return (
                           <TableCell
-                            key={header.id}
+                            key={row.code + header.id}
                             align={header.align}
                             sx={{ color: "white" }}
                           >
@@ -136,7 +150,7 @@ export default function List(props) {
                         const value = row[header.id];
                         return (
                           <TableCell
-                            key={header.id}
+                            key={row.code + header.id}
                             align={header.align}
                             sx={{ color: "white" }}
                           >
