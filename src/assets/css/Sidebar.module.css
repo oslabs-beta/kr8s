@@ -5,8 +5,13 @@
 .pageNames a {
   color: white;
   text-decoration: none;
+  margin-left: 10px;
 }
 
 .divider {
   background: grey;
+}
+
+#box {
+  background-color: rgb(235, 63, 143) !important;
 }

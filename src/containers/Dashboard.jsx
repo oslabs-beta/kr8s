@@ -26,25 +26,25 @@ export default function Dashboard(props) {
           <Speedometer src={disk} /> */}
           {/* using dashboard 6417 */}
           <iframe
-            src="http://localhost:32000/d-solo/sO3bv1Fnz/kr8s-dashboard?orgId=1&theme=dark&panelId=2"
+            // src="http://localhost:32000/d-solo/sO3bv1Fnz/kr8s-dashboard?orgId=1&theme=dark&panelId=2"
             width="280"
             height="200"
             frameborder="0"
           ></iframe>
           <iframe
-            src="http://localhost:32000/d-solo/sO3bv1Fnz/kr8s-dashboard?orgId=1&theme=dark&panelId=4"
+            // src="http://localhost:32000/d-solo/sO3bv1Fnz/kr8s-dashboard?orgId=1&theme=dark&panelId=4"
             width="280"
             height="200"
             frameborder="0"
           ></iframe>
           <iframe
-            src="http://localhost:32000/d-solo/sO3bv1Fnz/kr8s-dashboard?orgId=1&theme=dark&panelId=6"
+            // src="http://localhost:32000/d-solo/sO3bv1Fnz/kr8s-dashboard?orgId=1&theme=dark&panelId=6"
             width="280"
             height="200"
             frameborder="0"
           ></iframe>
           <iframe
-            src="http://localhost:32000/d-solo/sO3bv1Fnz/kr8s-dashboard?orgId=1&theme=dark&panelId=8"
+            // src="http://localhost:32000/d-solo/sO3bv1Fnz/kr8s-dashboard?orgId=1&theme=dark&panelId=8"
             width="280"
             height="200"
             frameborder="0"
@@ -58,25 +58,25 @@ export default function Dashboard(props) {
           <Speedometer src={etcd} /> */}
           {/* using dashboard 12006 */}
           <iframe
-            src="http://localhost:32000/d-solo/sO3bv1Fnz/kr8s-dashboard?orgId=1&theme=dark&panelId=16"
+            // src="http://localhost:32000/d-solo/sO3bv1Fnz/kr8s-dashboard?orgId=1&theme=dark&panelId=16"
             width="280"
             height="180"
             frameborder="0"
           ></iframe>
           <iframe
-            src="http://localhost:32000/d-solo/sO3bv1Fnz/kr8s-dashboard?orgId=1&theme=dark&panelId=18"
+            // src="http://localhost:32000/d-solo/sO3bv1Fnz/kr8s-dashboard?orgId=1&theme=dark&panelId=18"
             width="280"
             height="180"
             frameborder="0"
           ></iframe>
           <iframe
-            src="http://localhost:32000/d-solo/sO3bv1Fnz/kr8s-dashboard?orgId=1&theme=dark&panelId=20"
+            // src="http://localhost:32000/d-solo/sO3bv1Fnz/kr8s-dashboard?orgId=1&theme=dark&panelId=20"
             width="280"
             height="180"
             frameborder="0"
           ></iframe>
           <iframe
-            src="http://localhost:32000/d-solo/sO3bv1Fnz/kr8s-dashboard?orgId=1&theme=dark&panelId=22"
+            // src="http://localhost:32000/d-solo/sO3bv1Fnz/kr8s-dashboard?orgId=1&theme=dark&panelId=22"
             width="280"
             height="180"
             frameborder="0"
