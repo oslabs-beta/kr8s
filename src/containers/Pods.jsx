@@ -122,6 +122,20 @@ export default function Pods(props) {
             className={styles.podsiframe}
           ></iframe>
         </div>
+        <div className={styles.podsContainerHeader}>
+          <iframe
+            src="http://localhost:32000/d-solo/sO3bv1Fnz/kr8s-dashboard?orgId=1&theme=dark&panelId=48"
+            width="450"
+            height="120"
+            frameborder="0"
+          ></iframe>
+          <iframe
+            src="http://localhost:32000/d-solo/sO3bv1Fnz/kr8s-dashboard?orgId=1&theme=dark&panelId=50"
+            width="450"
+            height="120"
+            frameborder="0"
+          ></iframe>
+        </div>
       </div>
     </div>
   );
