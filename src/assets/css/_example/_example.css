@@ -6,6 +6,7 @@
     color: #000;
     background-color: #3d393b;
     margin: 0;
+    font-family: 'Lato', sans-serif;
   }
 }
 
@@ -15,11 +16,8 @@
     color: #201d1e;
     background-color: #3d393b;
     margin: 0;
+    font-family: 'Lato', sans-serif;
   }
 }
 
-h1 {
-  font-family: Helvetica, Arial, sans-serif;
-  font-size: 21px;
-  font-weight: 200;
-}
+
