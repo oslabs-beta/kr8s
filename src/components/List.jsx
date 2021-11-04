@@ -68,7 +68,7 @@ export default function List(props) {
       <Redirect
         to={{
           pathname: props.reroute,
-          state: { name: rowName }
+          state: { name: rowName, info: props.info },
         }}
       />
     );

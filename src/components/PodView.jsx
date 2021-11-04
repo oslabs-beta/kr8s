@@ -13,29 +13,37 @@ const containersHeaders = [
 ];
 
 export default function PodView(props) {
-  const { pod, initialized, ready, containersReady, podScheduled, numContainers, containers } = props.pod;
+  const {
+    pod,
+    initialized,
+    ready,
+    containersReady,
+    podScheduled,
+    numContainers,
+    containers,
+  } = props.location.state.info;
   const containersValues = [];
-  
   const headerContent = `Pod: ${pod}`;
-  
-  for(let i = 0; i < containers.length; i++) {
+
+  for (let i = 0; i < containers.length; i++) {
     const container = {};
-    container['name'] = containers[i].name;
-    container['ready'] = containers[i].ready.toString();
-    container['restarts'] = containers[i].restartCount;
+    container["name"] = containers[i].name;
+    container["ready"] = containers[i].ready.toString();
+    container["restarts"] = containers[i].restartCount;
 
     containersValues.push(container);
   }
 
-
   return (
     <div className={styles.containersContainer}>
       <Header headerContent={headerContent} />
-      
-      
+
       <div className={styles.containersContainerHeader}>
         {/* TODO: Add tileValue references */}
-        <Tile tileHeader="Number of Running Containers" tileValue={numContainers} />
+        <Tile
+          tileHeader="Number of Running Containers"
+          tileValue={numContainers}
+        />
         <Tile tileHeader="Number of Failed Containers" tileValue="1" />
         <Tile tileHeader="Number of Unknown Containers" tileValue="0" />
       </div>
