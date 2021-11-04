@@ -67,18 +67,13 @@ export default function App() {
   }
 
   return (
-    <div id={style.App}>
+    // Conditionally style the app background
+    <div style={(connected) ? {"background": "#161519"} : {"background": "linear-gradient(to bottom, rgb(28, 28, 33), rgb(33, 48, 70))"} }>
       <Router>
         <div className={style.AppContainer}>
           {/* Display Sidebar only if we are connected to a cluster */}
           {connected && <Sidebar clusterName={clusterName} />}
-          <div
-            className={style.routerWrapper}
-            // Only display the KR8S logo when we have not connected to a cluster
-            style={{
-              backgroundImage: !connected ? `url(${kr8sBackground})` : null,
-            }}
-          >
+          <div className={style.routerWrapper}>
             <Switch>
               <Route exact path="/index.html">
                 <ClusterConnect
