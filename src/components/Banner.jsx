@@ -13,7 +13,7 @@ export default function Banner(props) {
   })
 
   return (
-    <div className={style.banner}>
+    <div className={style.banner} style={(props.width) ? {"width": `${props.width}px`} : {}}>
       {items}
     </div>
   );
