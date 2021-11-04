@@ -6,8 +6,6 @@ import Banner from "../components/Banner.jsx";
 import style from "../assets/css/Dashboard.module.css";
 
 export default function Dashboard(props) {
-  
-
   return (
     <div className={style.DashboardContainer}>
       <Header headerContent={props.clusterName} />
@@ -27,25 +25,25 @@ export default function Dashboard(props) {
           <Speedometer src={disk} /> */}
           {/* using dashboard 6417 */}
           <iframe
-            src="http://localhost:32000/d-solo/sO3bv1Fnz/kr8s-dashboard?orgId=1&theme=dark&panelId=2"
+            src="http://localhost:32000/d-solo/sO3bv1Fnz/kr8s-dashboard?orgId=1&theme=dark&panelId=46"
             width="280"
             height="200"
             frameborder="0"
           ></iframe>
           <iframe
-            src="http://localhost:32000/d-solo/sO3bv1Fnz/kr8s-dashboard?orgId=1&theme=dark&panelId=4"
+            src="http://localhost:32000/d-solo/sO3bv1Fnz/kr8s-dashboard?orgId=1&theme=dark&panelId=42"
             width="280"
             height="200"
             frameborder="0"
           ></iframe>
           <iframe
-            src="http://localhost:32000/d-solo/sO3bv1Fnz/kr8s-dashboard?orgId=1&theme=dark&panelId=6"
+            src="http://localhost:32000/d-solo/sO3bv1Fnz/kr8s-dashboard?orgId=1&theme=dark&panelId=40"
             width="280"
             height="200"
             frameborder="0"
           ></iframe>
           <iframe
-            src="http://localhost:32000/d-solo/sO3bv1Fnz/kr8s-dashboard?orgId=1&theme=dark&panelId=8"
+            src="http://localhost:32000/d-solo/sO3bv1Fnz/kr8s-dashboard?orgId=1&theme=dark&panelId=44"
             width="280"
             height="200"
             frameborder="0"

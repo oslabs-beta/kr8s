@@ -55,12 +55,6 @@ export default function PodView(props) {
           reroute={false}
         />
       </div>
-
-      <div className={styles.containersContainerHeader}>
-        {/* TODO: Add tileValue references */}
-        <Tile tileHeader="CPU Cores Requested by Containers" tileValue="1.45" />
-        <Tile tileHeader="Memory Requested by Containers" tileValue="940MB" />
-      </div>
     </div>
   );
 }
