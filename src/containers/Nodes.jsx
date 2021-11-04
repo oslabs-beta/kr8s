@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 
-import Speedometer from "../components/Speedometer.jsx";
+import Banner from "../components/Banner.jsx";
 import Tile from "../components/Tile.jsx";
 import List from "../components/List.jsx";
 import Header from "../components/Header.jsx";
@@ -53,9 +53,16 @@ export default function Nodes(props) {
   return (
     <div className={style.nodesContainer}>
       <div className={style.nodesContainerHeader}>
+        <Banner
+          width='250'
+          items={[
+            {header: "TOTAL", value: numNodes},
+            {header: "AVAILABLE", value: numAvailableNodes}
+          ]}
+        />
         {/* TODO: Add tileValue references */}
-        <Tile tileHeader="Number of Nodes" tileValue={numNodes} />
-        <Tile tileHeader="Healthy Nodes" tileValue={numAvailableNodes} />
+        {/* <Tile tileHeader="Number of Nodes" tileValue={numNodes} />
+        <Tile tileHeader="Healthy Nodes" tileValue={numAvailableNodes} /> */}
         <Header headerContent={headerContent} />
       </div>
 
