@@ -1,7 +1,7 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 
-import Speedometer from "../components/Speedometer.jsx";
 import Header from "../components/Header.jsx";
+import Banner from "../components/Banner.jsx";
 
 import style from "../assets/css/Dashboard.module.css";
 
@@ -12,11 +12,12 @@ export default function Dashboard(props) {
     <div className={style.DashboardContainer}>
       <Header headerContent={props.clusterName} />
 
-      <div className={style.clusterNumbers}>
-        <h3>Nodes Running: {props.numNodes}</h3>
-        <h3>Pods Running: {props.numPods}</h3>
-        <h3>Containers: 37</h3>
-      </div>
+      <Banner items={[
+        {header: 'NODES RUNNING' ,value: props.numNodes},
+        {header: 'PODS RUNNING' ,value: props.numPods},
+        {header: 'CONTAINERS' ,value: 37}
+        ]}
+      />
 
       <div className={style.speedoBoxes}>
         <div className={style.speedoes}>

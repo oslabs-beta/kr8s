@@ -1,9 +1,7 @@
 import React, { useEffect, useState } from "react";
 
-// import Speedometer from "../components/Speedometer.jsx";
-import Tile from "../components/Tile.jsx";
+import Banner from "../components/Banner.jsx";
 import List from "../components/List.jsx";
-// import LineGraph from "../components/LineGraph.jsx";
 import Header from "../components/Header.jsx";
 
 import styles from "../assets/css/Pods.module.css";
@@ -77,11 +75,15 @@ export default function Pods(props) {
       <div className={styles.podsContainer}>
         <Header headerContent={headerContent} />
         <div className={styles.podsContainerHeader}>
-          <Tile tileHeader="Running Pods" tileValue={runningPods} />
-          <Tile tileHeader="Pending Pods" tileValue={pendingPods} />
-          <Tile tileHeader="Failed Pods" tileValue={failedPods} />
-          <Tile tileHeader="Unknown Pods" tileValue={unknownPods} />
-          <Tile tileHeader="Succeeded Pods" tileValue={succeededPods} />
+        
+          <Banner items={[
+            {header: 'PODS RUNNING' ,value: runningPods},
+            {header: 'PODS PENDING' ,value: pendingPods},
+            {header: 'FAILED PODS' ,value: failedPods},
+            {header: 'UNKNOWN PODS' ,value: unknownPods},
+            {header: 'SUCCEEDED PODS' ,value: succeededPods}
+            ]}
+          /> 
         </div>
 
         <div className={styles.podsContainerList}>
