@@ -1,7 +1,27 @@
+.nodeCondition {
+  
+  height: 18px;
+  left: calc(50% - 151px/2 - 349.5px);
+  top: calc(50% - 18px/2 - 178.5px);
+
+  font-family: Lato;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 21px;
+  line-height: 18px;
+  /* identical to box height, or 84% */
+
+  letter-spacing: 0.216667px;
+
+  color: #F1F0EF;
+}
+
 .nodesContainer {
   display: flex;
   flex-wrap: wrap;
   flex-direction: column;
+  align-items: center;
+  margin-left: 185px;
 }
 
 .nodesContainerHeader {
@@ -12,6 +32,7 @@
 }
 
 .nodesContainerMainContent {
+  margin: 50px 15px 0px 0px;
   width: 100%;
   display: flex;
   flex-direction: row;
@@ -19,10 +40,26 @@
 }
 
 .nodesContainerSpeedometerColumn {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
 
+.nodesContainerSpeedometerColumn > * {
+  /* position: absolute; */
+  width: 217px;
+  height: 142px;
+  left: 537px;
+  top: 589px;
+  margin-bottom: 10px;
+  
+  border: 1px solid #979698;
+  box-sizing: border-box;
+  border-radius: 4px;
 }
 
 .nodesContainerList {
+  margin-left: 20px;
   width: 100%;
 }
 

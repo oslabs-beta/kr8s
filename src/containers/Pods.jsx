@@ -2,12 +2,10 @@ import React, { useEffect, useState } from "react";
 
 import Banner from "../components/Banner.jsx";
 import List from "../components/List.jsx";
-import Header from "../components/Header.jsx";
 
 import styles from "../assets/css/Pods.module.css";
 
-export default function Pods(props) {
-  const headerContent = `${props.clusterName} Pod Condition`;
+export default function Pods(props) {  
   const [myPod, setMyPod] = useState({});
 
   function setCurrentPod(podName) {
@@ -73,7 +71,6 @@ export default function Pods(props) {
   return (
     <div>
       <div className={styles.podsContainer}>
-        <Header headerContent={headerContent} />
         <div className={styles.podsContainerHeader}>
         
           <Banner items={[
@@ -83,7 +80,8 @@ export default function Pods(props) {
             {header: 'UNKNOWN PODS' ,value: unknownPods},
             {header: 'SUCCEEDED PODS' ,value: succeededPods}
             ]}
-          /> 
+          />
+
         </div>
 
         <div className={styles.podsContainerList}>

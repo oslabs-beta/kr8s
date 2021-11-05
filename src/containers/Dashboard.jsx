@@ -1,6 +1,5 @@
 import React from "react";
 
-import Header from "../components/Header.jsx";
 import Banner from "../components/Banner.jsx";
 
 import style from "../assets/css/Dashboard.module.css";
@@ -8,7 +7,6 @@ import style from "../assets/css/Dashboard.module.css";
 export default function Dashboard(props) {
   return (
     <div className={style.DashboardContainer}>
-      <Header headerContent={props.clusterName} />
 
       <Banner items={[
         {header: 'NODES RUNNING' ,value: props.numNodes},
