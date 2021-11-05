@@ -65,15 +65,15 @@ export default function Nodes(props) {
         {/* TODO: Add grafana link for each speedometer */}
         <div className={style.nodesContainerSpeedometerColumn}>
             <iframe
-              // src="http://localhost:32000/d-solo/sO3bv1Fnz/kr8s-dashboard?orgId=1&theme=dark&panelId=26"
+              src="http://localhost:32000/d-solo/sO3bv1Fnz/kr8s-dashboard?orgId=1&theme=dark&panelId=26"
               frameborder="0"
             ></iframe>
           <iframe
-            // src="http://localhost:32000/d-solo/sO3bv1Fnz/kr8s-dashboard?orgId=1&theme=dark&panelId=28"
+            src="http://localhost:32000/d-solo/sO3bv1Fnz/kr8s-dashboard?orgId=1&theme=dark&panelId=28"
             frameborder="0"
           ></iframe>
           <iframe
-            // src="http://localhost:32000/d-solo/sO3bv1Fnz/kr8s-dashboard?orgId=1&theme=dark&panelId=30"
+            src="http://localhost:32000/d-solo/sO3bv1Fnz/kr8s-dashboard?orgId=1&theme=dark&panelId=30"
             frameborder="0"
           ></iframe>
         </div>
