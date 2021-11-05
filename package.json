@@ -49,6 +49,7 @@
     "@material-ui/styles": "^4.11.4",
     "@mui/icons-material": "^5.0.4",
     "@mui/material": "^5.0.4",
+    "cors": "^2.8.5",
     "node-fetch": "^3.0.0",
     "postcss": "^8.3.6",
     "react": "^17.0.2",
