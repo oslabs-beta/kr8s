@@ -19,7 +19,6 @@
 }
 
 .nodesContainerSpeedometerColumn {
-
 }
 
 .nodesContainerList {
@@ -29,4 +28,8 @@
 List {
   height: 400px;
   width: 500px;
+}
+
+.nodesContainerList h3 {
+  color: #f1f0ef;
 }
