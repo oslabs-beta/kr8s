@@ -15,15 +15,18 @@ const drawerWidth = 240;
 export default function Sidebar(props) {
   return (
     <div>
-      <Box sx={{ display: "flex" }}>
+      <Box sx={{ display: "flex", }}>
         <Drawer id="box"
           sx={{
             width: drawerWidth,
             flexShrink: 0,
             "& .MuiDrawer-paper": {
               width: drawerWidth,
+              borderRight: "1px solid rgba(151, 150, 152, 0.25)",
               boxSizing: "border-box",
-              background: "linear-gradient(0deg, #FFFFFF 0%, rgba(47, 109, 182, 0.25) 0.01%, rgba(47, 109, 182, 0) 100%);",
+              // background: "linear-gradient(0deg, #FFFFFF 0%, rgba(47, 109, 182, 0.25) 0.01%, rgba(47, 109, 182, 0) 100%)",
+              // opacity:" 1",
+              background: "linear-gradient(180deg, rgba(28, 28, 33, 1) 40%, rgba(47, 109, 182, 0.1))"
             },
           }}
           variant="permanent"

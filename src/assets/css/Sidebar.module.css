@@ -1,9 +1,13 @@
 .pageNames {
   color: rgb(247, 246, 248);
+  margin-top: 5px;
+  margin-bottom: 5px;
 }
 
 .pageNames a {
   color: rgb(248, 245, 245);
+  margin-top: 5px;
+  margin-bottom: 5px;
   text-decoration: none;
   margin-left: 10px;
   font-weight: 600;
@@ -18,7 +22,7 @@
 } */
 
 .divider {
-  background: grey;
+  background: rgba(128, 128, 128, 0.25);
 }
 
 .logo svg {
