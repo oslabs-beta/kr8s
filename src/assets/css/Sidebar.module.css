@@ -1,12 +1,35 @@
 .pageNames {
-  color: white;
+  color: rgb(247, 246, 248);
+  margin-top: 5px;
+  margin-bottom: 5px;
 }
 
 .pageNames a {
-  color: white;
+  color: rgb(248, 245, 245);
+  margin-top: 5px;
+  margin-bottom: 5px;
   text-decoration: none;
+  margin-left: 10px;
+  font-weight: 600;
 }
 
+/* .selected {
+  color: rgb(241, 9, 9);
+  text-decoration: none;
+  margin-left: 10px;
+  font-weight: 600;
+  background-color:rgb(235, 63, 143)
+} */
+
 .divider {
-  background: grey;
+  background: rgba(128, 128, 128, 0.25);
+}
+
+.logo svg {
+  margin-left: 10px;
+  margin-bottom: 20px
+}
+
+#box {
+  background-color: rgb(235, 63, 143) !important;
 }
