@@ -51,6 +51,7 @@ export default function Nodes(props) {
     <div className={style.nodesContainer}>
       <div className={style.nodesContainerHeader}>
         <Banner
+          width="1130"
           items={[
             {header: "TOTAL", value: numNodes},
             {header: "AVAILABLE", value: numAvailableNodes}
@@ -58,7 +59,8 @@ export default function Nodes(props) {
         />
       </div>
 
-          <p className={style.nodeCondition}>Node Condition</p>
+      <p className={style.nodeCondition}>Node Condition</p>
+      
       <div className={style.nodesContainerMainContent}>
         {/* TODO: Add grafana link for each speedometer */}
         <div className={style.nodesContainerSpeedometerColumn}>

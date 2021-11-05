@@ -72,19 +72,19 @@ export default function Pods(props) {
     <div>
       <div className={styles.podsContainer}>
         <div className={styles.podsContainerHeader}>
-        
-          <Banner items={[
-            {header: 'PODS RUNNING' ,value: runningPods},
-            {header: 'PODS PENDING' ,value: pendingPods},
-            {header: 'FAILED PODS' ,value: failedPods},
-            {header: 'UNKNOWN PODS' ,value: unknownPods},
-            {header: 'SUCCEEDED PODS' ,value: succeededPods}
+          <Banner
+            items={[
+              { header: "PODS RUNNING", value: runningPods },
+              { header: "PODS PENDING", value: pendingPods },
+              { header: "FAILED PODS", value: failedPods },
+              { header: "UNKNOWN PODS", value: unknownPods },
+              { header: "SUCCEEDED PODS", value: succeededPods },
             ]}
           />
-
         </div>
 
         <div className={styles.podsContainerList}>
+          <h3>Pods Condition</h3>
           <List
             listValueHeaders={podsHeaders}
             listValue={podsValues}

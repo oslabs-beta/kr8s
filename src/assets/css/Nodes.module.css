@@ -1,5 +1,5 @@
 .nodeCondition {
-  
+  position: absolute;
   height: 18px;
   left: calc(50% - 151px/2 - 349.5px);
   top: calc(50% - 18px/2 - 178.5px);
@@ -12,7 +12,8 @@
   /* identical to box height, or 84% */
 
   letter-spacing: 0.216667px;
-
+  margin-top: 100px;
+  margin-left: 235px;
   color: #F1F0EF;
 }
 
@@ -46,7 +47,6 @@
 }
 
 .nodesContainerSpeedometerColumn > * {
-  /* position: absolute; */
   width: 217px;
   height: 142px;
   left: 537px;
@@ -63,7 +63,6 @@
   width: 100%;
 }
 
-List {
-  height: 400px;
-  width: 500px;
+.nodesContainerList h3 {
+  color: #f1f0ef;
 }
