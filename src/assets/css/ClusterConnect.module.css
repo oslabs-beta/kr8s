@@ -1,24 +1,59 @@
 .mainContainer {
-  background-color: #00000081;
-  margin: auto;
-  margin-top: 200px;
-  width: 350px;
+  height: 488px;
+  width: 427px;
+  left: 507px;
+  top: 212px;
+  border-radius: 4px;
+
+  position: absolute;
+  width: 427px;
+  height: 488px;
+  left: 507px;
+  top: 212px;
+
+  background: #161519;
+  border: 1px solid #FFFFFF;
+  box-sizing: border-box;
+  border-radius: 4px;
   display: flex;
   flex-direction: column;
-  justify-content: center;
   align-items: center;
-  border: 1px white solid;
-  border-radius: .75em;
-  box-shadow: 0px 0px 8px aqua;
-  padding: 40px 0px;
+}
+
+#clusters {
+  padding-bottom: 100px
 }
 
 .clusterContainer {
-  border: 1px white solid;
-  border-radius: .5em;
-  background-color: #4a8ac5bb;
-  color:rgb(255, 255, 255);
-  text-align: center;
-  width: 200px;
-  padding: 15px;
+  height: 45px;
+  width: 367px;
+  
+  /* Note: backdrop-filter has minimal browser support */
+  background: #2f6eb6c5;
+  backdrop-filter: blur(4px);
+  border-radius: 4px;
+  
+  /* Style and Center Text */
+  color: #FFFFFF;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#newContainer {
+  height: 45px;
+  width: 367px;
+  
+  border: 1px solid #FFFFFF;
+  border-radius: 4px;
+  
+  /* Note: backdrop-filter has minimal browser support */
+  background: #000000b7;
+  backdrop-filter: blur(4px);
+  
+  /* Style and Center Text */
+  color: #FFFFFF;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }

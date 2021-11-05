@@ -8,7 +8,6 @@ import apiCalls from "../APIcalls.js";
 
 import styles from "../assets/css/ClusterConnect.module.css";
 import logo from "../assets/css/imgs/Transparent_Image_3.png";
-import underConstruction from "../assets/css/imgs/under-construction.png";
 
 const path = require("path");
 const fs = require("fs");
@@ -39,12 +38,9 @@ export default function ClusterConnect(props) {
   return (
     <div>
       <main className={styles.mainContainer}>
-        <img height="150px" width="150px" src={logo}></img>
-        <section>{clusters}</section>
-        <section
-          className={styles.clusterContainer}
-          style={{ backgroundImage: `url(${underConstruction})` }}
-        >
+        <img height='225px' width='225px'src={logo}></img>
+        <section id={styles.clusters}>{clusters}</section>
+        <section id={styles.newContainer}>
           Connect To New Cluster
         </section>
       </main>

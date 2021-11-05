@@ -9,9 +9,7 @@ import Nodes from "./Nodes.jsx";
 import Pods from "./Pods.jsx";
 import PodView from "../components/PodView.jsx";
 import NodeView from "../components/NodeView.jsx";
-
 import style from "../assets/css/App.module.css";
-import kr8sBackground from "../assets/css/imgs/KR8S-Background.png";
 import apiCalls from "../APIcalls.js";
 
 // const grafana = {};
@@ -50,7 +48,6 @@ export default function App() {
   function getClusterInfo(path) {
     // Set connected to true to display the sidebar
     useConnected(true);
-
     // TODO: Retrieve information necessary for the selected cluster
     // TODO: Store information in the grafana object and related state
     useClusterName("MicroServices Limited");
@@ -67,18 +64,16 @@ export default function App() {
   }
 
   return (
-    <div id={style.App}>
+    // Conditionally style the app background
+    <div style={(connected) ? {"background": "#161519"} : {"background": "linear-gradient(to bottom, rgb(28, 28, 33), rgb(33, 48, 70))"} }>
       <Router>
         <div className={style.AppContainer}>
           {/* Display Sidebar only if we are connected to a cluster */}
           {connected && <Sidebar clusterName={clusterName} />}
-          <div
-            className={style.routerWrapper}
-            // Only display the KR8S logo when we have not connected to a cluster
-            style={{
-              backgroundImage: !connected ? `url(${kr8sBackground})` : null,
-            }}
-          >
+          <div className={style.routerWrapper}>
+          
+            <header id={style.header}>{clusterName}</header>
+
             <Switch>
               <Route exact path="/index.html">
                 <ClusterConnect
@@ -91,16 +86,12 @@ export default function App() {
                 <Dashboard
                   numNodes={nodes.length}
                   numPods={pods.length}
-                  clusterName={clusterName}
-                  // grafana={grafana.cluster}
                 />
               </Route>
 
               <Route path="/nodes">
                 <Nodes
-                  clusterName={clusterName}
                   nodes={nodes}
-                  // grafana={grafana.nodes}
                 />
               </Route>
 
@@ -109,17 +100,13 @@ export default function App() {
                 render={(props) => (
                   <NodeView
                     {...props}
-                    clusterName={clusterName}
-                    // grafana={grafana.pods}
                   />
                 )}
               />
 
               <Route path="/pods">
                 <Pods
-                  clusterName={clusterName}
                   pods={pods}
-                  // grafana={grafana.pods}
                 />
               </Route>
 
@@ -128,8 +115,6 @@ export default function App() {
                 render={(props) => (
                   <PodView
                     {...props}
-                    clusterName={clusterName}
-                    // grafana={grafana.pods}
                   />
                 )}
               />
