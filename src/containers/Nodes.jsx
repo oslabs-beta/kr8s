@@ -58,11 +58,9 @@ export default function Nodes(props) {
           ]}
         />
       </div>
-
-      <p className={style.nodeCondition}>Node Condition</p>
       
       <div className={style.nodesContainerMainContent}>
-        {/* TODO: Add grafana link for each speedometer */}
+
         <div className={style.nodesContainerSpeedometerColumn}>
             <iframe
               src="http://localhost:32000/d-solo/sO3bv1Fnz/kr8s-dashboard?orgId=1&theme=dark&panelId=26"

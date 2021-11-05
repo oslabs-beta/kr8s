@@ -8,7 +8,9 @@ export default function Dashboard(props) {
   return (
     <div className={style.DashboardContainer}>
 
-      <Banner items={[
+      <Banner 
+      style={style.podsBanner}
+      items={[
         {header: 'NODES RUNNING' ,value: props.numNodes},
         {header: 'PODS RUNNING' ,value: props.numPods},
         {header: 'CONTAINERS' ,value: 37}
@@ -17,11 +19,6 @@ export default function Dashboard(props) {
 
       <div className={style.speedoBoxes}>
         <div className={style.speedoes}>
-          {/* <Speedometer  src={cpu} />
-          <Speedometer src={memory} />
-          <Speedometer src={io} />
-          <Speedometer src={disk} /> */}
-          {/* using dashboard 6417 */}
           <iframe
             src="http://localhost:32000/d-solo/sO3bv1Fnz/kr8s-dashboard?orgId=1&theme=dark&panelId=46"
             width="280"
