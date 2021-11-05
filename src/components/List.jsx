@@ -68,7 +68,7 @@ export default function List(props) {
       <Redirect
         to={{
           pathname: props.reroute,
-          state: { name: rowName }
+          state: { name: rowName, info: props.info },
         }}
       />
     );
@@ -79,9 +79,15 @@ export default function List(props) {
       sx={{
         width: "90%",
         overflow: "hidden",
-        background: "rgb(30,30,30)",
-        color: "white",
-        border: "2px solid #31A72B",
+        background: "#1C1C21",
+        color: "#F1F0EF",
+        border: "1px solid #979698",
+        boxSizing: "border-box",
+        borderRadius: "4px",
+        fontFamily: "Lato",
+        fontStyle: "normal",
+        fontWeight: "normal",
+        fontSize: "16px",
       }}
     >
       <TableContainer sx={{ maxHeight: 440 }}>
@@ -94,12 +100,11 @@ export default function List(props) {
                   align={header.align}
                   style={{ minWidth: header.minWidth }}
                   sx={{
-                    background: "rgb(30,30,30)",
-                    color: "#daa71d",
-                    fontWeight: "bold",
+                    background: "#1C1C21",
                   }}
+                  className={styles.header}
                 >
-                  {header.label}
+                  {header.label.toUpperCase()}
                 </TableCell>
               ))}
             </TableRow>
@@ -122,7 +127,7 @@ export default function List(props) {
                           <TableCell
                             key={row.code + header.id}
                             align={header.align}
-                            sx={{ color: "white" }}
+                            sx={{ color: "#F1F0EF" }}
                           >
                             <a
                               href=""
@@ -152,7 +157,7 @@ export default function List(props) {
                           <TableCell
                             key={row.code + header.id}
                             align={header.align}
-                            sx={{ color: "white" }}
+                            sx={{ color: "#F1F0EF" }}
                           >
                             <a className={styles.rows}>
                               {header.format && typeof value === "number"
@@ -178,12 +183,12 @@ export default function List(props) {
         onPageChange={handleChangePage}
         onRowsPerPageChange={handleChangeRowsPerPage}
         sx={{
-          color: "white",
+          color: "#F1F0EF",
           "& .MuiTablePagination-selectIcon": {
-            color: "white",
+            color: "#F1F0EF",
           },
           "& .MuiSvgIcon-root": {
-            color: "white",
+            color: "#F1F0EF",
           },
         }}
       />

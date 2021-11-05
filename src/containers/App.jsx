@@ -8,11 +8,8 @@ import Dashboard from "./Dashboard.jsx";
 import Nodes from "./Nodes.jsx";
 import Pods from "./Pods.jsx";
 import PodView from "../components/PodView.jsx";
-import NodeView from '../components/NodeView.jsx';
-
-
+import NodeView from "../components/NodeView.jsx";
 import style from "../assets/css/App.module.css";
-import kr8sBackground from "../assets/css/imgs/KR8S-Background.png";
 import apiCalls from "../APIcalls.js";
 
 // const grafana = {};
@@ -51,68 +48,76 @@ export default function App() {
   function getClusterInfo(path) {
     // Set connected to true to display the sidebar
     useConnected(true);
-
     // TODO: Retrieve information necessary for the selected cluster
     // TODO: Store information in the grafana object and related state
     useClusterName("MicroServices Limited");
-    
-    apiCalls.fetchNodes()
-      .then(data => {
-        setNodes(data.items);
-        console.log('Node data: ', data);
-      });
 
-    apiCalls.fetchPods()
-      .then(data => {
-        setPods(data.items);
-        console.log('Pod data: ', data);
-      });
+    apiCalls.fetchNodes().then((data) => {
+      setNodes(data.items);
+      console.log("Node data: ", data);
+    });
+
+    apiCalls.fetchPods().then((data) => {
+      setPods(data.items);
+      console.log("Pod data: ", data);
+    });
   }
 
   return (
-    <div id={style.App}>
+    // Conditionally style the app background
+    <div style={(connected) ? {"background": "#161519"} : {"background": "linear-gradient(to bottom, rgb(28, 28, 33), rgb(33, 48, 70))"} }>
       <Router>
         <div className={style.AppContainer}>
           {/* Display Sidebar only if we are connected to a cluster */}
-          {connected && <Sidebar clusterName={clusterName}/>}
-          <div 
-            className={style.routerWrapper} 
-            // Only display the KR8S logo when we have not connected to a cluster
-            style={{ backgroundImage: !connected?`url(${kr8sBackground})` : null }}
-          >
+          {connected && <Sidebar clusterName={clusterName} />}
+          <div className={style.routerWrapper}>
+          
+            <header id={style.header}>{clusterName}</header>
+
             <Switch>
               <Route exact path="/index.html">
-                  <ClusterConnect
-                    clusters={["MicroServices Limited"]}
-                    getClusterInfo={getClusterInfo}
-                  />
+                <ClusterConnect
+                  clusters={["MicroServices Limited"]}
+                  getClusterInfo={getClusterInfo}
+                />
               </Route>
 
               <Route path="/dash">
                 <Dashboard
                   numNodes={nodes.length}
                   numPods={pods.length}
-                  clusterName={clusterName}
-                  // grafana={grafana.cluster}
                 />
               </Route>
 
               <Route path="/nodes">
-                <Nodes 
-                  clusterName={clusterName} 
+                <Nodes
                   nodes={nodes}
-                  // grafana={grafana.nodes} 
                 />
               </Route>
+
+              <Route
+                path="/nodeview"
+                render={(props) => (
+                  <NodeView
+                    {...props}
+                  />
+                )}
+              />
 
               <Route path="/pods">
-                <Pods 
-                  clusterName={clusterName}
+                <Pods
                   pods={pods}
-                  // grafana={grafana.pods} 
                 />
               </Route>
 
+              <Route
+                path="/podview"
+                render={(props) => (
+                  <PodView
+                    {...props}
+                  />
+                )}
+              />
             </Switch>
           </div>
         </div>

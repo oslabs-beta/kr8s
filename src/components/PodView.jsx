@@ -2,7 +2,6 @@ import React from "react";
 
 import Tile from "../components/Tile.jsx";
 import List from "../components/List.jsx";
-import Header from "../components/Header.jsx";
 
 import styles from "../assets/css/PodView.module.css";
 
@@ -13,29 +12,35 @@ const containersHeaders = [
 ];
 
 export default function PodView(props) {
-  const { pod, initialized, ready, containersReady, podScheduled, numContainers, containers } = props.pod;
+  const {
+    pod,
+    initialized,
+    ready,
+    containersReady,
+    podScheduled,
+    numContainers,
+    containers,
+  } = props.location.state.info;
   const containersValues = [];
-  
-  const headerContent = `Pod: ${pod}`;
-  
-  for(let i = 0; i < containers.length; i++) {
+
+  for (let i = 0; i < containers.length; i++) {
     const container = {};
-    container['name'] = containers[i].name;
-    container['ready'] = containers[i].ready.toString();
-    container['restarts'] = containers[i].restartCount;
+    container["name"] = containers[i].name;
+    container["ready"] = containers[i].ready.toString();
+    container["restarts"] = containers[i].restartCount;
 
     containersValues.push(container);
   }
 
-
   return (
     <div className={styles.containersContainer}>
-      <Header headerContent={headerContent} />
-      
-      
+
       <div className={styles.containersContainerHeader}>
         {/* TODO: Add tileValue references */}
-        <Tile tileHeader="Number of Running Containers" tileValue={numContainers} />
+        <Tile
+          tileHeader="Number of Running Containers"
+          tileValue={numContainers}
+        />
         <Tile tileHeader="Number of Failed Containers" tileValue="1" />
         <Tile tileHeader="Number of Unknown Containers" tileValue="0" />
       </div>
@@ -46,12 +51,6 @@ export default function PodView(props) {
           listValue={containersValues}
           reroute={false}
         />
-      </div>
-
-      <div className={styles.containersContainerHeader}>
-        {/* TODO: Add tileValue references */}
-        <Tile tileHeader="CPU Cores Requested by Containers" tileValue="1.45" />
-        <Tile tileHeader="Memory Requested by Containers" tileValue="940MB" />
       </div>
     </div>
   );
