@@ -71,7 +71,7 @@
     "panels": [
       {
         "cacheTimeout": null,
-        "datasource": "${DS_PROMETHEUS}",
+        "datasource": "prometheus",
         "fieldConfig": {
           "defaults": {
             "color": {
@@ -146,7 +146,7 @@
       },
       {
         "cacheTimeout": null,
-        "datasource": "${DS_PROMETHEUS}",
+        "datasource": "prometheus",
         "fieldConfig": {
           "defaults": {
             "color": {
@@ -221,7 +221,7 @@
       },
       {
         "cacheTimeout": null,
-        "datasource": "${DS_PROMETHEUS}",
+        "datasource": "prometheus",
         "description": "",
         "fieldConfig": {
           "defaults": {
@@ -302,7 +302,7 @@
       },
       {
         "cacheTimeout": null,
-        "datasource": "${DS_PROMETHEUS}",
+        "datasource": "prometheus",
         "fieldConfig": {
           "defaults": {
             "color": {
@@ -382,7 +382,7 @@
       },
       {
         "cacheTimeout": null,
-        "datasource": "${DS_PROMETHEUS}",
+        "datasource": "prometheus",
         "fieldConfig": {
           "defaults": {
             "color": {
@@ -461,7 +461,7 @@
       },
       {
         "cacheTimeout": null,
-        "datasource": "${DS_PROMETHEUS}",
+        "datasource": "prometheus",
         "fieldConfig": {
           "defaults": {
             "color": {
@@ -538,7 +538,7 @@
         "type": "gauge"
       },
       {
-        "datasource": "${DS_PROMETHEUS}",
+        "datasource": "prometheus",
         "fieldConfig": {
           "defaults": {
             "color": {
@@ -594,7 +594,7 @@
       },
       {
         "cacheTimeout": null,
-        "datasource": "${DS_PROMETHEUS}",
+        "datasource": "prometheus",
         "fieldConfig": {
           "defaults": {
             "color": {
@@ -670,7 +670,7 @@
         "bars": false,
         "dashLength": 10,
         "dashes": false,
-        "datasource": "${DS_PROMETHEUS}",
+        "datasource": "prometheus",
         "decimals": 3,
         "editable": true,
         "error": false,
@@ -800,7 +800,7 @@
         "bars": false,
         "dashLength": 10,
         "dashes": false,
-        "datasource": "${DS_PROMETHEUS}",
+        "datasource": "prometheus",
         "description": "Basic network info per interface",
         "fieldConfig": {
           "defaults": {
@@ -918,7 +918,7 @@
         "bars": false,
         "dashLength": 10,
         "dashes": false,
-        "datasource": "${DS_PROMETHEUS}",
+        "datasource": "prometheus",
         "decimals": 3,
         "description": "Disk space used of all filesystems mounted",
         "fieldConfig": {
@@ -1044,7 +1044,7 @@
         "bars": false,
         "dashLength": 10,
         "dashes": false,
-        "datasource": "${DS_PROMETHEUS}",
+        "datasource": "prometheus",
         "decimals": 2,
         "description": "Basic memory usage",
         "fieldConfig": {
@@ -1218,7 +1218,7 @@
         "bars": false,
         "dashLength": 10,
         "dashes": false,
-        "datasource": "${DS_PROMETHEUS}",
+        "datasource": "prometheus",
         "decimals": 2,
         "description": "Basic CPU info",
         "fieldConfig": {
@@ -1342,7 +1342,7 @@
         "bars": false,
         "dashLength": 10,
         "dashes": false,
-        "datasource": "${DS_PROMETHEUS}",
+        "datasource": "prometheus",
         "description": "etcd request latency (p95)",
         "fieldConfig": {
           "defaults": {
@@ -1450,7 +1450,7 @@
         "bars": false,
         "dashLength": 10,
         "dashes": false,
-        "datasource": "${DS_PROMETHEUS}",
+        "datasource": "prometheus",
         "fieldConfig": {
           "defaults": {
             "links": []
@@ -1556,7 +1556,7 @@
         "bars": false,
         "dashLength": 10,
         "dashes": false,
-        "datasource": "${DS_PROMETHEUS}",
+        "datasource": "prometheus",
         "fieldConfig": {
           "defaults": {
             "links": []
@@ -1662,7 +1662,7 @@
         "bars": false,
         "dashLength": 10,
         "dashes": false,
-        "datasource": "${DS_PROMETHEUS}",
+        "datasource": "prometheus",
         "description": "95th percentile request latency for Kubernetes apiserver component",
         "fieldConfig": {
           "defaults": {
@@ -1770,7 +1770,7 @@
         "bars": false,
         "dashLength": 10,
         "dashes": false,
-        "datasource": "${DS_PROMETHEUS}",
+        "datasource": "prometheus",
         "fieldConfig": {
           "defaults": {
             "links": []
@@ -1866,7 +1866,7 @@
         "bars": false,
         "dashLength": 10,
         "dashes": false,
-        "datasource": "${DS_PROMETHEUS}",
+        "datasource": "prometheus",
         "decimals": 2,
         "editable": true,
         "error": false,
@@ -1981,7 +1981,7 @@
         "bars": false,
         "dashLength": 10,
         "dashes": false,
-        "datasource": "${DS_PROMETHEUS}",
+        "datasource": "prometheus",
         "decimals": 2,
         "editable": true,
         "error": false,
@@ -2085,7 +2085,7 @@
         "bars": false,
         "dashLength": 10,
         "dashes": false,
-        "datasource": "${DS_PROMETHEUS}",
+        "datasource": "prometheus",
         "decimals": 3,
         "editable": true,
         "error": false,
@@ -2186,7 +2186,7 @@
       },
       {
         "cacheTimeout": null,
-        "datasource": "${DS_PROMETHEUS}",
+        "datasource": "prometheus",
         "fieldConfig": {
           "defaults": {
             "color": {
@@ -2264,7 +2264,7 @@
       },
       {
         "cacheTimeout": null,
-        "datasource": "${DS_PROMETHEUS}",
+        "datasource": "prometheus",
         "fieldConfig": {
           "defaults": {
             "color": {
@@ -2342,7 +2342,7 @@
       },
       {
         "cacheTimeout": null,
-        "datasource": "${DS_PROMETHEUS}",
+        "datasource": "prometheus",
         "fieldConfig": {
           "defaults": {
             "color": {
@@ -2420,7 +2420,7 @@
       },
       {
         "cacheTimeout": null,
-        "datasource": "${DS_PROMETHEUS}",
+        "datasource": "prometheus",
         "fieldConfig": {
           "defaults": {
             "color": {

@@ -3,10 +3,7 @@ const path = require("path");
 const fs = require("fs");
 
 const grafanaDashboard = fs.readFileSync(
-  path.join(
-    __dirname,
-    "../../../../../../../../grafana-kr8s-dashboard-copy.json"
-  )
+  path.join(__dirname, "../../../../../../../../grafana-kr8s-dashboard.json")
 );
 const apiCalls = {};
 
