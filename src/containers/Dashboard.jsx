@@ -1,53 +1,46 @@
 import React from "react";
 
-import Speedometer from "../components/Speedometer.jsx";
-import Header from "../components/Header.jsx";
+import Banner from "../components/Banner.jsx";
 
 import style from "../assets/css/Dashboard.module.css";
 
 export default function Dashboard(props) {
-  const { apiServer, controller, cpu, disk, etcd, io, memory, scheduler } =
-    props.grafana;
-
   return (
     <div className={style.DashboardContainer}>
-      <Header headerContent={props.clusterName} />
 
-      <div className={style.clusterNumbers}>
-        <h3>Nodes Running: 8</h3>
-        <h3>Pods Running: 21</h3>
-        <h3>Containers: 37</h3>
-      </div>
+      <Banner 
+      style={style.podsBanner}
+      items={[
+        {header: 'NODES RUNNING' ,value: props.numNodes},
+        {header: 'PODS RUNNING' ,value: props.numPods},
+        {header: 'CONTAINERS' ,value: 37}
+        ]}
+      />
 
       <div className={style.speedoBoxes}>
         <div className={style.speedoes}>
-          {/* <Speedometer  src={cpu} />
-          <Speedometer src={memory} />
-          <Speedometer src={io} />
-          <Speedometer src={disk} /> */}
-          {/* using dashboard 6417 */}
           <iframe
-            src="http://localhost:32000/d-solo/4XuMd2Iiz/kubernetes-cluster-prometheus?orgId=1&from=1635439862845&to=1635441662846&theme=dark&panelId=4"
+            src="http://localhost:32000/d-solo/sO3bv1Fnz/kr8s-dashboard?orgId=1&theme=dark&panelId=46"
             width="280"
-            height="180"
+            height="200"
             frameborder="0"
           ></iframe>
           <iframe
-            src="http://localhost:32000/d-solo/4XuMd2Iiz/kubernetes-cluster-prometheus?orgId=1&from=1635439804187&to=1635441604187&theme=dark&panelId=5"
+            src="http://localhost:32000/d-solo/sO3bv1Fnz/kr8s-dashboard?orgId=1&theme=dark&panelId=42"
             width="280"
-            height="180"
+            height="200"
             frameborder="0"
           ></iframe>
           <iframe
-            src="http://localhost:32000/d-solo/4XuMd2Iiz/kubernetes-cluster-prometheus?orgId=1&from=1635439813545&to=1635441613545&theme=dark&panelId=6"
+            src="http://localhost:32000/d-solo/sO3bv1Fnz/kr8s-dashboard?orgId=1&theme=dark&panelId=40"
             width="280"
-            height="180"
+            height="200"
             frameborder="0"
           ></iframe>
           <iframe
-            src="http://localhost:32000/d-solo/4XuMd2Iiz/kubernetes-cluster-prometheus?orgId=1&from=1635439828243&to=1635441628243&theme=dark&panelId=7"
+            src="http://localhost:32000/d-solo/sO3bv1Fnz/kr8s-dashboard?orgId=1&theme=dark&panelId=44"
             width="280"
-            height="180"
+            height="200"
             frameborder="0"
           ></iframe>
         </div>
@@ -59,25 +52,25 @@ export default function Dashboard(props) {
           <Speedometer src={etcd} /> */}
           {/* using dashboard 12006 */}
           <iframe
-            src="http://localhost:32000/d-solo/R6abPf9Zz/kubernetes-apiserver?orgId=1&from=1635441183527&to=1635444783527&theme=dark&panelId=8"
+            src="http://localhost:32000/d-solo/sO3bv1Fnz/kr8s-dashboard?orgId=1&theme=dark&panelId=16"
             width="280"
             height="180"
             frameborder="0"
           ></iframe>
           <iframe
-            src="http://localhost:32000/d-solo/R6abPf9Zz/kubernetes-apiserver?orgId=1&from=1635441221311&to=1635444821311&theme=dark&panelId=2"
+            src="http://localhost:32000/d-solo/sO3bv1Fnz/kr8s-dashboard?orgId=1&theme=dark&panelId=18"
             width="280"
             height="180"
             frameborder="0"
           ></iframe>
           <iframe
-            src="http://localhost:32000/d-solo/R6abPf9Zz/kubernetes-apiserver?orgId=1&from=1635441208309&to=1635444808309&theme=dark&panelId=10"
+            src="http://localhost:32000/d-solo/sO3bv1Fnz/kr8s-dashboard?orgId=1&theme=dark&panelId=20"
             width="280"
             height="180"
             frameborder="0"
           ></iframe>
           <iframe
-            src="http://localhost:32000/d-solo/R6abPf9Zz/kubernetes-apiserver?orgId=1&from=1635441239546&to=1635444839546&theme=dark&panelId=12"
+            src="http://localhost:32000/d-solo/sO3bv1Fnz/kr8s-dashboard?orgId=1&theme=dark&panelId=22"
             width="280"
             height="180"
             frameborder="0"

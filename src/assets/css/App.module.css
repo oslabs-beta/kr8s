@@ -2,18 +2,27 @@
 
 @import "_example/_example.css";
 
-#App {
-  
-}
-
 .AppContainer {
   height: 100vh;
   width: 100vw;
   display: flex;
-  flex-direction: row;
-  justify-content: flex-start;
+  flex-direction: row;  
+}
+
+#header {
+height: 43px;
+
+color: #F1F0EF;
+font-style: normal;
+font-weight: 600;
+font-size: 36px;
+line-height: 43px;
+letter-spacing: 0.216667px;
+
+margin: 50px 0px 75px 50px;
 }
 
 .routerWrapper {
-  flex-grow: 1;
+  position: absolute;
+  margin-left: 18%;
 }

@@ -13,7 +13,7 @@
     "url": "https://github.com/oslabs-beta/kr8s/issues"
   },
   "author": {
-    "name": "Justing Stoddard, Reland Boyle, Duke Lee, and Adam Sheff",
+    "name": "Justin Stoddard, Reland Boyle, Duke Lee, and Adam Sheff",
     "email": "adamisheff@gmail.com",
     "url": "https://github.com/oslabs-beta/kr8s"
   },
@@ -58,6 +58,8 @@
     "@material-ui/styles": "^4.11.4",
     "@mui/icons-material": "^5.0.4",
     "@mui/material": "^5.0.4",
+    "cors": "^2.8.5",
+    "node-fetch": "^3.0.0",
     "postcss": "^8.3.6",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
@@ -65,10 +67,13 @@
   },
   "devDependencies": {
     "@babel/core": "^7.15.0",
-    "@babel/preset-env": "^7.15.0",
+    "@babel/plugin-transform-runtime": "^7.15.8",
+    "@babel/preset-env": "^7.15.8",
     "@babel/preset-react": "^7.14.5",
     "babel-jest": "^27.3.1",
+    "@babel/runtime": "^7.15.4",
     "babel-loader": "^8.2.2",
+    "babel-polyfill": "^6.26.0",
     "cross-env": "^7.0.3",
     "css-loader": "^6.2.0",
     "electron": "^13.1.9",
