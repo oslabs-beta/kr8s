@@ -1,5 +1,5 @@
 const express = require("express");
-// const cors = require("cors");
+const cors = require("cors");
 const path = require("path");
 const k8sController = require("./controllers/k8sController.js");
 const { app } = require("electron");
@@ -10,7 +10,11 @@ app = express();
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
-// app.use(cors());
+app.use(cors());
+app.get("/cors", (req, res) => {
+  res.set("Access-Control-Allow-Origin", "*");
+  res.send({ msg: "This has CORS enabled 🎈" });
+});
 
 //Routes handling requests for k8s cluster info
 

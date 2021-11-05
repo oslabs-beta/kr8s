@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
-
+import apiCalls from "../APIcalls.js";
 // const express = require("express");
 // const cors = require("cors");
 // app = express();
@@ -21,23 +21,6 @@ export default function ClusterConnect(props) {
   console.log("grafanaDashboard.db", JSON.parse(grafanaDashboard));
   console.log("dirname", __dirname);
 
-  function grafanaDashboardPostRequest() {
-    fetch("http://localhost:32000/api/dashboards/db", {
-      method: "POST",
-      mode: "no-cors",
-      headers: {
-        Accept: "application/json",
-        "Content-Type": "application/json",
-        Authorization:
-          "Bearer eyJrIjoicUNGMDRmRGwxZHVqejZoU2tId0pRR0YzUEhZNG9FaVYiLCJuIjoiYWRtaW4iLCJpZCI6MX0=",
-        "X-Content-Type-Options": "nosniff",
-      },
-      body: grafanaDashboard,
-      // data: grafanaDashboard,
-      // new_dashboard_data: JSON.parse(grafanaDashboard),
-    }).then((data) => console.log("data from post req", data));
-  }
-
   let clusters = props.clusters.map((cluster) => {
     return (
       <Link
@@ -45,7 +28,7 @@ export default function ClusterConnect(props) {
         to="/dash"
         onClick={() => {
           props.getClusterInfo();
-          grafanaDashboardPostRequest();
+          apiCalls.grafanaDashboardPostRequest();
         }}
       >
         <p className={styles.clusterContainer}>{cluster}</p>
