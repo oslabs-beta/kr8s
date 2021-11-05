@@ -15,9 +15,10 @@ const fs = require("fs");
 
 export default function ClusterConnect(props) {
   const grafanaDashboard = fs.readFileSync(
-    path.join(__dirname, "../../../../../../../../grafana-kr8s-dashboard.json")
+    path.join(__dirname, "../../../../../../../../grafana-test.json")
   );
   console.log("grafanaDashboard", grafanaDashboard);
+  console.log("grafanaDashboard.db", JSON.parse(grafanaDashboard));
   console.log("dirname", __dirname);
 
   function grafanaDashboardPostRequest() {
@@ -28,10 +29,13 @@ export default function ClusterConnect(props) {
         Accept: "application/json",
         "Content-Type": "application/json",
         Authorization:
-          "Bearer eyJrIjoidTFIWjk3aHRLZDV6TkdONTdjS0xVVzZiZU9wMEc5V3UiLCJuIjoiYWRtaW4iLCJpZCI6MX0=",
+          "Bearer eyJrIjoicUNGMDRmRGwxZHVqejZoU2tId0pRR0YzUEhZNG9FaVYiLCJuIjoiYWRtaW4iLCJpZCI6MX0=",
+        "X-Content-Type-Options": "nosniff",
       },
-      body: { dashboard: grafanaDashboard },
-    });
+      body: grafanaDashboard,
+      // data: grafanaDashboard,
+      // new_dashboard_data: JSON.parse(grafanaDashboard),
+    }).then((data) => console.log("data from post req", data));
   }
 
   let clusters = props.clusters.map((cluster) => {

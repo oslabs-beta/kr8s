@@ -1,0 +1,14 @@
+{
+  "dashboard": {
+    "id": 1,
+    "uid": 1,
+    "title": "Production Overview",
+    "tags": ["templated"],
+    "timezone": "browser",
+    "schemaVersion": 16,
+    "version": 0,
+    "refresh": "30s"
+  },
+  "folderId": 0,
+  "overwrite": false
+}
