@@ -20,7 +20,7 @@
       "type": "grafana",
       "id": "grafana",
       "name": "Grafana",
-      "version": "8.2.3"
+      "version": "8.2.2"
     },
     {
       "type": "panel",
@@ -71,6 +71,160 @@
     {
       "cacheTimeout": null,
       "datasource": "${DS_PROMETHEUS}",
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "fixedColor": "rgb(31, 120, 193)",
+            "mode": "fixed"
+          },
+          "mappings": [
+            {
+              "options": {
+                "match": "null",
+                "result": {
+                  "text": "N/A"
+                }
+              },
+              "type": "special"
+            }
+          ],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": null
+              },
+              {
+                "color": "red",
+                "value": 80
+              }
+            ]
+          },
+          "unit": "decbytes"
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 3,
+        "w": 12,
+        "x": 0,
+        "y": 0
+      },
+      "id": 50,
+      "interval": null,
+      "links": [],
+      "maxDataPoints": 100,
+      "options": {
+        "colorMode": "none",
+        "graphMode": "area",
+        "justifyMode": "auto",
+        "orientation": "horizontal",
+        "reduceOptions": {
+          "calcs": [
+            "lastNotNull"
+          ],
+          "fields": "",
+          "values": false
+        },
+        "text": {},
+        "textMode": "auto"
+      },
+      "pluginVersion": "8.2.2",
+      "targets": [
+        {
+          "exemplar": true,
+          "expr": "sum(kube_pod_container_resource_requests_memory_bytes{namespace=~\".*\", node=~\".*\"})",
+          "format": "time_series",
+          "interval": "",
+          "intervalFactor": 1,
+          "legendFormat": "",
+          "refId": "A"
+        }
+      ],
+      "title": "Memory Requested By Containers",
+      "type": "stat"
+    },
+    {
+      "cacheTimeout": null,
+      "datasource": "${DS_PROMETHEUS}",
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "fixedColor": "rgb(31, 120, 193)",
+            "mode": "fixed"
+          },
+          "mappings": [
+            {
+              "options": {
+                "match": "null",
+                "result": {
+                  "text": "N/A"
+                }
+              },
+              "type": "special"
+            }
+          ],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": null
+              },
+              {
+                "color": "red",
+                "value": 80
+              }
+            ]
+          },
+          "unit": "none"
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 3,
+        "w": 12,
+        "x": 0,
+        "y": 3
+      },
+      "id": 48,
+      "interval": null,
+      "links": [],
+      "maxDataPoints": 100,
+      "options": {
+        "colorMode": "none",
+        "graphMode": "area",
+        "justifyMode": "auto",
+        "orientation": "horizontal",
+        "reduceOptions": {
+          "calcs": [
+            "lastNotNull"
+          ],
+          "fields": "",
+          "values": false
+        },
+        "text": {},
+        "textMode": "auto"
+      },
+      "pluginVersion": "8.2.2",
+      "targets": [
+        {
+          "exemplar": true,
+          "expr": "sum(kube_pod_container_resource_requests_cpu_cores{namespace=~\".*\", node=~\".*\"})",
+          "format": "time_series",
+          "interval": "",
+          "intervalFactor": 1,
+          "legendFormat": "",
+          "refId": "A"
+        }
+      ],
+      "title": "CPU Cores Requested by Containers",
+      "type": "stat"
+    },
+    {
+      "cacheTimeout": null,
+      "datasource": "${DS_PROMETHEUS}",
       "description": "",
       "fieldConfig": {
         "defaults": {
@@ -116,7 +270,7 @@
         "h": 5,
         "w": 8,
         "x": 0,
-        "y": 0
+        "y": 6
       },
       "id": 46,
       "interval": null,
@@ -135,7 +289,7 @@
         "showThresholdMarkers": true,
         "text": {}
       },
-      "pluginVersion": "8.2.3",
+      "pluginVersion": "8.2.2",
       "targets": [
         {
           "exemplar": true,
@@ -198,7 +352,7 @@
         "h": 5,
         "w": 8,
         "x": 0,
-        "y": 5
+        "y": 11
       },
       "id": 44,
       "interval": null,
@@ -217,7 +371,7 @@
         "showThresholdMarkers": true,
         "text": {}
       },
-      "pluginVersion": "8.2.3",
+      "pluginVersion": "8.2.2",
       "targets": [
         {
           "exemplar": true,
@@ -280,7 +434,7 @@
         "h": 5,
         "w": 8,
         "x": 0,
-        "y": 10
+        "y": 16
       },
       "id": 42,
       "interval": null,
@@ -299,7 +453,7 @@
         "showThresholdMarkers": true,
         "text": {}
       },
-      "pluginVersion": "8.2.3",
+      "pluginVersion": "8.2.2",
       "targets": [
         {
           "exemplar": true,
@@ -360,7 +514,7 @@
         "h": 5,
         "w": 8,
         "x": 0,
-        "y": 15
+        "y": 21
       },
       "id": 40,
       "interval": null,
@@ -379,7 +533,7 @@
         "showThresholdMarkers": true,
         "text": {}
       },
-      "pluginVersion": "8.2.3",
+      "pluginVersion": "8.2.2",
       "targets": [
         {
           "exemplar": true,
@@ -422,7 +576,7 @@
         "h": 8,
         "w": 12,
         "x": 0,
-        "y": 20
+        "y": 26
       },
       "id": 38,
       "options": {
@@ -438,7 +592,7 @@
         "showThresholdMarkers": true,
         "text": {}
       },
-      "pluginVersion": "8.2.3",
+      "pluginVersion": "8.2.2",
       "targets": [
         {
           "exemplar": true,
@@ -492,7 +646,7 @@
         "h": 3,
         "w": 4,
         "x": 0,
-        "y": 28
+        "y": 34
       },
       "id": 36,
       "interval": null,
@@ -513,7 +667,7 @@
         "text": {},
         "textMode": "auto"
       },
-      "pluginVersion": "8.2.3",
+      "pluginVersion": "8.2.2",
       "targets": [
         {
           "expr": "sum (rate (container_cpu_usage_seconds_total{id=\"/\",kubernetes_io_hostname=~\"^$Node$\"}[1m]))",
@@ -542,7 +696,7 @@
         "h": 7,
         "w": 24,
         "x": 0,
-        "y": 31
+        "y": 37
       },
       "height": "",
       "hiddenSeries": false,
@@ -569,7 +723,7 @@
         "alertThreshold": true
       },
       "percentage": false,
-      "pluginVersion": "8.2.3",
+      "pluginVersion": "8.2.2",
       "pointradius": 5,
       "points": false,
       "renderer": "flot",
@@ -675,7 +829,7 @@
         "h": 7,
         "w": 12,
         "x": 0,
-        "y": 38
+        "y": 44
       },
       "hiddenSeries": false,
       "id": 32,
@@ -702,7 +856,7 @@
         "alertThreshold": true
       },
       "percentage": false,
-      "pluginVersion": "8.2.3",
+      "pluginVersion": "8.2.2",
       "pointradius": 5,
       "points": false,
       "renderer": "flot",
@@ -794,7 +948,7 @@
         "h": 7,
         "w": 12,
         "x": 0,
-        "y": 45
+        "y": 51
       },
       "height": "",
       "hiddenSeries": false,
@@ -821,7 +975,7 @@
         "alertThreshold": true
       },
       "percentage": false,
-      "pluginVersion": "8.2.3",
+      "pluginVersion": "8.2.2",
       "pointradius": 5,
       "points": false,
       "renderer": "flot",
@@ -920,7 +1074,7 @@
         "h": 7,
         "w": 12,
         "x": 0,
-        "y": 52
+        "y": 58
       },
       "hiddenSeries": false,
       "id": 28,
@@ -945,7 +1099,7 @@
         "alertThreshold": true
       },
       "percentage": false,
-      "pluginVersion": "8.2.3",
+      "pluginVersion": "8.2.2",
       "pointradius": 5,
       "points": false,
       "renderer": "flot",
@@ -1094,7 +1248,7 @@
         "h": 7,
         "w": 12,
         "x": 0,
-        "y": 59
+        "y": 65
       },
       "hiddenSeries": false,
       "id": 26,
@@ -1121,7 +1275,7 @@
         "alertThreshold": true
       },
       "percentage": true,
-      "pluginVersion": "8.2.3",
+      "pluginVersion": "8.2.2",
       "pointradius": 5,
       "points": false,
       "renderer": "flot",
@@ -1217,7 +1371,7 @@
         "h": 8,
         "w": 12,
         "x": 0,
-        "y": 66
+        "y": 72
       },
       "hiddenSeries": false,
       "id": 24,
@@ -1237,7 +1391,7 @@
         "alertThreshold": true
       },
       "percentage": false,
-      "pluginVersion": "8.2.3",
+      "pluginVersion": "8.2.2",
       "pointradius": 2,
       "points": false,
       "renderer": "flot",
@@ -1324,7 +1478,7 @@
         "h": 8,
         "w": 12,
         "x": 0,
-        "y": 74
+        "y": 80
       },
       "hiddenSeries": false,
       "id": 22,
@@ -1344,7 +1498,7 @@
         "alertThreshold": true
       },
       "percentage": false,
-      "pluginVersion": "8.2.3",
+      "pluginVersion": "8.2.2",
       "pointradius": 2,
       "points": false,
       "renderer": "flot",
@@ -1430,7 +1584,7 @@
         "h": 8,
         "w": 12,
         "x": 0,
-        "y": 82
+        "y": 88
       },
       "hiddenSeries": false,
       "id": 20,
@@ -1450,7 +1604,7 @@
         "alertThreshold": true
       },
       "percentage": false,
-      "pluginVersion": "8.2.3",
+      "pluginVersion": "8.2.2",
       "pointradius": 2,
       "points": false,
       "renderer": "flot",
@@ -1537,7 +1691,7 @@
         "h": 9,
         "w": 12,
         "x": 0,
-        "y": 90
+        "y": 96
       },
       "hiddenSeries": false,
       "id": 18,
@@ -1557,7 +1711,7 @@
         "alertThreshold": true
       },
       "percentage": false,
-      "pluginVersion": "8.2.3",
+      "pluginVersion": "8.2.2",
       "pointradius": 2,
       "points": false,
       "renderer": "flot",
@@ -1644,7 +1798,7 @@
         "h": 8,
         "w": 12,
         "x": 0,
-        "y": 99
+        "y": 105
       },
       "hiddenSeries": false,
       "id": 16,
@@ -1664,7 +1818,7 @@
         "alertThreshold": true
       },
       "percentage": false,
-      "pluginVersion": "8.2.3",
+      "pluginVersion": "8.2.2",
       "pointradius": 2,
       "points": false,
       "renderer": "flot",
@@ -1738,7 +1892,7 @@
         "h": 7,
         "w": 24,
         "x": 0,
-        "y": 107
+        "y": 113
       },
       "hiddenSeries": false,
       "id": 14,
@@ -1765,7 +1919,7 @@
         "alertThreshold": true
       },
       "percentage": false,
-      "pluginVersion": "8.2.3",
+      "pluginVersion": "8.2.2",
       "pointradius": 5,
       "points": false,
       "renderer": "flot",
@@ -1853,7 +2007,7 @@
         "h": 7,
         "w": 24,
         "x": 0,
-        "y": 114
+        "y": 120
       },
       "hiddenSeries": false,
       "id": 12,
@@ -1880,7 +2034,7 @@
         "alertThreshold": true
       },
       "percentage": false,
-      "pluginVersion": "8.2.3",
+      "pluginVersion": "8.2.2",
       "pointradius": 5,
       "points": false,
       "renderer": "flot",
@@ -1957,7 +2111,7 @@
         "h": 7,
         "w": 24,
         "x": 0,
-        "y": 121
+        "y": 127
       },
       "hiddenSeries": false,
       "id": 10,
@@ -1983,7 +2137,7 @@
         "alertThreshold": true
       },
       "percentage": false,
-      "pluginVersion": "8.2.3",
+      "pluginVersion": "8.2.2",
       "pointradius": 5,
       "points": false,
       "renderer": "flot",
@@ -2091,7 +2245,7 @@
         "h": 4,
         "w": 6,
         "x": 0,
-        "y": 128
+        "y": 134
       },
       "id": 8,
       "interval": null,
@@ -2110,7 +2264,7 @@
         "showThresholdMarkers": true,
         "text": {}
       },
-      "pluginVersion": "8.2.3",
+      "pluginVersion": "8.2.2",
       "targets": [
         {
           "exemplar": true,
@@ -2171,7 +2325,7 @@
         "h": 4,
         "w": 6,
         "x": 0,
-        "y": 132
+        "y": 138
       },
       "id": 6,
       "interval": null,
@@ -2190,7 +2344,7 @@
         "showThresholdMarkers": true,
         "text": {}
       },
-      "pluginVersion": "8.2.3",
+      "pluginVersion": "8.2.2",
       "targets": [
         {
           "exemplar": true,
@@ -2251,7 +2405,7 @@
         "h": 4,
         "w": 6,
         "x": 0,
-        "y": 136
+        "y": 142
       },
       "id": 4,
       "interval": null,
@@ -2270,7 +2424,7 @@
         "showThresholdMarkers": true,
         "text": {}
       },
-      "pluginVersion": "8.2.3",
+      "pluginVersion": "8.2.2",
       "targets": [
         {
           "exemplar": true,
@@ -2331,7 +2485,7 @@
         "h": 4,
         "w": 6,
         "x": 0,
-        "y": 140
+        "y": 146
       },
       "id": 2,
       "interval": null,
@@ -2350,7 +2504,7 @@
         "showThresholdMarkers": true,
         "text": {}
       },
-      "pluginVersion": "8.2.3",
+      "pluginVersion": "8.2.2",
       "targets": [
         {
           "exemplar": true,
@@ -2373,12 +2527,12 @@
     "list": []
   },
   "time": {
-    "from": "now-5m",
+    "from": "now-30m",
     "to": "now"
   },
   "timepicker": {},
   "timezone": "",
   "title": "Kr8s Dashboard",
   "uid": "sO3bv1Fnz",
-  "version": 8
+  "version": 14
 }
