@@ -1,7 +1,6 @@
 import React from "react";
 
 import LineGraph from "../components/LineGraph.jsx";
-import Header from "../components/Header.jsx";
 import Tile from "../components/Tile.jsx";
 
 import styles from "../assets/css/NodeView.module.css";
@@ -10,11 +9,8 @@ export default function NodeView(props) {
   const { node, memoryPressure, diskPressure, pidPressure, ready } =
     props.location.state.info;
 
-  const headerContent = `Node: ${node}`;
-
   return (
     <div className={styles.containersContainer}>
-      <Header headerContent={headerContent} />
 
       <div className={styles.containersContainerHeader}>
         <div className={styles.lineGraph}>

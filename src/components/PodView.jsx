@@ -2,7 +2,6 @@ import React from "react";
 
 import Tile from "../components/Tile.jsx";
 import List from "../components/List.jsx";
-import Header from "../components/Header.jsx";
 
 import styles from "../assets/css/PodView.module.css";
 
@@ -23,7 +22,6 @@ export default function PodView(props) {
     containers,
   } = props.location.state.info;
   const containersValues = [];
-  const headerContent = `Pod: ${pod}`;
 
   for (let i = 0; i < containers.length; i++) {
     const container = {};
@@ -36,7 +34,6 @@ export default function PodView(props) {
 
   return (
     <div className={styles.containersContainer}>
-      <Header headerContent={headerContent} />
 
       <div className={styles.containersContainerHeader}>
         {/* TODO: Add tileValue references */}
