@@ -12,33 +12,8 @@ import NodeView from "../components/NodeView.jsx";
 import style from "../assets/css/App.module.css";
 import apiCalls from "../APIcalls.js";
 
-// const grafana = {};
-
-// // Adding dummy data to the grafana object
-// grafana["cluster"] = {
-//   cpu: "https://source.unsplash.com/random/200x220?speedometer",
-//   memory: "https://source.unsplash.com/random/200x220?speedometer",
-//   io: "https://source.unsplash.com/random/200x220?speedometer",
-//   disk: "https://source.unsplash.com/random/200x220?speedometer",
-//   apiServer: "https://source.unsplash.com/random/200x220?speedometer",
-//   scheduler: "https://source.unsplash.com/random/200x220?speedometer",
-//   controller: "https://source.unsplash.com/random/200x220?speedometer",
-//   etcd: "https://source.unsplash.com/random/200x220?speedometer",
-// };
-// grafana["nodes"] = {
-//   cpu: "https://source.unsplash.com/random/200x220?speedometer",
-//   memory: "https://source.unsplash.com/random/200x220?speedometer",
-//   disk: "https://source.unsplash.com/random/200x220?speedometer",
-// };
-// grafana["pods"] = {
-//   cpu: "http://localhost:32000/d/AAOMjeHmk/kubernetes-pod-and-cluster-monitoring-via-prometheus?orgId=1&refresh=10s&from=1635436646489&to=1635440246490&viewPanel=3",
-//   memory: "http://localhost:32000/d/AAOMjeHmk/kubernetes-pod-and-cluster-monitoring-via-prometheus?orgId=1&refresh=10s&from=1635436837809&to=1635440437809&theme=dark&viewPanel=2",
-//   restarts: "http://localhost:32000/d/AAOMjeHmk/kubernetes-pod-and-cluster-monitoring-via-prometheus?orgId=1&refresh=10s&from=1635436921706&to=1635440521706&theme=dark&viewPanel=8",
-// };
-
 export default function App() {
-  //   Set connected to be true for development
-  //   !!TODO: Change useState value to false before deployment!!!
+  
   const [connected, useConnected] = useState(false);
   const [clusterName, useClusterName] = useState("");
   const [pods, setPods] = useState([]);
@@ -49,7 +24,6 @@ export default function App() {
     // Set connected to true to display the sidebar
     useConnected(true);
     // TODO: Retrieve information necessary for the selected cluster
-    // TODO: Store information in the grafana object and related state
     useClusterName("MicroServices Limited");
 
     apiCalls.fetchNodes().then((data) => {

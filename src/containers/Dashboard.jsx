@@ -8,7 +8,6 @@ export default function Dashboard(props) {
   return (
     <div className={style.DashboardContainer}>
       <Banner
-        style={style.podsBanner}
         items={[
           { header: "NODES RUNNING", value: props.numNodes },
           { header: "PODS RUNNING", value: props.numPods },
