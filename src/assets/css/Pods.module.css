@@ -13,14 +13,15 @@
 
 .podsContainerMain {
   width: 1130px;
-  height: 350px;
-  margin-top: 50px;
+  /* height: 300px; */
+  margin-top: 30px;
   display: flex;
 }
 
 .podsiframe {
   border: 1px solid #979698;
   border-radius: 4px;
+  margin-bottom: 20px;
 }
 
 .podsContainerList {
@@ -43,7 +44,7 @@
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
-  justify-content: space-evenly;
+  justify-content: flex-start;
 }
 
 #columnRight {
@@ -51,9 +52,13 @@
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
-  justify-content: center;
+  justify-content: flex-end;
 }
 
 #list {
   width: 1130px;
+}
+
+#firstPodiFrame {
+  margin-right: 20px;
 }

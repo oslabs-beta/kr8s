@@ -86,24 +86,24 @@ export default function Pods(props) {
 
         <div className={styles.podsContainerMain}>
         <div id={styles.columnLeft}>
-          <iframe
+          <iframe id={styles.firstPodiFrame}
             src="http://localhost:32000/d-solo/sO3bv1Fnz/kr8s-dashboard?orgId=1&theme=dark&panelId=48"
-            width="240"
-            height="130"
+            width="264"
+            height="200"
             frameborder="1"
             className={styles.podsiframe}
           ></iframe>
           <iframe
             src="http://localhost:32000/d-solo/sO3bv1Fnz/kr8s-dashboard?orgId=1&theme=dark&panelId=50"
-            width="240"
-            height="130"
+            width="264"
+            height="200"
             frameborder="1"
             className={styles.podsiframe}
           ></iframe>
           <iframe
             src="http://localhost:32000/d-solo/sO3bv1Fnz/kr8s-dashboard?orgId=1&theme=dark&panelId=10"
-            width="510"
-            height="130"
+            width="550"
+            height="200"
             frameborder="1"
             className={styles.podsiframe}
           ></iframe>
@@ -112,15 +112,15 @@ export default function Pods(props) {
           <div id={styles.columnRight}>
             <iframe
               src="http://localhost:32000/d-solo/sO3bv1Fnz/kr8s-dashboard?orgId=1&theme=dark&panelId=12"
-              width="510"
-              height="130"
+              width="550"
+              height="200"
               frameborder="1"
               className={styles.podsiframe}
             ></iframe>
             <iframe
               src="http://localhost:32000/d-solo/sO3bv1Fnz/kr8s-dashboard?orgId=1&theme=dark&panelId=14"
-              width="510"
-              height="130"
+              width="550"
+              height="200"
               frameborder="1"
               className={styles.podsiframe}
             ></iframe>
