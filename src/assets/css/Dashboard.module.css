@@ -3,26 +3,50 @@
   flex-direction: column;
 }
 
-.clusterNumbers {
-  width: 100%;
-  display: flex;
-  flex-direction: row;
-  justify-content: space-evenly;
+.linegraph {
+  width: 550px;
+  height: 200px;
+  margin-top: 10px;
+
+  border: 1px solid #979698;
+  border-radius: 4px;
 }
 
-.speedoBoxes {
-  margin-top: 20px;
-  width: 100%;
+.grafanaColumn {
+  width: 550px;
+
   display: flex;
-  flex-direction: row;
-  justify-content: center;
+  flex-direction: column;
+  justify-content: space-between;
 }
 
-.speedoes {
-  width: 50%;
+#grafanaDisplays {
+  width: 1130px;
+
   display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  justify-content: space-evenly;
+  justify-content: space-between;
 }
 
+#speedometers {
+  width: 1130px;
+  margin-top: 10px;
+
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.speedo {
+  height: 180px;
+  width: 265px;
+
+  border: 1px solid #979698;
+  border-radius: 4px;
+}
+
+.speedoRow {
+  display: flex;
+  justify-content: space-between;
+
+  margin-top: 10px;
+}

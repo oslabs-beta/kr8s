@@ -24,7 +24,7 @@ export default function PodView(props) {
   } = props.location.state.info;
   const containersValues = [];
   let runningContainers = 0;
-  let restartCount = 0;
+  let failedContainers = 0;
 
   for (let i = 0; i < containers.length; i++) {
     const container = {};
@@ -33,7 +33,7 @@ export default function PodView(props) {
     container["restarts"] = containers[i].restartCount;
 
     if(containers[i].state.running) runningContainers++;
-    if(containers[i].restartCount) restartCount += containers[i].restartCount;
+    else failedContainers++;
 
     containersValues.push(container);
   }
@@ -47,7 +47,7 @@ export default function PodView(props) {
           items={[
             {header: 'TOTAL CONTAINERS' ,value: numContainers},
             {header: 'RUNNING CONTAINERS' ,value: runningContainers},
-            {header: 'FAILED CONTAINERS' ,value: restartCount}
+            {header: 'FAILED CONTAINERS' ,value: failedContainers}
             ]}
         />
 
