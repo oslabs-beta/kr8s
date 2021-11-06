@@ -4,24 +4,49 @@
 }
 
 .linegraph {
+  width: 550px;
+  height: 200px;
+  margin-top: 10px;
+
   border: 1px solid #979698;
   border-radius: 4px;
 }
 
-#linegraphs {
+.grafanaColumn {
+  width: 550px;
+
   display: flex;
   flex-direction: column;
-  align-items: center;
+  justify-content: space-between;
 }
 
-#speedoemeters {
+#grafanaDisplays {
+  width: 1130px;
+
+  display: flex;
+  justify-content: space-between;
+}
+
+#speedometers {
+  width: 1130px;
+  margin-top: 10px;
+
   display: flex;
   flex-direction: row;
+  justify-content: space-between;
 }
 
 .speedo {
-  height: 200px;
-  width: 20%;
+  height: 180px;
+  width: 265px;
+
   border: 1px solid #979698;
   border-radius: 4px;
+}
+
+.speedoRow {
+  display: flex;
+  justify-content: space-between;
+
+  margin-top: 10px;
 }
