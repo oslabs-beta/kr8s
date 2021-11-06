@@ -29,6 +29,7 @@ apiCalls.fetchNodes = async () => {
 
 apiCalls.createAPIkey = async () => {
   try {
+    let respObj;
     let response = await fetch("http://localhost:32000/api/auth/keys", {
       method: "POST",
       mode: "no-cors",
@@ -36,14 +37,17 @@ apiCalls.createAPIkey = async () => {
         Accept: "*/*",
         "Content-Type": "application/json",
       },
-      body: {
-        name: "newuser25",
+      body: JSON.stringify({
+        name: "newuser",
         role: "Admin",
         secondsToLive: 86400,
-      },
-    });
-    console.log("api key response", response);
-    return JSON.parse(response).key;
+      }),
+    })
+      .then((res) => res.json())
+      .then((data) => {
+        respObj = data;
+      });
+    return respObj.key;
   } catch {
     console.log("Error occured creating API key");
   }
@@ -61,7 +65,6 @@ apiCalls.grafanaDashboardPostRequest = async (APIKey) => {
       },
       body: grafanaDashboard,
     });
-    console.log("grafana dashboard response", response);
   } catch {
     console.log("Error occured posting dashboard to grafana");
   }
