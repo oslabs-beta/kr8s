@@ -1,9 +1,9 @@
 .mainContainer {
   position: absolute;
-  width: 427px;
+  width: 440px;
   height: 488px;
-  left: 275px;
-  top: 212px;
+  margin-left: 480px;
+  top: 175px;
 
   background: #161519;
   border: 1px solid #FFFFFF;
@@ -22,16 +22,20 @@
   height: 45px;
   width: 367px;
   
-  /* Note: backdrop-filter has minimal browser support */
   background: #2f6eb6c5;
   backdrop-filter: blur(4px);
   border-radius: 4px;
-  
+  border: 1px solid #FFFFFF;
+
   /* Style and Center Text */
   color: #FFFFFF;
   display: flex;
   align-items: center;
   justify-content: center;
+}
+
+.clusterLink {
+  text-decoration: none;
 }
 
 #newContainer {
