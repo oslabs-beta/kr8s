@@ -1,7 +1,6 @@
 import React from "react";
 
 import LineGraph from "../components/LineGraph.jsx";
-import Tile from "../components/Tile.jsx";
 
 import styles from "../assets/css/NodeView.module.css";
 
@@ -14,18 +13,24 @@ export default function NodeView(props) {
 
       <div className={styles.containersContainerHeader}>
         <div className={styles.lineGraph}>
-          <LineGraph />
-          <h2>CPU</h2>
+          <iframe
+            src="http://localhost:32000/d-solo/sO3bv1Fnz/kr8s-dashboard?orgId=1&theme=dark&panelId=26"
+            frameborder="0"
+          ></iframe>
         </div>
 
         <div className={styles.lineGraph}>
-          <LineGraph />
-          <h2>Disk Usage</h2>
+          <iframe
+            src="http://localhost:32000/d-solo/sO3bv1Fnz/kr8s-dashboard?orgId=1&theme=dark&panelId=26"
+            frameborder="0"
+          ></iframe>
         </div>
 
         <div className={styles.lineGraph}>
-          <LineGraph />
-          <h2>Memory</h2>
+          <iframe
+            src="http://localhost:32000/d-solo/sO3bv1Fnz/kr8s-dashboard?orgId=1&theme=dark&panelId=26"
+            frameborder="0"
+          ></iframe>
         </div>
       </div>
 

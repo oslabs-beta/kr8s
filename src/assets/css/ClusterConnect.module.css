@@ -1,14 +1,8 @@
 .mainContainer {
-  height: 488px;
-  width: 427px;
-  left: 507px;
-  top: 212px;
-  border-radius: 4px;
-
   position: absolute;
   width: 427px;
   height: 488px;
-  left: 507px;
+  left: 275px;
   top: 212px;
 
   background: #161519;
