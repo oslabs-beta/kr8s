@@ -1,6 +1,4 @@
-list {
-  width: 100%;
-}
+
 
 .podsContainer {
   /* background-color: rgb(116, 83, 133); */
@@ -22,7 +20,7 @@ list {
 .podsContainerMain {
   /* background-color: rgb(91, 92, 160); */
   width: 1130px;
-  height: 500px;
+  height: 350px;
   margin-top: 50px;
   display: flex;
   /* flex-direction: row; */
@@ -38,9 +36,8 @@ list {
 }
 
 .podsContainerList {
-  width: 100%;
+  width: 1130px;
   height: 30%;
-  margin: 20px;
   display: flex;
   flex-direction: column;
 }
@@ -54,19 +51,25 @@ list {
 }
 
 #columnLeft {
-  flex-grow: 2;
+  width: 50%;
   /* background-color: rgb(84, 146, 125); */
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
+  flex-wrap: wrap;
   justify-content: space-evenly;
-  align-items: center;
+  /* align-items: center; */
 }
 
 #columnRight {
-  flex-grow: 1.75;
+  width: 50%;
   /* background-color: rgb(175, 113, 113); */
   display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  align-items: center;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  /* align-items: center; */
+}
+
+#list {
+  width: 1130px;
 }

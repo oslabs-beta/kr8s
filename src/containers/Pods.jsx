@@ -90,7 +90,7 @@ export default function Pods(props) {
             // src="http://localhost:32000/d-solo/sO3bv1Fnz/kr8s-dashboard?orgId=1&theme=dark&panelId=48"
             // src = "https://assets.materialup.com/uploads/c403590c-0595-4ebe-97f3-2132825506e9/preview.jpg"
             width="240"
-            height="120"
+            height="130"
             frameborder="1"
             className={styles.podsiframe}
           ></iframe>
@@ -98,7 +98,15 @@ export default function Pods(props) {
             // src="http://localhost:32000/d-solo/sO3bv1Fnz/kr8s-dashboard?orgId=1&theme=dark&panelId=50"
             // src = "https://assets.materialup.com/uploads/c403590c-0595-4ebe-97f3-2132825506e9/preview.jpg"
             width="240"
-            height="120"
+            height="130"
+            frameborder="1"
+            className={styles.podsiframe}
+          ></iframe>
+          <iframe
+            // src="http://localhost:32000/d-solo/sO3bv1Fnz/kr8s-dashboard?orgId=1&theme=dark&panelId=10"
+            // src="https://i.imgur.com/m0xORHF.jpg?1"
+            width="510"
+            height="130"
             frameborder="1"
             className={styles.podsiframe}
           ></iframe>
@@ -110,27 +118,20 @@ export default function Pods(props) {
                 <LineGraph src={props.grafana.memory} />
                 <Speedometer src={props.grafana.restarts} /> */}
             {/* using dashboard 6663 */}
-            <iframe
-              // src="http://localhost:32000/d-solo/sO3bv1Fnz/kr8s-dashboard?orgId=1&theme=dark&panelId=10"
-              // src="https://i.imgur.com/m0xORHF.jpg?1"
-              width="650"
-              height="100"
-              frameborder="1"
-              className={styles.podsiframe}
-            ></iframe>
+
             <iframe
               // src="http://localhost:32000/d-solo/sO3bv1Fnz/kr8s-dashboard?orgId=1&theme=dark&panelId=12"
               // src = "https://i.imgur.com/m0xORHF.jpg?1"
-              width="650"
-              height="100"
+              width="510"
+              height="130"
               frameborder="1"
               className={styles.podsiframe}
             ></iframe>
             <iframe
               // src="http://localhost:32000/d-solo/sO3bv1Fnz/kr8s-dashboard?orgId=1&theme=dark&panelId=14"
               // src = "https://i.imgur.com/m0xORHF.jpg?1"
-              width="650"
-              height="100"
+              width="510"
+              height="130"
               frameborder="1"
               className={styles.podsiframe}
             ></iframe>
@@ -138,7 +139,7 @@ export default function Pods(props) {
         </div>
 
         <div className={styles.podsContainerList}>
-          <h3>Deployed Pods</h3>
+          {/*<h3>Deployed Pods</h3>*/}
           <List
             listValueHeaders={podsHeaders}
             listValue={podsValues}
