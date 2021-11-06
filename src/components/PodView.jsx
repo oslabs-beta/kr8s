@@ -2,6 +2,7 @@ import React from "react";
 
 import Tile from "../components/Tile.jsx";
 import List from "../components/List.jsx";
+import Banner from "../components/Banner.jsx";
 
 import styles from "../assets/css/PodView.module.css";
 
@@ -22,12 +23,17 @@ export default function PodView(props) {
     containers,
   } = props.location.state.info;
   const containersValues = [];
+  let runningContainers = 0;
+  let restartCount = 0;
 
   for (let i = 0; i < containers.length; i++) {
     const container = {};
     container["name"] = containers[i].name;
     container["ready"] = containers[i].ready.toString();
     container["restarts"] = containers[i].restartCount;
+
+    if(containers[i].state.running) runningContainers++;
+    if(containers[i].restartCount) restartCount += containers[i].restartCount;
 
     containersValues.push(container);
   }
@@ -36,13 +42,15 @@ export default function PodView(props) {
     <div className={styles.containersContainer}>
 
       <div className={styles.containersContainerHeader}>
-        {/* TODO: Add tileValue references */}
-        <Tile
-          tileHeader="Number of Running Containers"
-          tileValue={numContainers}
+        
+        <Banner 
+          items={[
+            {header: 'TOTAL CONTAINERS' ,value: numContainers},
+            {header: 'RUNNING CONTAINERS' ,value: runningContainers},
+            {header: 'FAILED CONTAINERS' ,value: restartCount}
+            ]}
         />
-        <Tile tileHeader="Number of Failed Containers" tileValue="1" />
-        <Tile tileHeader="Number of Unknown Containers" tileValue="0" />
+
       </div>
 
       <div className={styles.containersContainerList}>
