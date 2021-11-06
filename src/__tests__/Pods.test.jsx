@@ -6,7 +6,7 @@ import Banner from "../components/Banner.jsx";
 
 import { shallow, mount } from "enzyme";
 
-describe("testing the test", () => {
+describe("test pods page functionality", () => {
   let wrapper, runningPods, pendingPods, failedPods, unknownPods, succeededPods;
   const pods = [
     {
