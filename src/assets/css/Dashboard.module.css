@@ -1,7 +1,6 @@
 .DashboardContainer {
   display: flex;
   flex-direction: column;
-  margin-left: 50px
 }
 
 .clusterNumbers {
@@ -27,7 +26,3 @@
   justify-content: space-evenly;
 }
 
-iframe {
-  padding-top: 20px;
-  padding-bottom: 10px;
-}

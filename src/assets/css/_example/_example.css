@@ -4,7 +4,7 @@
   /* Light theme */
   body {
     color: #000;
-    background-color: #3d393b;
+    background-color: rgba(22, 21, 25, 1);
     margin: 0;
     font-family: 'Lato', sans-serif;
   }
@@ -14,7 +14,7 @@
   /* Dark theme */
   body {
     color: #201d1e;
-    background-color: #3d393b;
+    background-color: rgba(22, 21, 25, 1);
     margin: 0;
     font-family: 'Lato', sans-serif;
   }
