@@ -26,12 +26,12 @@ export default function Pods(props) {
   const podsValues = [];
 
   const podsHeaders = [
-    { id: "pod", label: "Pod", minWidth: 100 },
-    { id: "initialized", label: "Initialized", minWidth: 100 },
-    { id: "ready", label: "Ready", minWidth: 100 },
-    { id: "containersReady", label: "Containers Ready", minWidth: 100 },
-    { id: "podScheduled", label: "Pod Scheduled", minWidth: 100 },
-    { id: "numContainers", label: "Number of Containers", minWidth: 100 },
+    { id: "pod", label: "Pod", minWidth: 100, align: "center" },
+    { id: "initialized", label: "Initialized", minWidth: 100, align: "center" },
+    { id: "ready", label: "Ready", minWidth: 100, align: "center" },
+    { id: "containersReady", label: "Containers Ready", minWidth: 100, align: "center" },
+    { id: "podScheduled", label: "Pod Scheduled", minWidth: 100, align: "center" },
+    { id: "numContainers", label: "Number of Containers", minWidth: 100, align: "center" },
   ];
 
   props.pods.forEach((pod) => {

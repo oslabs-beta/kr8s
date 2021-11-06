@@ -19,11 +19,11 @@ export default function Nodes(props) {
 
   const nodesValues = [],
     nodesHeaders = [
-      { id: "node", label: "Node", minWidth: 100 },
-      { id: "ready", label: "Ready", minWidth: 100 },
-      { id: "memorypressure", label: "MemoryPressure", minWidth: 100 },
-      { id: "diskpressure", label: "DiskPressure", minWidth: 100 },
-      { id: "pidPressure", label: "PID Pressure", minWidth: 100 },
+      { id: "node", label: "Node", minWidth: 100, align: "center" },
+      { id: "ready", label: "Ready", minWidth: 100, align: "center"  },
+      { id: "memorypressure", label: "MemoryPressure", minWidth: 100, align: "center"  },
+      { id: "diskpressure", label: "DiskPressure", minWidth: 100, align: "center"  },
+      { id: "pidPressure", label: "PID Pressure", minWidth: 100, align: "center"  },
     ];
 
   let numNodes = props.nodes.length,
@@ -82,7 +82,7 @@ export default function Nodes(props) {
             listValue={nodesValues}
             setCurrentTarget={setCurrentNode}
             info={myNode}
-            reroute="/nodeview"
+            reroute={false}
           />
         </div>
       </div>
