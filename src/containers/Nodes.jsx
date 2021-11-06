@@ -48,44 +48,41 @@ export default function Nodes(props) {
   });
 
   return (
-    <div className={style.nodesContainer}>
-      <div className={style.nodesContainerHeader}>
-        <Banner
-          width="1130"
-          items={[
-            { header: "TOTAL", value: numNodes },
-            { header: "AVAILABLE", value: numAvailableNodes },
-          ]}
-        />
-      </div>
+    <div id={style.nodesContainer}>
+      <Banner
+        items={[
+          { header: "TOTAL", value: numNodes },
+          { header: "AVAILABLE", value: numAvailableNodes },
+        ]}
+      />
 
-      <div className={style.nodesContainerMainContent}>
-        <div className={style.nodesContainerSpeedometerColumn}>
+      <div id={style.lineGraphs}>
           <iframe
+            className={style.lineGraph}
             src="http://localhost:32000/d-solo/sO3bv1Fnz/kr8s-dashboard?orgId=1&theme=dark&panelId=26"
-            frameBorder="0"
+            frameBorder="1"
           ></iframe>
           <iframe
+            className={style.lineGraph}
             src="http://localhost:32000/d-solo/sO3bv1Fnz/kr8s-dashboard?orgId=1&theme=dark&panelId=28"
-            frameBorder="0"
+            frameBorder="1"
           ></iframe>
           <iframe
+            className={style.lineGraph}
             src="http://localhost:32000/d-solo/sO3bv1Fnz/kr8s-dashboard?orgId=1&theme=dark&panelId=30"
-            frameBorder="0"
+            frameBorder="1"
           ></iframe>
-        </div>
-
-        <div className={style.nodesContainerList}>
-          {/* TODO: Add list props once List component is done */}
-          <List
-            listValueHeaders={nodesHeaders}
-            listValue={nodesValues}
-            setCurrentTarget={setCurrentNode}
-            info={myNode}
-            reroute={false}
-          />
-        </div>
       </div>
+
+      <List
+        listValueHeaders={nodesHeaders}
+        listValue={nodesValues}
+        setCurrentTarget={setCurrentNode}
+        info={myNode}
+        reroute="/nodeview"
+      />
+
+
     </div>
   );
 }
