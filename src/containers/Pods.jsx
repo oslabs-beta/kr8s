@@ -87,24 +87,21 @@ export default function Pods(props) {
         <div className={styles.podsContainerMain}>
         <div id={styles.columnLeft}>
           <iframe
-            // src="http://localhost:32000/d-solo/sO3bv1Fnz/kr8s-dashboard?orgId=1&theme=dark&panelId=48"
-            // src = "https://assets.materialup.com/uploads/c403590c-0595-4ebe-97f3-2132825506e9/preview.jpg"
+            src="http://localhost:32000/d-solo/sO3bv1Fnz/kr8s-dashboard?orgId=1&theme=dark&panelId=48"
             width="240"
             height="130"
             frameborder="1"
             className={styles.podsiframe}
           ></iframe>
           <iframe
-            // src="http://localhost:32000/d-solo/sO3bv1Fnz/kr8s-dashboard?orgId=1&theme=dark&panelId=50"
-            // src = "https://assets.materialup.com/uploads/c403590c-0595-4ebe-97f3-2132825506e9/preview.jpg"
+            src="http://localhost:32000/d-solo/sO3bv1Fnz/kr8s-dashboard?orgId=1&theme=dark&panelId=50"
             width="240"
             height="130"
             frameborder="1"
             className={styles.podsiframe}
           ></iframe>
           <iframe
-            // src="http://localhost:32000/d-solo/sO3bv1Fnz/kr8s-dashboard?orgId=1&theme=dark&panelId=10"
-            // src="https://i.imgur.com/m0xORHF.jpg?1"
+            src="http://localhost:32000/d-solo/sO3bv1Fnz/kr8s-dashboard?orgId=1&theme=dark&panelId=10"
             width="510"
             height="130"
             frameborder="1"
@@ -120,16 +117,14 @@ export default function Pods(props) {
             {/* using dashboard 6663 */}
 
             <iframe
-              // src="http://localhost:32000/d-solo/sO3bv1Fnz/kr8s-dashboard?orgId=1&theme=dark&panelId=12"
-              // src = "https://i.imgur.com/m0xORHF.jpg?1"
+              src="http://localhost:32000/d-solo/sO3bv1Fnz/kr8s-dashboard?orgId=1&theme=dark&panelId=12"
               width="510"
               height="130"
               frameborder="1"
               className={styles.podsiframe}
             ></iframe>
             <iframe
-              // src="http://localhost:32000/d-solo/sO3bv1Fnz/kr8s-dashboard?orgId=1&theme=dark&panelId=14"
-              // src = "https://i.imgur.com/m0xORHF.jpg?1"
+              src="http://localhost:32000/d-solo/sO3bv1Fnz/kr8s-dashboard?orgId=1&theme=dark&panelId=14"
               width="510"
               height="130"
               frameborder="1"
