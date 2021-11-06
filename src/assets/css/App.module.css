@@ -11,23 +11,22 @@ body::-webkit-scrollbar {
   width: 100vw;
   display: flex;
   flex-direction: row;
-  margin-left: auto;
 }
 
 #header {
-height: 43px;
+  height: 43px;
 
-color: #F1F0EF;
-font-style: normal;
-font-weight: 600;
-font-size: 36px;
-line-height: 43px;
-letter-spacing: 0.216667px;
+  color: #F1F0EF;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 36px;
+  line-height: 43px;
+  letter-spacing: 0.216667px;
 
-margin: 50px 0px 75px 30px;
+  margin: 50px 0px;
 }
 
 .routerWrapper {
-  /* position: absolute; */
-  /* margin-left: 18%; */
+  margin-left: 35px;
 }
+
