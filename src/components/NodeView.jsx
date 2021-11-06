@@ -10,26 +10,25 @@ export default function NodeView(props) {
 
   return (
     <div className={styles.containersContainer}>
-
       <div className={styles.containersContainerHeader}>
         <div className={styles.lineGraph}>
           <iframe
             src="http://localhost:32000/d-solo/sO3bv1Fnz/kr8s-dashboard?orgId=1&theme=dark&panelId=26"
-            frameborder="0"
+            frameBorder="0"
           ></iframe>
         </div>
 
         <div className={styles.lineGraph}>
           <iframe
             src="http://localhost:32000/d-solo/sO3bv1Fnz/kr8s-dashboard?orgId=1&theme=dark&panelId=26"
-            frameborder="0"
+            frameBorder="0"
           ></iframe>
         </div>
 
         <div className={styles.lineGraph}>
           <iframe
             src="http://localhost:32000/d-solo/sO3bv1Fnz/kr8s-dashboard?orgId=1&theme=dark&panelId=26"
-            frameborder="0"
+            frameBorder="0"
           ></iframe>
         </div>
       </div>

@@ -1,9 +1,5 @@
-
-
 .podsContainer {
-  /* background-color: rgb(116, 83, 133); */
   display: flex;
-  /* flex-wrap: wrap; */
   flex-direction: column;
   align-items: center;
   margin-left: 50px;
@@ -14,24 +10,17 @@
   display: flex;
   flex-direction: row;
   align-items: center;
-  /* justify-content: space-evenly; */
 }
 
 .podsContainerMain {
-  /* background-color: rgb(91, 92, 160); */
   width: 1130px;
   height: 350px;
   margin-top: 50px;
   display: flex;
-  /* flex-direction: row; */
 }
 
 .podsiframe {
-  /* height: 100px; */
-  /* margin: 20px 0px 20px; */
-  /* margin-top: 40px; */
   border: 1px solid #979698;
-  /* box-sizing: border-box; */
   border-radius: 4px;
 }
 
@@ -52,22 +41,18 @@
 
 #columnLeft {
   width: 50%;
-  /* background-color: rgb(84, 146, 125); */
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
   justify-content: space-evenly;
-  /* align-items: center; */
 }
 
 #columnRight {
   width: 50%;
-  /* background-color: rgb(175, 113, 113); */
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
   justify-content: center;
-  /* align-items: center; */
 }
 
 #list {

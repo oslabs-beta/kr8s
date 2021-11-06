@@ -5,7 +5,7 @@ import List from "../components/List.jsx";
 
 import styles from "../assets/css/Pods.module.css";
 
-export default function Pods(props) {  
+export default function Pods(props) {
   const [myPod, setMyPod] = useState({});
 
   function setCurrentPod(podName) {
@@ -110,12 +110,6 @@ export default function Pods(props) {
         </div>
 
           <div id={styles.columnRight}>
-            {/* TODO: Add grafana link for each speedometer */}
-            {/* <LineGraph src={props.grafana.cpu} />
-                <LineGraph src={props.grafana.memory} />
-                <Speedometer src={props.grafana.restarts} /> */}
-            {/* using dashboard 6663 */}
-
             <iframe
               src="http://localhost:32000/d-solo/sO3bv1Fnz/kr8s-dashboard?orgId=1&theme=dark&panelId=12"
               width="510"
