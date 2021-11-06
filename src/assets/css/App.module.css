@@ -11,6 +11,7 @@ body::-webkit-scrollbar {
   width: 100vw;
   display: flex;
   flex-direction: row;
+  margin-left: auto;
 }
 
 #header {
@@ -23,10 +24,10 @@ font-size: 36px;
 line-height: 43px;
 letter-spacing: 0.216667px;
 
-margin: 50px 0px 75px 50px;
+margin: 50px 0px 75px 30px;
 }
 
 .routerWrapper {
-  position: absolute;
-  margin-left: 18%;
+  /* position: absolute; */
+  /* margin-left: 18%; */
 }
