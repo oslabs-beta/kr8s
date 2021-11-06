@@ -73,6 +73,7 @@ export default function Pods(props) {
       <div className={styles.podsContainer}>
         <div className={styles.podsContainerHeader}>
           <Banner
+            width="1130"
             items={[
               { header: "PODS RUNNING", value: runningPods },
               { header: "PODS PENDING", value: pendingPods },
@@ -83,8 +84,51 @@ export default function Pods(props) {
           />
         </div>
 
+        <div className={styles.podsContainerMain}>
+        <div id={styles.columnLeft}>
+          <iframe
+            src="http://localhost:32000/d-solo/sO3bv1Fnz/kr8s-dashboard?orgId=1&theme=dark&panelId=48"
+            width="240"
+            height="130"
+            frameborder="1"
+            className={styles.podsiframe}
+          ></iframe>
+          <iframe
+            src="http://localhost:32000/d-solo/sO3bv1Fnz/kr8s-dashboard?orgId=1&theme=dark&panelId=50"
+            width="240"
+            height="130"
+            frameborder="1"
+            className={styles.podsiframe}
+          ></iframe>
+          <iframe
+            src="http://localhost:32000/d-solo/sO3bv1Fnz/kr8s-dashboard?orgId=1&theme=dark&panelId=10"
+            width="510"
+            height="130"
+            frameborder="1"
+            className={styles.podsiframe}
+          ></iframe>
+        </div>
+
+          <div id={styles.columnRight}>
+            <iframe
+              src="http://localhost:32000/d-solo/sO3bv1Fnz/kr8s-dashboard?orgId=1&theme=dark&panelId=12"
+              width="510"
+              height="130"
+              frameborder="1"
+              className={styles.podsiframe}
+            ></iframe>
+            <iframe
+              src="http://localhost:32000/d-solo/sO3bv1Fnz/kr8s-dashboard?orgId=1&theme=dark&panelId=14"
+              width="510"
+              height="130"
+              frameborder="1"
+              className={styles.podsiframe}
+            ></iframe>
+          </div>
+        </div>
+
         <div className={styles.podsContainerList}>
-          <h3>Pods Condition</h3>
+          {/*<h3>Deployed Pods</h3>*/}
           <List
             listValueHeaders={podsHeaders}
             listValue={podsValues}
@@ -92,50 +136,8 @@ export default function Pods(props) {
             info={myPod}
             reroute="/podview"
           />
-        </div>
+       </div>
 
-        <div className={styles.podsContainerHeader}>
-          {/* TODO: Add grafana link for each speedometer */}
-          {/* <LineGraph src={props.grafana.cpu} />
-              <LineGraph src={props.grafana.memory} />
-              <Speedometer src={props.grafana.restarts} /> */}
-          {/* using dashboard 6663 */}
-          <iframe
-            src="http://localhost:32000/d-solo/sO3bv1Fnz/kr8s-dashboard?orgId=1&theme=dark&panelId=10"
-            width="280"
-            height="180"
-            frameBorder="0"
-            className={styles.podsiframe}
-          ></iframe>
-          <iframe
-            src="http://localhost:32000/d-solo/sO3bv1Fnz/kr8s-dashboard?orgId=1&theme=dark&panelId=12"
-            width="280"
-            height="180"
-            frameBorder="0"
-            className={styles.podsiframe}
-          ></iframe>
-          <iframe
-            src="http://localhost:32000/d-solo/sO3bv1Fnz/kr8s-dashboard?orgId=1&theme=dark&panelId=14"
-            width="280"
-            height="180"
-            frameBorder="0"
-            className={styles.podsiframe}
-          ></iframe>
-        </div>
-        <div className={styles.podsContainerHeader}>
-          <iframe
-            src="http://localhost:32000/d-solo/sO3bv1Fnz/kr8s-dashboard?orgId=1&theme=dark&panelId=48"
-            width="450"
-            height="120"
-            frameBorder="0"
-          ></iframe>
-          <iframe
-            src="http://localhost:32000/d-solo/sO3bv1Fnz/kr8s-dashboard?orgId=1&theme=dark&panelId=50"
-            width="450"
-            height="120"
-            frameBorder="0"
-          ></iframe>
-        </div>
       </div>
     </div>
   );

@@ -1,8 +1,8 @@
 .podsContainer {
   display: flex;
-  flex-wrap: wrap;
   flex-direction: column;
   align-items: center;
+  margin-left: 50px;
 }
 
 .podsContainerHeader {
@@ -10,20 +10,51 @@
   display: flex;
   flex-direction: row;
   align-items: center;
-  justify-content: space-evenly;
+}
+
+.podsContainerMain {
+  width: 1130px;
+  height: 350px;
+  margin-top: 50px;
+  display: flex;
 }
 
 .podsiframe {
-  padding: 0px 10px;
-  margin-top: 20px;
+  border: 1px solid #979698;
+  border-radius: 4px;
 }
 
 .podsContainerList {
-  width: 90%;
+  width: 1130px;
   height: 30%;
+  display: flex;
+  flex-direction: column;
+}
+
+.podsContainerList:first-child {
   margin: auto;
 }
 
 .podsContainerList h3 {
   color: #f1f0ef;
+}
+
+#columnLeft {
+  width: 50%;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+}
+
+#columnRight {
+  width: 50%;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+#list {
+  width: 1130px;
 }
