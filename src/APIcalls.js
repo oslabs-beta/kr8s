@@ -27,7 +27,33 @@ apiCalls.fetchNodes = async () => {
   }
 };
 
-apiCalls.grafanaDashboardPostRequest = async () => {
+apiCalls.createAPIkey = async () => {
+  try {
+    let respObj;
+    let response = await fetch("http://localhost:32000/api/auth/keys", {
+      method: "POST",
+      mode: "no-cors",
+      headers: {
+        Accept: "*/*",
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        name: "newuser",
+        role: "Admin",
+        secondsToLive: 86400,
+      }),
+    })
+      .then((res) => res.json())
+      .then((data) => {
+        respObj = data;
+      });
+    return respObj.key;
+  } catch {
+    console.log("Error occured creating API key");
+  }
+};
+
+apiCalls.grafanaDashboardPostRequest = async (APIKey) => {
   try {
     let response = await fetch("http://localhost:32000/api/dashboards/db", {
       method: "POST",
@@ -35,12 +61,10 @@ apiCalls.grafanaDashboardPostRequest = async () => {
       headers: {
         Accept: "*/*",
         "Content-Type": "application/json",
-        Authorization:
-          "Bearer eyJrIjoicUNGMDRmRGwxZHVqejZoU2tId0pRR0YzUEhZNG9FaVYiLCJuIjoiYWRtaW4iLCJpZCI6MX0=",
+        Authorization: `Bearer ${APIKey}`,
       },
       body: grafanaDashboard,
     });
-    console.log(response);
   } catch {
     console.log("Error occured posting dashboard to grafana");
   }
