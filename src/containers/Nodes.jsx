@@ -53,26 +53,25 @@ export default function Nodes(props) {
         <Banner
           width="1130"
           items={[
-            {header: "TOTAL", value: numNodes},
-            {header: "AVAILABLE", value: numAvailableNodes}
+            { header: "TOTAL", value: numNodes },
+            { header: "AVAILABLE", value: numAvailableNodes },
           ]}
         />
       </div>
-      
-      <div className={style.nodesContainerMainContent}>
 
+      <div className={style.nodesContainerMainContent}>
         <div className={style.nodesContainerSpeedometerColumn}>
-            <iframe
-              src="http://localhost:32000/d-solo/sO3bv1Fnz/kr8s-dashboard?orgId=1&theme=dark&panelId=26"
-              frameborder="0"
-            ></iframe>
+          <iframe
+            src="http://localhost:32000/d-solo/sO3bv1Fnz/kr8s-dashboard?orgId=1&theme=dark&panelId=26"
+            frameBorder="0"
+          ></iframe>
           <iframe
             src="http://localhost:32000/d-solo/sO3bv1Fnz/kr8s-dashboard?orgId=1&theme=dark&panelId=28"
-            frameborder="0"
+            frameBorder="0"
           ></iframe>
           <iframe
             src="http://localhost:32000/d-solo/sO3bv1Fnz/kr8s-dashboard?orgId=1&theme=dark&panelId=30"
-            frameborder="0"
+            frameBorder="0"
           ></iframe>
         </div>
 

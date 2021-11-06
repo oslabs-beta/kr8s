@@ -8,7 +8,7 @@ export default function Speedometer(props) {
       <iframe
         width="280px"
         height="200px"
-        frameborder="0"
+        frameBorder="0"
         src={props.src || "https://tinyurl.com/jrVsrDev"}
       ></iframe>
     </div>

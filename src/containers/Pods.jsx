@@ -5,7 +5,7 @@ import List from "../components/List.jsx";
 
 import styles from "../assets/css/Pods.module.css";
 
-export default function Pods(props) {  
+export default function Pods(props) {
   const [myPod, setMyPod] = useState({});
 
   function setCurrentPod(podName) {
@@ -104,21 +104,21 @@ export default function Pods(props) {
             src="http://localhost:32000/d-solo/sO3bv1Fnz/kr8s-dashboard?orgId=1&theme=dark&panelId=10"
             width="280"
             height="180"
-            frameborder="0"
+            frameBorder="0"
             className={styles.podsiframe}
           ></iframe>
           <iframe
             src="http://localhost:32000/d-solo/sO3bv1Fnz/kr8s-dashboard?orgId=1&theme=dark&panelId=12"
             width="280"
             height="180"
-            frameborder="0"
+            frameBorder="0"
             className={styles.podsiframe}
           ></iframe>
           <iframe
             src="http://localhost:32000/d-solo/sO3bv1Fnz/kr8s-dashboard?orgId=1&theme=dark&panelId=14"
             width="280"
             height="180"
-            frameborder="0"
+            frameBorder="0"
             className={styles.podsiframe}
           ></iframe>
         </div>
@@ -127,13 +127,13 @@ export default function Pods(props) {
             src="http://localhost:32000/d-solo/sO3bv1Fnz/kr8s-dashboard?orgId=1&theme=dark&panelId=48"
             width="450"
             height="120"
-            frameborder="0"
+            frameBorder="0"
           ></iframe>
           <iframe
             src="http://localhost:32000/d-solo/sO3bv1Fnz/kr8s-dashboard?orgId=1&theme=dark&panelId=50"
             width="450"
             height="120"
-            frameborder="0"
+            frameBorder="0"
           ></iframe>
         </div>
       </div>
