@@ -16,7 +16,8 @@ export default function ClusterConnect(props) {
         to="/dash"
         onClick={() => {
           props.getClusterInfo();
-          apiCalls.grafanaDashboardPostRequest();
+          const APIkey = apiCalls.createAPIkey();
+          apiCalls.grafanaDashboardPostRequest(APIkey);
         }}
       >
         <p className={styles.clusterContainer}>{cluster}</p>
