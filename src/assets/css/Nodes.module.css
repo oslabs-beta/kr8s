@@ -1,57 +1,22 @@
-.nodeCondition {
-  width: 100%;
-  height: 18px;
-
-  font-family: Lato;
-  font-style: normal;
-  font-weight: 600;
-  font-size: 21px;
-  line-height: 18px;
-  /* identical to box height, or 84% */
-
-  letter-spacing: 0.216667px;
-  color: #F1F0EF;
-}
-
-.nodesContainer {
+#nodesContainer {
   display: flex;
   flex-direction: column;
   align-items: center;
 }
 
-.nodesContainerHeader {
-  width: 100%;
-}
+.lineGraph {
+  width: 350px;
+  height: 250px;
 
-.nodesContainerMainContent {
-  width: 100%;
-  display: flex;
-  flex-direction: row;
-  margin-top: 50px;
-}
-
-.nodesContainerSpeedometerColumn {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  width: 230px;
-}
-
-.nodesContainerSpeedometerColumn > * {
-  width: 217px;
-  height: 142px;
-  /* margin-right: 15px; */
-  margin-bottom: 10px; 
-  
   border: 1px solid #979698;
-  box-sizing: border-box;
   border-radius: 4px;
 }
 
-.nodesContainerList {
-  width: 900px;
+#lineGraphs {
+  width: 1130px;
+  margin: 20px 0px;
+
+  display: flex;
+  justify-content: space-between;
 }
 
-.nodesContainerList h3 {
-  color: #f1f0ef;
-}
