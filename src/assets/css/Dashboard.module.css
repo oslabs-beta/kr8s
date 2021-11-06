@@ -3,26 +3,25 @@
   flex-direction: column;
 }
 
-.clusterNumbers {
-  width: 100%;
-  display: flex;
-  flex-direction: row;
-  justify-content: space-evenly;
+.linegraph {
+  border: 1px solid #979698;
+  border-radius: 4px;
 }
 
-.speedoBoxes {
-  margin-top: 20px;
-  width: 100%;
+#linegraphs {
   display: flex;
-  flex-direction: row;
-  justify-content: center;
+  flex-direction: column;
+  align-items: center;
 }
 
-.speedoes {
-  width: 50%;
+#speedoemeters {
   display: flex;
   flex-direction: row;
-  flex-wrap: wrap;
-  justify-content: space-evenly;
 }
 
+.speedo {
+  height: 200px;
+  width: 20%;
+  border: 1px solid #979698;
+  border-radius: 4px;
+}
