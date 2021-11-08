@@ -59,17 +59,17 @@ export default function Nodes(props) {
       <div id={style.lineGraphs}>
           <iframe
             className={style.lineGraph}
-            src="http://localhost:32000/d-solo/sO3bv1Fnz/kr8s-dashboard?orgId=1&theme=dark&panelId=26"
+            src="http://localhost:32000/d-solo/sO3bv1Fnz/kr8s-dashboard?orgId=1&theme=dark&panelId=52"
             frameBorder="1"
           ></iframe>
           <iframe
             className={style.lineGraph}
-            src="http://localhost:32000/d-solo/sO3bv1Fnz/kr8s-dashboard?orgId=1&theme=dark&panelId=28"
+            src="http://localhost:32000/d-solo/sO3bv1Fnz/kr8s-dashboard?orgId=1&theme=dark&panelId=54"
             frameBorder="1"
           ></iframe>
           <iframe
             className={style.lineGraph}
-            src="http://localhost:32000/d-solo/sO3bv1Fnz/kr8s-dashboard?orgId=1&theme=dark&panelId=30"
+            src="http://localhost:32000/d-solo/sO3bv1Fnz/kr8s-dashboard?orgId=1&theme=dark&panelId=56"
             frameBorder="1"
           ></iframe>
       </div>
