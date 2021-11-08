@@ -21,8 +21,8 @@ export default function Nodes(props) {
     nodesHeaders = [
       { id: "node", label: "Node", minWidth: 100, align: "center" },
       { id: "ready", label: "Ready", minWidth: 100, align: "center"  },
-      { id: "memorypressure", label: "MemoryPressure", minWidth: 100, align: "center"  },
-      { id: "diskpressure", label: "DiskPressure", minWidth: 100, align: "center"  },
+      { id: "memorypressure", label: "Memory Pressure", minWidth: 100, align: "center"  },
+      { id: "diskpressure", label: "Disk Pressure", minWidth: 100, align: "center"  },
       { id: "pidPressure", label: "PID Pressure", minWidth: 100, align: "center"  },
     ];
 
@@ -39,14 +39,15 @@ export default function Nodes(props) {
     // Build and push current nodeValues object and push to nodesValues array
     const nodeValues = {};
     nodeValues["node"] = node.metadata.name;
-    nodeValues["memoryPressure"] = node.status.conditions[0].status;
-    nodeValues["diskPressure"] = node.status.conditions[1].status;
+    nodeValues["memorypressure"] = node.status.conditions[0].status;
+    nodeValues["diskpressure"] = node.status.conditions[1].status;
     nodeValues["pidPressure"] = node.status.conditions[2].status;
     nodeValues["ready"] = node.status.conditions[3].status;
 
     nodesValues.push(nodeValues);
   });
 
+  
   return (
     <div id={style.nodesContainer}>
       <Banner
