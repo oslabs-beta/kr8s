@@ -25,7 +25,7 @@ export default function App() {
     // Set connected to true to display the sidebar
     useConnected(true);
     // TODO: Retrieve information necessary for the selected cluster
-    useClusterName("MicroServices Limited");
+    useClusterName("Local Cluster");
 
     apiCalls.fetchNodes().then((data) => {
       setNodes(data.items);
@@ -58,7 +58,7 @@ export default function App() {
             <Switch>
               <Route exact path="/index.html">
                 <ClusterConnect
-                  clusters={["MicroServices Limited"]}
+                  clusters={["Local Cluster"]}
                   getClusterInfo={getClusterInfo}
                 />
               </Route>
