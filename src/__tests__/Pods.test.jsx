@@ -33,7 +33,6 @@ describe("test to see if Pods page is rendering and functioning as expected", ()
       (succeededPods = 0);
   });
   test("pod status incrementing functionality", () => {
-    // console.log(wrapper.find("Banner").props())
     expect(wrapper.find("Banner").props().items[0].value).toBe(1);
     expect(wrapper.find("Banner").props().items[1].value).toBe(0);
     expect(wrapper.find("Banner").props().items[2].value).toBe(0);
