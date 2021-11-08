@@ -18,7 +18,7 @@ describe("test to see if Pods page is rendering and functioning as expected", ()
         ],
         containerStatuses: true,
       },
-      metadata: { name: null },
+      metadata: { name: "testPod" },
       spec: { containers: [1, 2, 3] },
     },
   ];
@@ -41,7 +41,7 @@ describe("test to see if Pods page is rendering and functioning as expected", ()
     expect(wrapper.find("Banner").props().items[4].value).toBe(0);
   });
   test("render 1 Banner component in Pods page", () => {
-    expect(wrapper.find("List")).toHaveLength(1);
+    expect(wrapper.find("Banner")).toHaveLength(1);
   });
   test("render 5 iframes in Pods page", () => {
     expect(wrapper.find("iframe")).toHaveLength(5);
@@ -50,11 +50,17 @@ describe("test to see if Pods page is rendering and functioning as expected", ()
     expect(wrapper.find("List")).toHaveLength(1);
   });
   test("6 list headers passed to List component", () => {
-    console.log(wrapper.find("List").props().listValueHeaders);
     expect(wrapper.find("List").props().listValueHeaders).toHaveLength(6);
   });
   test("list reroute prop is truthy", () => {
-    console.log(wrapper.find("List").props().reroute);
     expect(wrapper.find("List").props().reroute).toBeTruthy();
+  });
+  test("list listValue prop object", () => {
+    expect(wrapper.find("List").props().listValue[0].initialized).toBeTruthy();
+    expect(wrapper.find("List").props().listValue[0].ready).toBeTruthy();
+    expect(
+      wrapper.find("List").props().listValue[0].containersReady
+    ).toBeTruthy();
+    expect(wrapper.find("List").props().listValue[0].podScheduled).toBeTruthy();
   });
 });
