@@ -7,7 +7,6 @@
   width: 550px;
   height: 200px;
   margin-top: 10px;
-
   border: 1px solid #979698;
   border-radius: 4px;
 }
@@ -30,16 +29,14 @@
 #speedometers {
   width: 1130px;
   margin-top: 10px;
-
   display: flex;
   flex-direction: row;
   justify-content: space-between;
 }
 
 .speedo {
-  height: 180px;
+  height: 160px;
   width: 265px;
-
   border: 1px solid #979698;
   border-radius: 4px;
 }
