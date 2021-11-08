@@ -79,7 +79,7 @@ export default function Nodes(props) {
         listValue={nodesValues}
         setCurrentTarget={setCurrentNode}
         info={myNode}
-        reroute="/nodeview"
+        reroute={false}
       />
 
 
