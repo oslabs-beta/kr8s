@@ -11,7 +11,7 @@ export default function Dashboard(props) {
         items={[
           { header: "NODES RUNNING", value: props.numNodes },
           { header: "PODS RUNNING", value: props.numPods },
-          { header: "CONTAINERS", value: 37 },
+          { header: "CONTAINERS", value: props.numContainers },
         ]}
       />
 

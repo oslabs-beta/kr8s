@@ -18,6 +18,7 @@ export default function App() {
   const [clusterName, useClusterName] = useState("");
   const [pods, setPods] = useState([]);
   const [nodes, setNodes] = useState([]);
+  const [numContainers, setNumContainers] = useState(0);
 
   // Accepts a path variable to connect to the given cluster
   function getClusterInfo(path) {
@@ -33,7 +34,13 @@ export default function App() {
 
     apiCalls.fetchPods().then((data) => {
       setPods(data.items);
-      console.log("Pod data: ", data);
+
+      // Retrieve number of containers by iterating over pods
+      let containerCount = 0;
+      for(const pod of data.items) {
+        containerCount += pod.spec.containers.length;
+      }
+      setNumContainers(containerCount);
     });
   }
 
@@ -60,6 +67,7 @@ export default function App() {
                 <Dashboard
                   numNodes={nodes.length}
                   numPods={pods.length}
+                  numContainers={numContainers}
                 />
               </Route>
 
