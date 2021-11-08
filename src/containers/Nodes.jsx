@@ -19,11 +19,11 @@ export default function Nodes(props) {
 
   const nodesValues = [],
     nodesHeaders = [
-      { id: "node", label: "Node", minWidth: 100 },
-      { id: "ready", label: "Ready", minWidth: 100 },
-      { id: "memorypressure", label: "MemoryPressure", minWidth: 100 },
-      { id: "diskpressure", label: "DiskPressure", minWidth: 100 },
-      { id: "pidPressure", label: "PID Pressure", minWidth: 100 },
+      { id: "node", label: "Node", minWidth: 100, align: "center" },
+      { id: "ready", label: "Ready", minWidth: 100, align: "center"  },
+      { id: "memorypressure", label: "MemoryPressure", minWidth: 100, align: "center"  },
+      { id: "diskpressure", label: "DiskPressure", minWidth: 100, align: "center"  },
+      { id: "pidPressure", label: "PID Pressure", minWidth: 100, align: "center"  },
     ];
 
   let numNodes = props.nodes.length,
@@ -48,44 +48,41 @@ export default function Nodes(props) {
   });
 
   return (
-    <div className={style.nodesContainer}>
-      <div className={style.nodesContainerHeader}>
-        <Banner
-          width="1130"
-          items={[
-            { header: "TOTAL", value: numNodes },
-            { header: "AVAILABLE", value: numAvailableNodes },
-          ]}
-        />
+    <div id={style.nodesContainer}>
+      <Banner
+        items={[
+          { header: "TOTAL", value: numNodes },
+          { header: "AVAILABLE", value: numAvailableNodes },
+        ]}
+      />
+
+      <div id={style.lineGraphs}>
+          <iframe
+            className={style.lineGraph}
+            src="http://localhost:32000/d-solo/sO3bv1Fnz/kr8s-dashboard?orgId=1&theme=dark&panelId=52"
+            frameBorder="1"
+          ></iframe>
+          <iframe
+            className={style.lineGraph}
+            src="http://localhost:32000/d-solo/sO3bv1Fnz/kr8s-dashboard?orgId=1&theme=dark&panelId=54"
+            frameBorder="1"
+          ></iframe>
+          <iframe
+            className={style.lineGraph}
+            src="http://localhost:32000/d-solo/sO3bv1Fnz/kr8s-dashboard?orgId=1&theme=dark&panelId=56"
+            frameBorder="1"
+          ></iframe>
       </div>
 
-      <div className={style.nodesContainerMainContent}>
-        <div className={style.nodesContainerSpeedometerColumn}>
-          <iframe
-            src="http://localhost:32000/d-solo/sO3bv1Fnz/kr8s-dashboard?orgId=1&theme=dark&panelId=26"
-            frameBorder="0"
-          ></iframe>
-          <iframe
-            src="http://localhost:32000/d-solo/sO3bv1Fnz/kr8s-dashboard?orgId=1&theme=dark&panelId=28"
-            frameBorder="0"
-          ></iframe>
-          <iframe
-            src="http://localhost:32000/d-solo/sO3bv1Fnz/kr8s-dashboard?orgId=1&theme=dark&panelId=30"
-            frameBorder="0"
-          ></iframe>
-        </div>
+      <List
+        listValueHeaders={nodesHeaders}
+        listValue={nodesValues}
+        setCurrentTarget={setCurrentNode}
+        info={myNode}
+        reroute="/nodeview"
+      />
 
-        <div className={style.nodesContainerList}>
-          {/* TODO: Add list props once List component is done */}
-          <List
-            listValueHeaders={nodesHeaders}
-            listValue={nodesValues}
-            setCurrentTarget={setCurrentNode}
-            info={myNode}
-            reroute="/nodeview"
-          />
-        </div>
-      </div>
+
     </div>
   );
 }

@@ -7,9 +7,9 @@ import Banner from "../components/Banner.jsx";
 import styles from "../assets/css/PodView.module.css";
 
 const containersHeaders = [
-  { id: "name", label: "Name", minWidth: 100 },
-  { id: "ready", label: "Ready", minWidth: 100 },
-  { id: "restarts", label: "Number of Restarts", minWidth: 100 },
+  { id: "name", label: "Name", minWidth: 100, align: "center" },
+  { id: "ready", label: "Ready", minWidth: 100, align: "center" },
+  { id: "restarts", label: "Number of Restarts", minWidth: 100, align: "center" },
 ];
 
 export default function PodView(props) {
