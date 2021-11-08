@@ -90,21 +90,21 @@ export default function Pods(props) {
             src="http://localhost:32000/d-solo/sO3bv1Fnz/kr8s-dashboard?orgId=1&theme=dark&panelId=48"
             width="264"
             height="200"
-            frameborder="1"
+            frameBorder="1"
             className={styles.podsiframe}
           ></iframe>
           <iframe
             src="http://localhost:32000/d-solo/sO3bv1Fnz/kr8s-dashboard?orgId=1&theme=dark&panelId=50"
             width="264"
             height="200"
-            frameborder="1"
+            frameBorder="1"
             className={styles.podsiframe}
           ></iframe>
           <iframe
             src="http://localhost:32000/d-solo/sO3bv1Fnz/kr8s-dashboard?orgId=1&theme=dark&panelId=10"
             width="550"
             height="200"
-            frameborder="1"
+            frameBorder="1"
             className={styles.podsiframe}
           ></iframe>
         </div>
@@ -114,14 +114,14 @@ export default function Pods(props) {
               src="http://localhost:32000/d-solo/sO3bv1Fnz/kr8s-dashboard?orgId=1&theme=dark&panelId=12"
               width="550"
               height="200"
-              frameborder="1"
+              frameBorder="1"
               className={styles.podsiframe}
             ></iframe>
             <iframe
               src="http://localhost:32000/d-solo/sO3bv1Fnz/kr8s-dashboard?orgId=1&theme=dark&panelId=14"
               width="550"
               height="200"
-              frameborder="1"
+              frameBorder="1"
               className={styles.podsiframe}
             ></iframe>
           </div>
