@@ -14,12 +14,12 @@ spec:
     spec:
       containers:
         - name: kr8sserver
-          image: jgstoddard/kr8sserver
+          image: kr8sserver/server
 ---
 apiVersion: v1
 kind: Service
 metadata:
-  name: kr8sserver-srv
+  name: kr8sserver-np-srv
 spec: 
   type: NodePort
   selector:
@@ -27,5 +27,6 @@ spec:
   ports:
     - name: kr8sserver
       protocol: TCP
-      port: 3400
+      port: 3500
       targetPort: 3400
+      nodePort: 31000
