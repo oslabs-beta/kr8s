@@ -13,7 +13,6 @@
 
 .grafanaColumn {
   width: 550px;
-
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -44,6 +43,5 @@
 .speedoRow {
   display: flex;
   justify-content: space-between;
-
   margin-top: 10px;
 }
