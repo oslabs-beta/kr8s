@@ -27,9 +27,9 @@ describe("test to see if Nodes page is rendering and functioning as expected", (
   beforeEach(() => {
     const nodeValues = {
       node: null,
-      memoryPressure: null,
-      diskPressure: null,
-      pidPressure: null,
+      memorypressure: null,
+      diskpressure: null,
+      pidpressure: null,
       ready: null,
     };
   });
@@ -53,10 +53,10 @@ describe("test to see if Nodes page is rendering and functioning as expected", (
   });
   test("list listValue prop object", () => {
     expect(
-      wrapper.find("List").props().listValue[0].memoryPressure
+      wrapper.find("List").props().listValue[0].memorypressure
     ).toBeFalsy();
-    expect(wrapper.find("List").props().listValue[0].diskPressure).toBeFalsy();
-    expect(wrapper.find("List").props().listValue[0].pidPressure).toBeFalsy();
+    expect(wrapper.find("List").props().listValue[0].diskpressure).toBeFalsy();
+    expect(wrapper.find("List").props().listValue[0].pidpressure).toBeFalsy();
     expect(wrapper.find("List").props().listValue[0].ready).toBeTruthy();
   });
 });
