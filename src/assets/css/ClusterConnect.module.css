@@ -42,7 +42,7 @@
   height: 45px;
   width: 367px;
   
-  border: 1px solid #FFFFFF;
+  border: 1px solid #888888;
   border-radius: 4px;
   
   /* Note: backdrop-filter has minimal browser support */
@@ -50,8 +50,12 @@
   backdrop-filter: blur(4px);
   
   /* Style and Center Text */
-  color: #FFFFFF;
+  color: #888888;
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: center; 
+}
+
+#newContainer:hover {
+  cursor: not-allowed;
 }
