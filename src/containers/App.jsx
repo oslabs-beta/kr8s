@@ -29,7 +29,7 @@ export default function App() {
 
     apiCalls.fetchNodes().then((data) => {
       setNodes(data.items);
-      console.log("Node data: ", data);
+      // console.log("Node data: ", data);
     });
 
     apiCalls.fetchPods().then((data) => {
