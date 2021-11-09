@@ -41,7 +41,7 @@ export default function Dashboard(props) {
           ></iframe>
 
           <iframe
-            class={style.linegraph}
+            className={style.linegraph}
             src="http://localhost:32000/d-solo/sO3bv1Fnz/kr8s-dashboard?orgId=1&theme=dark&panelId=18"
             frameBorder="1"
           ></iframe>
