@@ -93,7 +93,7 @@ export default function List(props) {
       <TableContainer sx={{ maxHeight: 440 }}>
         <Table stickyHeader aria-label="sticky table">
           <TableHead>
-            <TableRow>
+            <TableRow key="header">
               {props.listValueHeaders.map((header) => (
                 <TableCell
                   key={header.id}
@@ -109,7 +109,7 @@ export default function List(props) {
               ))}
             </TableRow>
           </TableHead>
-          <TableBody>
+          <TableBody key="tablebody">
             {props.listValue
               .slice(page * rowsPerPage, page * rowsPerPage + rowsPerPage)
               .map((row) => {
@@ -119,13 +119,13 @@ export default function List(props) {
                       hover
                       role="checkbox"
                       tabIndex={-1}
-                      key={row.code}
+                      key={row.node || row.pod || row.name}
                     >
                       {props.listValueHeaders.map((header) => {
                         const value = row[header.id];
                         return (
                           <TableCell
-                            key={row.code + header.id}
+                            key={(row.node || row.pod || row.name) + header.id}
                             align={header.align}
                             sx={{ color: "#F1F0EF" }}
                           >
@@ -149,13 +149,13 @@ export default function List(props) {
                       hover
                       role="checkbox"
                       tabIndex={-1}
-                      key={row.code}
+                      key={row.node || row.pod || row.name}
                     >
                       {props.listValueHeaders.map((header) => {
                         const value = row[header.id];
                         return (
                           <TableCell
-                            key={row.code + header.id}
+                            key={(row.node || row.pod || row.name) + header.id}
                             align={header.align}
                             sx={{ color: "#F1F0EF" }}
                           >
