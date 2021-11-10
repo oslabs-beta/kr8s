@@ -15,7 +15,7 @@
 }
 
 #clusters {
-  padding-bottom: 100px
+  padding-bottom: 10px
 }
 
 .clusterContainer {
@@ -36,6 +36,11 @@
 
 .clusterLink {
   text-decoration: none;
+}
+
+#logo {
+  margin-top: 50px;
+  margin-bottom: 75px;
 }
 
 #newContainer {
