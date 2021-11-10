@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import apiCalls from "../APIcalls.js";
 
 import styles from "../assets/css/ClusterConnect.module.css";
-import logo from "../assets/css/imgs/Transparent_Image_3.png";
+import logo from "../assets/css/imgs/kr8s-connect.svg";
 
 export default function ClusterConnect(props) {
   let clusters = props.clusters.map((cluster) => {
@@ -26,7 +26,7 @@ export default function ClusterConnect(props) {
   return (
     <div>
       <main className={styles.mainContainer}>
-        <img height="225px" width="225px" src={logo}></img>
+        <img id={styles.logo} height="150px" width="150px" src={logo}></img>
         <section id={styles.clusters}>{clusters}</section>
         <section id={styles.newContainer}>Connect To New Cluster</section>
       </main>
