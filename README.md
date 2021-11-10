@@ -1,5 +1,15 @@
 # Kr8s
 
+<p align='center'><img src="./src/assets/css/imgs/kr8s-connect.svg" height="300"/></p>
+
+<p align="center">
+  <img src="https://img.shields.io/badge/contributions-welcome-informational.svg?style=flat"/>
+  <img alt="last commit" src="https://img.shields.io/github/last-commit/oslabs-beta/kr8s?color=blue">
+  <img alt="license" src="https://img.shields.io/github/license/oslabs-beta/kr8s?color=blue">
+  <img alt="github stars" src="https://img.shields.io/github/stars/oslabs-beta/kr8s?logoColor=%2334495e&style=social">
+  <img alt="twitter" src="https://img.shields.io/twitter/follow/kr8s4k?style=social">
+</p>
+
 ## Table of Contents
 
 - [Getting Started](#getting-started)
