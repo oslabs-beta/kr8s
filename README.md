@@ -6,45 +6,53 @@ Kr8s is a desktop application made for developers that need to monitor and visua
 
 ## Metrics
 
-The Dashboard page  
+The Dashboard page is the first page you will see once you connect to your local cluster. This page will give you metrics of your cluster on a high-level including pod usage, CPU usage, and memory usage.  
 ![dashboard-screenshot](https://github.com/oslabs-beta/kr8s/blob/dev/docs/images/dashboard-screenshot.png)
 
-The Nodes page  
+The Nodes page will give you everything you will need to know about the nodes in your cluster such as the names and health of each node.  
 ![nodes-screenshot](https://github.com/oslabs-beta/kr8s/blob/dev/docs/images/nodes-screenshot.png)
 
-The Pods page  
-![pods-gif3](https://media.giphy.com/media/SxELWUtpWU84Xzk0OT/giphy.gif)
+The Pods page will display the most important metrics you will need when monitoring all of your pods including pod CPU usage, memory usage, and the names and health of each pod.  
+<img src="https://media.giphy.com/media/SxELWUtpWU84Xzk0OT/giphy.gif" width="800" height="auto"/>
 
-The Pod View page  
+The Pod View page can be accessed when you click on a specific pod on the Pods page. This view will give you useful information of a specific pod and the containers inside that pod.  
 ![podview-screenshot](https://github.com/oslabs-beta/kr8s/blob/dev/docs/images/podview-screenshot.png)
 
 # Getting Started
 
 ## Setting up Kr8s
 
-If you have Prometheus and Grafana running on your machine, simply download the Kr8s application and
+If you already have Prometheus and Grafana running on your machine, simply download and open the Kr8s desktop application. Once the application is loaded, you can click the **Local Cluster** button and it will lead you to the Dashboard where you will be able to visualize the health of your Kubernetes cluster. [todo]
+
+_SCREENSHOT OR GIF GOING FROM CONNECT PAGE TO DASHBOARD_
 
 ## Setting up Prometheus and Grafana
 
-# How to Contribute
+If you do not have Prometheus and/or Grafana set up, you will need to do so before using the Kr8s application. [todo]
 
-If you would like to contribute to Kr8s,
+## I don't have a cluster but want to demo Kr8s
 
-Some features we would like to build:
+[todo]
+
+# Upcoming Features
+
+Some features in future versions include:
 
 1.
 2.
 
-# Contributors
+Please refer to [CONTRIBUTING.md](https://github.com/oslabs-beta/kr8s/blob/dev/CONTRIBUTING.md) to see how you can contribute to this product!
+
+# Meet Our Team
 
 Adam Sheff  
-LinkedIn | Github
+[LinkedIn](https://www.linkedin.com/in/adam-sheff/) | [Github](https://github.com/adamISheff)
 
 Duke Lee  
 [LinkedIn](https://www.linkedin.com/in/duke-lee) | [Github](https://github.com/dukelee11)
 
 Justin Stoddard  
-LinkedIn | Github
+[LinkedIn]() | [Github](https://github.com/jgstoddard)
 
 Reland Boyle  
-LinkedIn | Github
+[LinkedIn](https://www.linkedin.com/in/relandboyle/) | [Github](https://github.com/GlorifiedBicycle)
