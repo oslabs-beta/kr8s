@@ -64,12 +64,6 @@ export default function App() {
             <header id={style.header}>{clusterName}</header>
 
             <Switch>
-              <Route exact path="/index.html">
-                <ClusterConnect
-                  clusters={["Local Cluster"]}
-                  getClusterInfo={getClusterInfo}
-                />
-              </Route>
 
               <Route path="/dash">
                 <Dashboard
@@ -108,6 +102,14 @@ export default function App() {
                   />
                 )}
               />
+
+              <Route path="/">
+              <ClusterConnect
+                clusters={["Local Cluster"]}
+                getClusterInfo={getClusterInfo}
+              />
+            </Route>
+
             </Switch>
           </div>
         </div>

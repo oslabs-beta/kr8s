@@ -1,6 +1,6 @@
 # Build folder and files #
 ##########################
-builds/
+*builds/
 
 # Development folders and files #
 #################################
