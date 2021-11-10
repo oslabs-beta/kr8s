@@ -8,6 +8,9 @@ const defaultInclude = path.resolve(__dirname, 'src')
 
 module.exports = {
   entry: ['babel-polyfill', './src/index.js'],
+  // entry: {
+  //   app: './src/index.js',
+  // },
   module: {
     rules: [
       {
