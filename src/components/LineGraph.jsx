@@ -1,6 +1,7 @@
 import React from "react";
-
 import style from "../assets/css/LineGraph.module.css";
+
+// LineGraph component is not currently used by Kr8s
 
 export default function LineGraph(props) {
   return (

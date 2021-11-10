@@ -1,6 +1,5 @@
 'use strict'
 
-// Import parts of electron to use
 const { app, BrowserWindow } = require('electron')
 const path = require('path')
 const url = require('url')
@@ -12,10 +11,12 @@ let mainWindow;
 
 // Keep a reference for dev mode
 let dev = false
+
+
 const kubeCommand = 'kubectl create namespace monitoring';
 const kubeCommand2 = 'kubectl apply -f manifests'
 
-// Run node command
+// Run node command to create monitoring namespace for metric scraping
 exec(kubeCommand, (error, stdout, stderr) => {
   if (error) {
     console.error(`error: ${error.message}`);
@@ -30,7 +31,7 @@ exec(kubeCommand, (error, stdout, stderr) => {
   console.log(`stdout:\n${stdout}`);
 });
 
-// Run node command
+// Run node command to apply all yaml files in manifests
 exec(kubeCommand2, (error, stdout, stderr) => {
   if (error) {
     console.error(`error: ${error.message}`);

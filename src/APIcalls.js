@@ -3,11 +3,11 @@ const path = require("path");
 const fs = require("fs");
 const process = require("process");
 
-const grafanaDashboard = fs.readFileSync(
-  path.join(process.cwd(), "/grafana-kr8s-dashboard.json")
-);
 const apiCalls = {};
 
+/*
+  Retrieve data from Prometheus instance for running pods
+*/
 apiCalls.fetchPods = async () => {
   try {
     let response = await fetch("http://localhost:31000/api/podList");
@@ -18,6 +18,9 @@ apiCalls.fetchPods = async () => {
   }
 };
 
+/*
+  Retrieve data from Prometheus instance for running nodes
+*/
 apiCalls.fetchNodes = async () => {
   try {
     let response = await fetch("http://localhost:31000/api/nodeList");
@@ -28,6 +31,12 @@ apiCalls.fetchNodes = async () => {
   }
 };
 
+/*
+Generate a valid API key for the user
+
+The API Key will be required to make subsequent
+requests to grafana for the user
+*/
 apiCalls.createAPIkey = async () => {
   try {
     let respObj;
@@ -44,16 +53,27 @@ apiCalls.createAPIkey = async () => {
         secondsToLive: 86400,
       }),
     })
-      .then((res) => res.json())
-      .then((data) => {
-        respObj = data;
-      });
+    .then((res) => res.json())
+    .then((data) => {
+      respObj = data;
+    });
     return respObj.key;
   } catch {
     console.log("Error occured creating API key");
   }
 };
 
+/*
+This imports the Kr8s custom dashboard into the user's Grafana
+
+The dashboard needs to be imported to grafana for the iframes
+to be available to the user
+
+A valid APIKey is required Grafana to accept the request
+*/
+const grafanaDashboard = fs.readFileSync(
+  path.join(process.cwd(), "/grafana-kr8s-dashboard.json")
+);
 apiCalls.grafanaDashboardPostRequest = async (APIKey) => {
   try {
     let response = await fetch("http://localhost:32000/api/dashboards/db", {

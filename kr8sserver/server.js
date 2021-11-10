@@ -1,5 +1,4 @@
 const express = require('express');
-const path = require('path');
 const k8sController = require('./controllers/k8sController.js')
 
 
@@ -11,7 +10,10 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
 
-//Routes handling requests for k8s cluster info
+/*
+  Routes handling requests for k8s cluster info from Prometheus
+  Middleware will retrieve requested information from Prometheus
+*/
 
 app.get('/api/namespaceList', 
 k8sController.getPodList,
