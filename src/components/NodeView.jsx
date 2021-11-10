@@ -1,8 +1,7 @@
 import React from "react";
-
-import LineGraph from "../components/LineGraph.jsx";
-
 import styles from "../assets/css/NodeView.module.css";
+
+// NodeView is currently disabled by Kr8s
 
 export default function NodeView(props) {
   const { node, memoryPressure, diskPressure, pidPressure, ready } =

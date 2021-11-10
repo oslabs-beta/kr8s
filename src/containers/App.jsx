@@ -19,22 +19,29 @@ export default function App() {
   const [pods, setPods] = useState([]);
   const [nodes, setNodes] = useState([]);
   const [numContainers, setNumContainers] = useState(0);
-
-  // Accepts a path variable to connect to the given cluster
-  function getClusterInfo(path) {
+  const [scrapeInterval, setScrapeInterval] = useState(15000);
+  
+  /*
+    Function passed to ClusterConnect
+    Invoked when user selects Cluster for connection
+    Begins scraping from Prometheus
+  */
+  function getClusterInfo() {
     // Set connected to true to display the sidebar
     useConnected(true);
-    // TODO: Retrieve information necessary for the selected cluster
+    
     useClusterName("Local Cluster");
+
+    // Begin interval to scrape data from Prometheus
+    // Interval for scraping is determined by scrapeInterval Hook
     setInterval(() => {
       apiCalls.fetchNodes().then((data) => {
         setNodes(data.items);
-        console.log("Node data: ", data);
       });
   
       apiCalls.fetchPods().then((data) => {
         setPods(data.items);
-  
+        
         // Retrieve number of containers by iterating over pods
         let containerCount = 0;
         for(const pod of data.items) {
@@ -42,7 +49,7 @@ export default function App() {
         }
         setNumContainers(containerCount);
       });
-    }, 15000);
+    }, scrapeInterval);
   }
 
   return (

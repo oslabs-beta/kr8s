@@ -1,7 +1,5 @@
 import React from "react";
-
 import Banner from "../components/Banner.jsx";
-
 import style from "../assets/css/Dashboard.module.css";
 
 export default function Dashboard(props) {

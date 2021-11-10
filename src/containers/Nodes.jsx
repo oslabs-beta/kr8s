@@ -8,6 +8,15 @@ import style from "../assets/css/Nodes.module.css";
 export default function Nodes(props) {
   const [myNode, setMyNode] = useState({});
 
+  /*
+    ****    Currently rerouting to NodeView is disabled     ****
+    **** To enable update reroute prop value passed to List component to '/NodeView' ****
+    This function is passed down to the list component
+
+    It is invoked onClick and is used to set the specific pod to display for a user
+    when they are rerouted to the NodeView component, which displays information on
+    a single Pod    
+  */
   function setCurrentNode(nodeName) {
     for (let i = 0; i < nodesValues.length; i++) {
       if (nodesValues[i].node === nodeName) {
@@ -17,6 +26,10 @@ export default function Nodes(props) {
     }
   }
 
+  /*
+    Parse through passed in Nodes data from props
+    This will organize the information to be displayed in the components below
+  */
   const nodesValues = [],
     nodesHeaders = [
       { id: "node", label: "Node", minWidth: 100, align: "center" },

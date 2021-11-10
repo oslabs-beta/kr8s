@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 
 import Banner from "../components/Banner.jsx";
 import List from "../components/List.jsx";
@@ -8,6 +8,13 @@ import styles from "../assets/css/Pods.module.css";
 export default function Pods(props) {
   const [myPod, setMyPod] = useState({});
 
+  /*
+    This function is passed down to the list component
+
+    It is invoked onClick and is used to set the specific pod to display for a user
+    when they are rerouted to the PodView component, which displays information on
+    a single Pod    
+  */
   function setCurrentPod(podName) {
     for (let i = 0; i < podsValues.length; i++) {
       if (podsValues[i].pod === podName) {
@@ -17,6 +24,12 @@ export default function Pods(props) {
     }
   }
 
+
+
+  /*
+    Parse through passed in Pods data from props
+    This will organize the information to be displayed in the components below
+  */
   let runningPods = 0,
     pendingPods = 0,
     failedPods = 0,
@@ -67,6 +80,9 @@ export default function Pods(props) {
 
     podsValues.push(podValues);
   });
+
+
+
 
   return (
     <div>
