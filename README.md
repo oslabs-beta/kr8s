@@ -52,7 +52,7 @@ Duke Lee
 [LinkedIn](https://www.linkedin.com/in/duke-lee) | [Github](https://github.com/dukelee11)
 
 Justin Stoddard  
-[LinkedIn]() | [Github](https://github.com/jgstoddard)
+[LinkedIn](https://www.linkedin.com/in/jgstoddard/) | [Github](https://github.com/jgstoddard)
 
 Reland Boyle  
 [LinkedIn](https://www.linkedin.com/in/relandboyle/) | [Github](https://github.com/GlorifiedBicycle)
