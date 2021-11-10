@@ -45,6 +45,7 @@
     "test": "jest",
     "package-mac": "electron-packager . --overwrite --platform=darwin --arch=x64 --icon=src/assets/css/imgs/kr8s.icns --prune=true --out=release-builds",
     "package-win": "electron-packager . kr8s --overwrite --asar --platform=win32 --arch=ia32 --icon=src/assets/css/imgs/kr8s.ico --prune=true --out=builds --version-string.CompanyName=\"Team Kr8s\" --version-string.FileDescription=\"Kr8s\" --version-string.ProductName=\"Electron Tutorial App\"",
+    "create-win": "node installers/windows/createinstaller.js",
     "package-linux": "electron-packager . kr8s --overwrite --asar --platform=linux --arch=x64 --icon=src/assets/css/imgs/icon-24@256.png --prune=true --out=builds",
     "create-debian": "electron-installer-debian --src builds/kr8s-linux-x64 --arch amd64 --config debian.json"
   },

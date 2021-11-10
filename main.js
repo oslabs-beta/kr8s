@@ -1,9 +1,9 @@
 'use strict'
 
 // Import parts of electron to use
-const { app, BrowserWindow } = require('electron')
-const path = require('path')
-const url = require('url')
+const { app, BrowserWindow } = require('electron');
+const path = require('path');
+const url = require('url');
 
 // disable security warnings - used for debugging - should be removed
 // process.env['ELECTRON_DISABLE_SECURITY_WARNINGS'] = 'true';
@@ -52,27 +52,17 @@ function createWindow() {
   let fileLoader = () => {};
 
   if (dev && process.argv.indexOf('--noDevServer') === -1) {
-    indexPath = path.join('http://', 'localhost:8080', 'index.html');
-    // url.format({
-    //   protocol: 'http:',
-    //   host: 'localhost:8080',
-    //   pathname: 'index.html',
-    //   slashes: true
-    // })
+    indexPath = 'http://localhost:8080/index.html';
     fileLoader = mainWindow.loadURL(indexPath);
   } else {
     indexPath = path.join(process.cwd(), 'dist', 'index.html');
-    // mainWindow.loadURL(path.join(__dirname, 'mainWindow.html'));
-    //   url.format({
-    //   protocol: 'file:',
-    //   pathname: path.join(__dirname, 'dist', 'index.html'),
-    //   slashes: true
-    // })
     fileLoader = mainWindow.loadFile(indexPath);
   }
   
   console.log('*** indexPath: ', indexPath);
   () => fileLoader;
+
+  mainWindow.webContents.openDevTools();
 
   // Don't show until we are ready and loaded
   mainWindow.once('ready-to-show', () => {

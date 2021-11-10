@@ -56,7 +56,7 @@ export default function App() {
             <header id={style.header}>{clusterName}</header>
 
             <Switch>
-              <Route exact path="/index.html">
+              <Route path="/index.html">
                 <ClusterConnect
                   clusters={["Local Cluster"]}
                   getClusterInfo={getClusterInfo}
