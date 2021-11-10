@@ -4,6 +4,7 @@
 const { app, BrowserWindow } = require('electron')
 const path = require('path')
 const url = require('url')
+const { exec } = require('child_process')
 
 // Keep a global reference of the window object, if you don't, the window will
 // be closed automatically when the JavaScript object is garbage collected.
@@ -11,11 +12,38 @@ let mainWindow
 
 // Keep a reference for dev mode
 let dev = false
+const kubeCommand = 'kubectl create namespace monitoring';
+const kubeCommand2 = 'kubectl apply -f manifests'
 
-// Broken:
-// if (process.defaultApp || /[\\/]electron-prebuilt[\\/]/.test(process.execPath) || /[\\/]electron[\\/]/.test(process.execPath)) {
-//   dev = true
-// }
+// Run node command
+exec(kubeCommand, (error, stdout, stderr) => {
+  if (error) {
+    console.error(`error: ${error.message}`);
+    return;
+  }
+
+  if (stderr) {
+    console.error(`stderr: ${stderr}`);
+    return;
+  }
+
+  console.log(`stdout:\n${stdout}`);
+});
+
+// Run node command
+exec(kubeCommand2, (error, stdout, stderr) => {
+  if (error) {
+    console.error(`error: ${error.message}`);
+    return;
+  }
+
+  if (stderr) {
+    console.error(`stderr: ${stderr}`);
+    return;
+  }
+
+  console.log(`stdout:\n${stdout}`);
+});
 
 if (process.env.NODE_ENV !== undefined && process.env.NODE_ENV === 'development') {
   dev = true
