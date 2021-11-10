@@ -2,7 +2,7 @@
 
 ## Summary
 
-Kr8s is a desktop application made for developers that need to monitor and visualize their Kubernetes clusters in a user friendly GUI. This easy-to-use tool will display the most important metrics for your cluster, nodes, pods, and containers. Kr8s will work seamlessly with Prometheus and Grafana to give you everything you need in one application.
+[Kr8s](https://kr8s.dev/) is a desktop application made for developers that need to monitor and visualize their Kubernetes clusters in a user friendly GUI. This easy-to-use tool will display the most important metrics for your cluster, nodes, pods, and containers. Kr8s will work seamlessly with Prometheus and Grafana to give you everything you need in one application.
 
 ## Metrics
 
@@ -22,17 +22,25 @@ The Pod View page can be accessed when you click on a specific pod on the Pods p
 
 ## Setting up Kr8s
 
-If you already have Prometheus and Grafana running on your machine, simply download and open the Kr8s desktop application. Once the application is loaded, you can click the **Local Cluster** button and it will lead you to the Dashboard where you will be able to visualize the health of your Kubernetes cluster. [todo]
+If you already have Prometheus and Grafana running on your machine, simply download and open the Kr8s desktop application. Once the application is loaded, you can click the **Local Cluster** button and it will lead you to the Dashboard where you will be able to visualize the health of your Kubernetes cluster. <!-- [TODO] -->
 
 _SCREENSHOT OR GIF GOING FROM CONNECT PAGE TO DASHBOARD_
 
 ## Setting up Prometheus and Grafana
 
-If you do not have Prometheus and/or Grafana set up, you will need to do so before using the Kr8s application. [todo]
+If you do not have Prometheus and/or Grafana set up, you can simply copy the following two lines of commands on your terminal and you will be ready to go. <!-- [TODO] -->
+
+```console
+kubectl create namespace monitoring
+```
+
+```console
+kubectl apply -f manifests/
+```
 
 ## I don't have a cluster but want to demo Kr8s
 
-[todo]
+We created a [small microservices application](https://github.com/jgstoddard/kr8sdemo) that you can use demo Kr8s. <!-- [TODO] -->
 
 # Upcoming Features
 
