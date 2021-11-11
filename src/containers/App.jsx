@@ -34,7 +34,7 @@ export default function App() {
 
     // Begin interval to scrape data from Prometheus
     // Interval for scraping is determined by scrapeInterval Hook
-    setInterval(() => {
+    const scrape = () => {
       apiCalls.fetchNodes().then((data) => {
         setNodes(data.items);
       });
@@ -49,7 +49,9 @@ export default function App() {
         }
         setNumContainers(containerCount);
       });
-    }, scrapeInterval);
+    }
+    scrape();
+    setInterval(scrape, scrapeInterval);
   }
 
   return (
