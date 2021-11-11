@@ -1,0 +1,22 @@
+#nodesContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.lineGraph {
+  width: 350px;
+  height: 250px;
+
+  border: 1px solid #979698;
+  border-radius: 4px;
+}
+
+#lineGraphs {
+  width: 1130px;
+  margin: 20px 0px;
+
+  display: flex;
+  justify-content: space-between;
+}
+
