@@ -53,10 +53,10 @@ apiCalls.createAPIkey = async () => {
         secondsToLive: 86400,
       }),
     })
-    .then((res) => res.json())
-    .then((data) => {
-      respObj = data;
-    });
+      .then((res) => res.json())
+      .then((data) => {
+        respObj = data;
+      });
     return respObj.key;
   } catch {
     console.log("Error occured creating API key");
