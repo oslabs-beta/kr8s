@@ -37,17 +37,10 @@
     "last 4 versions"
   ],
   "scripts": {
-    "prod": "cross-env NODE_ENV=production webpack --mode production --config=./webpack.build.config.js && electron --noDevServer .",
-    "start": "cross-env NODE_ENV=development webpack serve --hot --host 0.0.0.0 --config=./webpack.dev.config.js --mode development",
+    "start": "cross-env NODE_ENV=production webpack --mode production --config=./webpack.build.config.js && electron --noDevServer .",
+    "dev": "cross-env NODE_ENV=development webpack serve --hot --host 0.0.0.0 --config=./webpack.dev.config.js --mode development",
     "build": "cross-env NODE_ENV=production webpack --config webpack.build.config.js --mode production",
-    "package": "npm run build",
-    "postpackage": "electron-packager ./ --out=./builds",
-    "test": "jest",
-    "package-mac": "electron-packager . --overwrite --platform=darwin --arch=x64 --icon=src/assets/css/imgs/kr8s.icns --prune=true --out=release-builds",
-    "package-win": "electron-packager . kr8s --overwrite --asar --platform=win32 --arch=ia32 --icon=src/assets/css/imgs/kr8s.ico --prune=true --out=builds --version-string.CompanyName=\"Team Kr8s\" --version-string.FileDescription=\"Kr8s\" --version-string.ProductName=\"Electron Tutorial App\"",
-    "create-win": "node installers/windows/createinstaller.js",
-    "package-linux": "electron-packager . kr8s --overwrite --asar --platform=linux --arch=x64 --icon=src/assets/css/imgs/icon-24@256.png --prune=true --out=builds",
-    "create-debian": "electron-installer-debian --src builds/kr8s-linux-x64 --arch amd64 --config debian.json"
+    "test": "jest"
   },
   "jest": {
     "moduleNameMapper": {
@@ -87,9 +80,6 @@
     "css-loader": "^6.2.0",
     "electron": "^13.1.9",
     "electron-devtools-installer": "^3.2.0",
-    "electron-installer-dmg": "^3.0.0",
-    "electron-packager": "^15.4.0",
-    "electron-winstaller": "^5.0.0",
     "enzyme": "^3.11.0",
     "enzyme-adapter-react-16": "^1.15.6",
     "eslint": "^8.0.1",
