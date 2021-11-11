@@ -4,7 +4,6 @@ import apiCalls from "../APIcalls.js";
 import styles from "../assets/css/ClusterConnect.module.css";
 import logo from "../assets/css/imgs/kr8s-connect.svg";
 
-// 
 
 export default function ClusterConnect(props) {
   
