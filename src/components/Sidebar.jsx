@@ -26,8 +26,6 @@ export default function Sidebar(props) {
               width: drawerWidth,
               borderRight: "1px solid rgba(151, 150, 152, 0.25)",
               boxSizing: "border-box",
-              // background: "linear-gradient(0deg, #FFFFFF 0%, rgba(47, 109, 182, 0.25) 0.01%, rgba(47, 109, 182, 0) 100%)",
-              // opacity:" 1",
               background:
                 "linear-gradient(180deg, rgba(28, 28, 33, 1) 40%, rgba(47, 109, 182, 0.1))",
             },
@@ -45,7 +43,6 @@ export default function Sidebar(props) {
                 height="40"
                 fill="#fff"
               >
-                <defs>{/* <style>.cls-1{fill:#fff;}</style> */}</defs>
                 <g id="Layer_2" data-name="Layer 2">
                   <g id="Layer_1-2" data-name="Layer 1">
                     <path
@@ -102,7 +99,6 @@ export default function Sidebar(props) {
                 width="100"
                 fill="#fff"
               >
-                <defs>{/* <style>.cls-1{fill=#fff;}</style> */}</defs>
                 <g id="Layer_2" data-name="Layer 2">
                   <g id="Layer_1-2" data-name="Layer 1">
                     <path
