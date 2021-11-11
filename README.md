@@ -15,6 +15,7 @@
 - [Getting Started](#getting-started)
 - [Features](#features)
 - [Upcoming Features](#upcoming-features)
+- [Links](#links)
 - [Meet Our Team](#meet-our-team)
   <br/>
   <br/>
@@ -35,8 +36,16 @@ Kr8s functionality assumes that you have Docker and Kubernetes already installed
 
 ## Install Kr8s
 
-TO DO
-<br/>
+To install Kr8s, you will need to first clone this repository to your local machine. Then in the root directory, run the following commands and a desktop application will launch:
+
+```
+npm install
+```
+
+```
+npm run start
+```
+
 <br/>
 
 ## I don't have an existing cluster but I want to demo Kr8s
@@ -100,6 +109,16 @@ Kr8s is an open-source product in active development. Below are some features th
 The team is always open to feedback and collaborators, so If you are interested in contributing to Kr8s please refer to [CONTRIBUTING.md](https://github.com/oslabs-beta/kr8s/blob/dev/CONTRIBUTING.md) for submission guidelines!  
 <br/>
 <br/>
+
+# Links
+
+- [Website](http://www.kr8s.dev/)
+- [LinkedIn](https://www.linkedin.com/company/kr8s/)
+- [Medium](https://medium.com/@kr8sdevelopers)
+- [Twitter](https://twitter.com/Kr8s4K)
+- [Product Hunt](https://www.producthunt.com/posts/kr8s-for-kubernetes)  
+  <br/>
+  <br/>
 
 # Meet Our Team
 
