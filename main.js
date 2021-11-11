@@ -75,6 +75,8 @@ function createWindow() {
 
   // and load the index.html of the app.
   let indexPath;
+
+  // function to set pathIndex and run loadURL or loadFile
   let fileLoader = () => {};
 
   if (dev && process.argv.indexOf('--noDevServer') === -1) {

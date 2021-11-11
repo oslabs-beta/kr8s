@@ -17,9 +17,9 @@ function getInstallerConfig () {
     appDirectory: path.join(outPath, '../../builds/kr8s-win-win32-ia32'),
     authors: 'Team Kr8s',
     noMsi: true,
-    outputDirectory: path.join(outPath, '../../builds'),
-    exe: 'kr8s-win.exe',
+    outputDirectory: path.join(outPath, 'kr8s-win-out'),
+    exe: 'KR8S.exe',
     setupExe: 'KR8S',
-    setupIcon: path.join(rootPath, '../../src/assets/css/imgs/kr8s.ico')
+    setupIcon: path.join(rootPath, '/src/assets/css/imgs/kr8sx.ico')
   })
 }
